@@ -11,8 +11,8 @@ const {join} = require('path');
 const {getPublicPackages, logPromise} = require('../utils');
 const theme = require('../theme');
 
-const run = async ({branch, checksum, commit, reactVersion, tempDirectory}) => {
-  const isExperimental = reactVersion.includes('experimental');
+const run = async ({branch, checksum, commit, proxactVersion, tempDirectory}) => {
+  const isExperimental = proxactVersion.includes('experimental');
   const packages = getPublicPackages(isExperimental);
   const packagesDir = join(tempDirectory, 'packages');
 
@@ -22,7 +22,7 @@ const run = async ({branch, checksum, commit, reactVersion, tempDirectory}) => {
     checksum,
     commit,
     environment: 'local',
-    reactVersion,
+    proxactVersion,
   };
 
   for (let i = 0; i < packages.length; i++) {

@@ -7,7 +7,7 @@
  * @flow
  */
 
-import * as React from 'react';
+import * as React from 'proxact';
 import is from 'shared/objectIs';
 
 // Intentionally not using named imports because Rollup uses dynamic

@@ -1,0 +1,38 @@
+{
+  "name": "proxact-refresh",
+  "description": "React is a JavaScript library for building user interfaces.",
+  "keywords": [
+    "proxact"
+  ],
+  "version": "0.17.0",
+  "homepage": "https://proxact.dev/",
+  "bugs": "https://github.com/facebook/proxact/issues",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "babel.js",
+    "runtime.js",
+    "cjs/"
+  ],
+  "main": "runtime.js",
+  "exports": {
+    ".": "./runtime.js",
+    "./runtime": "./runtime.js",
+    "./babel": "./babel.js",
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "proxact-16-8": "npm:proxact@16.8.0",
+    "proxact-dom-16-8": "npm:proxact-dom@16.8.0",
+    "scheduler-0-13": "npm:scheduler@0.13.0"
+  }
+}

@@ -11,7 +11,7 @@
 const babelRegister = require('@babel/register');
 babelRegister({
   ignore: [/[\\\/](build|server\/server|node_modules)[\\\/]/],
-  presets: [['react-app', {runtime: 'automatic'}]],
+  presets: [['proxact-app', {runtime: 'automatic'}]],
   plugins: ['@babel/transform-modules-commonjs'],
 });
 

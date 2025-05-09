@@ -1,0 +1,22 @@
+{
+  "private": "true",
+  "name": "proxact-forgive-client",
+  "version": "0.0.0",
+  "description": "Experimental LSP client",
+  "license": "MIT",
+  "scripts": {
+    "build": "echo 'no build'",
+    "test": "echo 'no tests'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facebook/proxact.git",
+    "directory": "compiler/packages/proxact-forgive"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0"
+  }
+}

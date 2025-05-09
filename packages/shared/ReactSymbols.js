@@ -11,44 +11,44 @@ import {renameElementSymbol} from 'shared/ReactFeatureFlags';
 
 // ATTENTION
 // When adding new symbols to this file,
-// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+// Please consider also adding to 'proxact-devtools-shared/src/backend/ReactSymbols'
 
 // The Symbol used to tag the ReactElement-like types.
-export const REACT_LEGACY_ELEMENT_TYPE: symbol = Symbol.for('react.element');
+export const REACT_LEGACY_ELEMENT_TYPE: symbol = Symbol.for('proxact.element');
 export const REACT_ELEMENT_TYPE: symbol = renameElementSymbol
-  ? Symbol.for('react.transitional.element')
+  ? Symbol.for('proxact.transitional.element')
   : REACT_LEGACY_ELEMENT_TYPE;
-export const REACT_PORTAL_TYPE: symbol = Symbol.for('react.portal');
-export const REACT_FRAGMENT_TYPE: symbol = Symbol.for('react.fragment');
-export const REACT_STRICT_MODE_TYPE: symbol = Symbol.for('react.strict_mode');
-export const REACT_PROFILER_TYPE: symbol = Symbol.for('react.profiler');
-export const REACT_PROVIDER_TYPE: symbol = Symbol.for('react.provider'); // TODO: Delete with enableRenderableContext
-export const REACT_CONSUMER_TYPE: symbol = Symbol.for('react.consumer');
-export const REACT_CONTEXT_TYPE: symbol = Symbol.for('react.context');
-export const REACT_FORWARD_REF_TYPE: symbol = Symbol.for('react.forward_ref');
-export const REACT_SUSPENSE_TYPE: symbol = Symbol.for('react.suspense');
+export const REACT_PORTAL_TYPE: symbol = Symbol.for('proxact.portal');
+export const REACT_FRAGMENT_TYPE: symbol = Symbol.for('proxact.fragment');
+export const REACT_STRICT_MODE_TYPE: symbol = Symbol.for('proxact.strict_mode');
+export const REACT_PROFILER_TYPE: symbol = Symbol.for('proxact.profiler');
+export const REACT_PROVIDER_TYPE: symbol = Symbol.for('proxact.provider'); // TODO: Delete with enableRenderableContext
+export const REACT_CONSUMER_TYPE: symbol = Symbol.for('proxact.consumer');
+export const REACT_CONTEXT_TYPE: symbol = Symbol.for('proxact.context');
+export const REACT_FORWARD_REF_TYPE: symbol = Symbol.for('proxact.forward_ref');
+export const REACT_SUSPENSE_TYPE: symbol = Symbol.for('proxact.suspense');
 export const REACT_SUSPENSE_LIST_TYPE: symbol = Symbol.for(
-  'react.suspense_list',
+  'proxact.suspense_list',
 );
-export const REACT_MEMO_TYPE: symbol = Symbol.for('react.memo');
-export const REACT_LAZY_TYPE: symbol = Symbol.for('react.lazy');
-export const REACT_SCOPE_TYPE: symbol = Symbol.for('react.scope');
-export const REACT_ACTIVITY_TYPE: symbol = Symbol.for('react.activity');
+export const REACT_MEMO_TYPE: symbol = Symbol.for('proxact.memo');
+export const REACT_LAZY_TYPE: symbol = Symbol.for('proxact.lazy');
+export const REACT_SCOPE_TYPE: symbol = Symbol.for('proxact.scope');
+export const REACT_ACTIVITY_TYPE: symbol = Symbol.for('proxact.activity');
 export const REACT_LEGACY_HIDDEN_TYPE: symbol = Symbol.for(
-  'react.legacy_hidden',
+  'proxact.legacy_hidden',
 );
 export const REACT_TRACING_MARKER_TYPE: symbol = Symbol.for(
-  'react.tracing_marker',
+  'proxact.tracing_marker',
 );
 
 export const REACT_MEMO_CACHE_SENTINEL: symbol = Symbol.for(
-  'react.memo_cache_sentinel',
+  'proxact.memo_cache_sentinel',
 );
 
-export const REACT_POSTPONE_TYPE: symbol = Symbol.for('react.postpone');
+export const REACT_POSTPONE_TYPE: symbol = Symbol.for('proxact.postpone');
 
 export const REACT_VIEW_TRANSITION_TYPE: symbol = Symbol.for(
-  'react.view_transition',
+  'proxact.view_transition',
 );
 
 const MAYBE_ITERATOR_SYMBOL = Symbol.iterator;

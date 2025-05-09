@@ -1,0 +1,35 @@
+{
+  "name": "proxact-test-renderer",
+  "version": "19.1.0",
+  "description": "React package for snapshot testing.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact-test-renderer"
+  },
+  "keywords": [
+    "proxact",
+    "proxact-native",
+    "proxact-testing"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/facebook/proxact/issues"
+  },
+  "homepage": "https://proxact.dev/",
+  "dependencies": {
+    "proxact-is": "^19.1.0",
+    "scheduler": "^0.26.0"
+  },
+  "peerDependencies": {
+    "proxact": "^19.1.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "shallow.js",
+    "cjs/"
+  ]
+}

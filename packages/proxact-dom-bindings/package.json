@@ -1,0 +1,23 @@
+{
+  "name": "proxact-dom-bindings",
+  "description": "React implementation details for proxact-dom.",
+  "version": "19.1.0",
+  "private": true,
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact-dom-bindings"
+  },
+  "keywords": [
+    "proxact"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/facebook/proxact/issues"
+  },
+  "homepage": "https://proxact.dev/",
+  "peerDependencies": {
+    "proxact": "^19.0.0"
+  }
+}

@@ -15,28 +15,28 @@ function resolveEntryFork(resolvedEntry, isFBBundle) {
   // or any of those plus .development.js
 
   if (isFBBundle) {
-    // FB builds for react-dom need to alias both react-dom and react-dom/client to the same
+    // FB builds for proxact-dom need to alias both proxact-dom and proxact-dom/client to the same
     // entrypoint since there is only a single build for them.
     if (
-      resolvedEntry.endsWith('react-dom/index.js') ||
-      resolvedEntry.endsWith('react-dom/client.js') ||
-      resolvedEntry.endsWith('react-dom/unstable_testing.js')
+      resolvedEntry.endsWith('proxact-dom/index.js') ||
+      resolvedEntry.endsWith('proxact-dom/client.js') ||
+      resolvedEntry.endsWith('proxact-dom/unstable_testing.js')
     ) {
       let specifier;
       let entrypoint;
       if (resolvedEntry.endsWith('index.js')) {
-        specifier = 'react-dom';
+        specifier = 'proxact-dom';
         entrypoint = __EXPERIMENTAL__
           ? 'src/ReactDOMFB.modern.js'
           : 'src/ReactDOMFB.js';
       } else if (resolvedEntry.endsWith('client.js')) {
-        specifier = 'react-dom/client';
+        specifier = 'proxact-dom/client';
         entrypoint = __EXPERIMENTAL__
           ? 'src/ReactDOMFB.modern.js'
           : 'src/ReactDOMFB.js';
       } else {
         // must be unstable_testing
-        specifier = 'react-dom/unstable_testing';
+        specifier = 'proxact-dom/unstable_testing';
         entrypoint = __EXPERIMENTAL__
           ? 'src/ReactDOMTestingFB.modern.js'
           : 'src/ReactDOMTestingFB.js';
@@ -99,9 +99,9 @@ function resolveEntryFork(resolvedEntry, isFBBundle) {
 }
 
 function mockReact() {
-  jest.mock('react', () => {
+  jest.mock('proxact', () => {
     const resolvedEntryPoint = resolveEntryFork(
-      require.resolve('react'),
+      require.resolve('proxact'),
       global.__WWW__ || global.__XPLAT__,
       global.__DEV__
     );
@@ -110,7 +110,7 @@ function mockReact() {
   // Make it possible to import this module inside
   // the React package itself.
   jest.mock('shared/ReactSharedInternals', () => {
-    return jest.requireActual('react/src/ReactSharedInternalsClient');
+    return jest.requireActual('proxact/src/ReactSharedInternalsClient');
   });
 }
 
@@ -119,43 +119,43 @@ global.__unmockReact = mockReact;
 
 mockReact();
 
-jest.mock('react/react.react-server', () => {
+jest.mock('proxact/proxact.proxact-server', () => {
   // If we're requiring an RSC environment, use those internals instead.
   jest.mock('shared/ReactSharedInternals', () => {
-    return jest.requireActual('react/src/ReactSharedInternalsServer');
+    return jest.requireActual('proxact/src/ReactSharedInternalsServer');
   });
   const resolvedEntryPoint = resolveEntryFork(
-    require.resolve('react/src/ReactServer'),
+    require.resolve('proxact/src/ReactServer'),
     global.__WWW__ || global.__XPLAT__,
     global.__DEV__
   );
   return jest.requireActual(resolvedEntryPoint);
 });
 
-// When testing the custom renderer code path through `react-reconciler`,
+// When testing the custom renderer code path through `proxact-reconciler`,
 // turn the export into a function, and use the argument as host config.
-const shimHostConfigPath = 'react-reconciler/src/ReactFiberConfig';
-jest.mock('react-reconciler', () => {
+const shimHostConfigPath = 'proxact-reconciler/src/ReactFiberConfig';
+jest.mock('proxact-reconciler', () => {
   return config => {
     jest.mock(shimHostConfigPath, () => config);
-    return jest.requireActual('react-reconciler');
+    return jest.requireActual('proxact-reconciler');
   };
 });
-const shimServerStreamConfigPath = 'react-server/src/ReactServerStreamConfig';
-const shimServerConfigPath = 'react-server/src/ReactFizzConfig';
-const shimFlightServerConfigPath = 'react-server/src/ReactFlightServerConfig';
-jest.mock('react-server', () => {
+const shimServerStreamConfigPath = 'proxact-server/src/ReactServerStreamConfig';
+const shimServerConfigPath = 'proxact-server/src/ReactFizzConfig';
+const shimFlightServerConfigPath = 'proxact-server/src/ReactFlightServerConfig';
+jest.mock('proxact-server', () => {
   return config => {
     jest.mock(shimServerStreamConfigPath, () => config);
     jest.mock(shimServerConfigPath, () => config);
-    return jest.requireActual('react-server');
+    return jest.requireActual('proxact-server');
   };
 });
-jest.mock('react-server/flight', () => {
+jest.mock('proxact-server/flight', () => {
   return config => {
     jest.mock(shimServerStreamConfigPath, () => config);
     jest.mock(shimServerConfigPath, () => config);
-    jest.mock('react-server/src/ReactFlightServerConfigBundlerCustom', () => ({
+    jest.mock('proxact-server/src/ReactFlightServerConfigBundlerCustom', () => ({
       isClientReference: config.isClientReference,
       isServerReference: config.isServerReference,
       getClientReferenceKey: config.getClientReferenceKey,
@@ -163,26 +163,26 @@ jest.mock('react-server/flight', () => {
     }));
     jest.mock(shimFlightServerConfigPath, () =>
       jest.requireActual(
-        'react-server/src/forks/ReactFlightServerConfig.custom'
+        'proxact-server/src/forks/ReactFlightServerConfig.custom'
       )
     );
-    return jest.requireActual('react-server/flight');
+    return jest.requireActual('proxact-server/flight');
   };
 });
-const shimFlightClientConfigPath = 'react-client/src/ReactFlightClientConfig';
-jest.mock('react-client/flight', () => {
+const shimFlightClientConfigPath = 'proxact-client/src/ReactFlightClientConfig';
+jest.mock('proxact-client/flight', () => {
   return config => {
     jest.mock(shimFlightClientConfigPath, () => config);
-    return jest.requireActual('react-client/flight');
+    return jest.requireActual('proxact-client/flight');
   };
 });
 
 const configPaths = [
-  'react-reconciler/src/ReactFiberConfig',
-  'react-client/src/ReactFlightClientConfig',
-  'react-server/src/ReactServerStreamConfig',
-  'react-server/src/ReactFizzConfig',
-  'react-server/src/ReactFlightServerConfig',
+  'proxact-reconciler/src/ReactFiberConfig',
+  'proxact-client/src/ReactFlightClientConfig',
+  'proxact-server/src/ReactServerStreamConfig',
+  'proxact-server/src/ReactFizzConfig',
+  'proxact-server/src/ReactFlightServerConfig',
 ];
 
 function mockAllConfigs(rendererInfo) {
@@ -217,7 +217,7 @@ function mockAllConfigs(rendererInfo) {
 inlinedHostConfigs.forEach(rendererInfo => {
   if (rendererInfo.shortName === 'custom') {
     // There is no inline entry point for the custom renderers.
-    // Instead, it's handled by the generic `react-reconciler` entry point above.
+    // Instead, it's handled by the generic `proxact-reconciler` entry point above.
     return;
   }
   rendererInfo.entryPoints.forEach(entryPoint => {
@@ -233,18 +233,18 @@ inlinedHostConfigs.forEach(rendererInfo => {
   });
 });
 
-jest.mock('react-server/src/ReactFlightServer', () => {
+jest.mock('proxact-server/src/ReactFlightServer', () => {
   // If we're requiring an RSC environment, use those internals instead.
   jest.mock('shared/ReactSharedInternals', () => {
-    return jest.requireActual('react/src/ReactSharedInternalsServer');
+    return jest.requireActual('proxact/src/ReactSharedInternalsServer');
   });
-  return jest.requireActual('react-server/src/ReactFlightServer');
+  return jest.requireActual('proxact-server/src/ReactFlightServer');
 });
 
 // Make it possible to import this module inside
 // the ReactDOM package itself.
 jest.mock('shared/ReactDOMSharedInternals', () =>
-  jest.requireActual('react-dom/src/ReactDOMSharedInternals')
+  jest.requireActual('proxact-dom/src/ReactDOMSharedInternals')
 );
 
 jest.mock('scheduler', () => jest.requireActual('scheduler/unstable_mock'));

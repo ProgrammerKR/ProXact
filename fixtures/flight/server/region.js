@@ -5,7 +5,7 @@
 const path = require('path');
 const url = require('url');
 
-const register = require('react-server-dom-webpack/node-register');
+const register = require('proxact-server-dom-webpack/node-register');
 register();
 
 const babelRegister = require('@babel/register');
@@ -23,7 +23,7 @@ babelRegister({
       return false;
     },
   ],
-  presets: ['@babel/preset-react'],
+  presets: ['@babel/preset-proxact'],
   plugins: ['@babel/transform-modules-commonjs'],
   sourceMaps: process.env.NODE_ENV === 'development' ? 'inline' : false,
 });
@@ -48,11 +48,11 @@ app.use(compress());
 
 const {readFile} = require('fs').promises;
 
-const React = require('react');
+const React = require('proxact');
 
 async function renderApp(res, returnValue, formState) {
   const {renderToPipeableStream} = await import(
-    'react-server-dom-webpack/server'
+    'proxact-server-dom-webpack/server'
   );
   // const m = require('../src/App.js');
   const m = await import('../src/App.js');
@@ -62,7 +62,7 @@ async function renderApp(res, returnValue, formState) {
   if (process.env.NODE_ENV === 'development') {
     // Read the module map from the HMR server in development.
     moduleMap = await (
-      await fetch('http://localhost:3000/react-client-manifest.json')
+      await fetch('http://localhost:3000/proxact-client-manifest.json')
     ).json();
     mainCSSChunks = (
       await (
@@ -73,7 +73,7 @@ async function renderApp(res, returnValue, formState) {
     // Read the module map from the static build in production.
     moduleMap = JSON.parse(
       await readFile(
-        path.resolve(__dirname, `../build/react-client-manifest.json`),
+        path.resolve(__dirname, `../build/proxact-client-manifest.json`),
         'utf8'
       )
     );
@@ -107,7 +107,7 @@ async function renderApp(res, returnValue, formState) {
 
 async function prerenderApp(res, returnValue, formState) {
   const {unstable_prerenderToNodeStream: prerenderToNodeStream} = await import(
-    'react-server-dom-webpack/static'
+    'proxact-server-dom-webpack/static'
   );
   // const m = require('../src/App.js');
   const m = await import('../src/App.js');
@@ -117,7 +117,7 @@ async function prerenderApp(res, returnValue, formState) {
   if (process.env.NODE_ENV === 'development') {
     // Read the module map from the HMR server in development.
     moduleMap = await (
-      await fetch('http://localhost:3000/react-client-manifest.json')
+      await fetch('http://localhost:3000/proxact-client-manifest.json')
     ).json();
     mainCSSChunks = (
       await (
@@ -128,7 +128,7 @@ async function prerenderApp(res, returnValue, formState) {
     // Read the module map from the static build in production.
     moduleMap = JSON.parse(
       await readFile(
-        path.resolve(__dirname, `../build/react-client-manifest.json`),
+        path.resolve(__dirname, `../build/proxact-client-manifest.json`),
         'utf8'
       )
     );
@@ -170,7 +170,7 @@ app.get('/', async function (req, res) {
 
 app.post('/', bodyParser.text(), async function (req, res) {
   const {decodeReply, decodeReplyFromBusboy, decodeAction, decodeFormState} =
-    await import('react-server-dom-webpack/server');
+    await import('proxact-server-dom-webpack/server');
   const serverReference = req.get('rsc-action');
   if (serverReference) {
     // This is the client-side case
@@ -179,7 +179,7 @@ app.post('/', bodyParser.text(), async function (req, res) {
     // Validate that this is actually a function we intended to expose and
     // not the client trying to invoke arbitrary functions. In a real app,
     // you'd have a manifest verifying this before even importing it.
-    if (action.$$typeof !== Symbol.for('react.server.reference')) {
+    if (action.$$typeof !== Symbol.for('proxact.server.reference')) {
       throw new Error('Invalid action');
     }
 

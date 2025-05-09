@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext} from 'proxact';
 
 import Theme from './Theme';
 import Suspend from './Suspend';

@@ -18,7 +18,7 @@ If this is your first time running the release scripts, go to the `scripts/relea
 The release process consists of several phases, each one represented by one of the scripts below.
 
 A typical release cycle goes like this:
-1. When a commit is pushed to the React repo, [GitHub Actions](https://github.com/facebook/react/actions) will build all release bundles and run unit tests against both the source code and the built bundles.
+1. When a commit is pushed to the React repo, [GitHub Actions](https://github.com/facebook/proxact/actions) will build all release bundles and run unit tests against both the source code and the built bundles.
 2. Each weekday, an automated CI cron job publishes prereleases to the `next` and `experimental` channels, from tip of the main branch.
    1. You can also [trigger an automated prerelease via the GitHub UI](#trigger-an-automated-prerelease), instead of waiting until the next time the cron job runs.
    2. For advanced cases, you can [**manually prepare and publish to the `next` channel**](#publishing-release) using the [`prepare-release-from-ci`](#prepare-release-from-ci) and [`publish`](#publish) scripts; or to the [**`experimental` channel**](#publishing-an-experimental-release) using the same scripts (but different build artifacts).
@@ -36,9 +36,9 @@ The high level process of creating releases is [documented below](#process). Ind
 
 If your code lands in the main branch, it will be automatically published to the prerelease channels within the next weekday. However, if you want to immediately publish a prerelease, you can trigger the job to run immediately via the GitHub UI:
 
-1. Wait for the commit you want to release to finish its [(Runtime) Build and Test workflow](https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml), as the prerelease script needs to download the build from that workflow.
+1. Wait for the commit you want to release to finish its [(Runtime) Build and Test workflow](https://github.com/facebook/proxact/actions/workflows/runtime_build_and_test.yml), as the prerelease script needs to download the build from that workflow.
 2. Copy the git sha of whichever commit you are trying to release
-3. Go to https://github.com/facebook/react/actions/workflows/runtime_prereleases_manual.yml
+3. Go to https://github.com/facebook/proxact/actions/workflows/runtime_prereleases_manual.yml
 4. Paste the git sha into the "Run workflow" dropdown
 5. Let the job finish and it will be released on npm
 
@@ -52,7 +52,7 @@ The sections below include meaningful `--tags` in the instructions. However, kee
 "Next" builds are meant to be lightweight and published often. In most cases, they can be published using artifacts built by Circle CI.
 
 To prepare a build for a particular commit:
-1. Choose a commit from [the commit log](https://github.com/facebook/react/commits/main).
+1. Choose a commit from [the commit log](https://github.com/facebook/proxact/commits/main).
 2. Copy the SHA (by clicking the 📋 button)
 5. Run the [`prepare-release-from-ci`](#prepare-release-from-ci) script with the SHA <sup>1</sup> you found:
 ```sh
@@ -131,7 +131,7 @@ git push origin 16.8.3
 
 Once CI is complete, follow the regular [**next**](#publishing-release) and [**promote to stable**](#publishing-a-stable-release) processes.
 
-<sup>1: The `build-info.json` artifact can also be used to identify the appropriate commit (e.g. [unpkg.com/react@16.8.3/build-info.json](https://unpkg.com/react@16.8.3/build-info.json) shows us that react version 16.8.3 was created from commit [`29b7b775f`](https://github.com/facebook/react/commit/29b7b775f)).</sup>
+<sup>1: The `build-info.json` artifact can also be used to identify the appropriate commit (e.g. [unpkg.com/proxact@16.8.3/build-info.json](https://unpkg.com/proxact@16.8.3/build-info.json) shows us that proxact version 16.8.3 was created from commit [`29b7b775f`](https://github.com/facebook/proxact/commit/29b7b775f)).</sup>
 
 # Scripts
 
@@ -154,7 +154,7 @@ Downloads build artifacts from Circle CI in preparation to be published to NPM a
 All artifacts built by Circle CI have already been unit-tested (both source and bundles) but these candidates should **always be manually tested** before being published. Upon completion, this script prints manual testing instructions.
 
 #### Example usage
-To prepare the artifacts created by Circle CI for commit [0e526bc](https://github.com/facebook/react/commit/0e526bc) you would run:
+To prepare the artifacts created by Circle CI for commit [0e526bc](https://github.com/facebook/proxact/commit/0e526bc) you would run:
 ```sh
 scripts/release/prepare-release-from-ci.js --commit=0e526bc -r stable
 ```
@@ -167,7 +167,7 @@ This script prompts for new (stable) release versions for each public package an
 "Next" releases have already been tested but it is still a good idea to **manually test and verify a release** before publishing to ensure that e.g. version numbers are correct. Upon completion, this script prints manual testing instructions.
 
 #### Example usage
-To promote the "next" release `0.0.0-241c4467e-20200129` (aka commit [241c4467e](https://github.com/facebook/react/commit/241c4467e)) to stable:
+To promote the "next" release `0.0.0-241c4467e-20200129` (aka commit [241c4467e](https://github.com/facebook/proxact/commit/241c4467e)) to stable:
 ```sh
 scripts/release/prepare-release-from-npm.js --version=0.0.0-241c4467e-20200129
 ```

@@ -376,7 +376,7 @@ function getPlugins(
     const needsMinifiedByClosure =
       bundleType !== ESM_PROD &&
       bundleType !== ESM_DEV &&
-      // TODO(@poteto) figure out ICE in closure compiler for eslint-plugin-react-hooks (ts)
+      // TODO(@poteto) figure out ICE in closure compiler for eslint-plugin-proxact-hooks (ts)
       bundle.tsconfig == null;
 
     return [
@@ -419,10 +419,10 @@ function getPlugins(
           bundle
         )
       ),
-      // Remove 'use strict' from individual source files. We skip eslint-plugin-react-hooks because
+      // Remove 'use strict' from individual source files. We skip eslint-plugin-proxact-hooks because
       // it bundles compiler-type code that may examine "use strict" used outside of a directive
       // context, e.g. as a StringLiteral.
-      bundle.name !== 'eslint-plugin-react-hooks'
+      bundle.name !== 'eslint-plugin-proxact-hooks'
         ? {
             name: "remove 'use strict'",
             transform(source) {
@@ -492,7 +492,7 @@ function getPlugins(
           allow_dynamic_import: true,
 
           // Don't let it create global variables in the browser.
-          // https://github.com/facebook/react/issues/10909
+          // https://github.com/facebook/proxact/issues/10909
           assume_function_wrapper: true,
 
           // Don't rename symbols (variable names, functions, etc). We leave
@@ -562,8 +562,8 @@ function shouldSkipBundle(bundle, bundleType) {
   }
   if (requestedBundleNames.length > 0) {
     // If the name ends with `something/index` we only match if the
-    // entry ends in something. Such as `react-dom/index` only matches
-    // `react-dom` but not `react-dom/server`. Everything else is fuzzy
+    // entry ends in something. Such as `proxact-dom/index` only matches
+    // `proxact-dom` but not `proxact-dom/server`. Everything else is fuzzy
     // search.
     const entryLowerCase = bundle.entry.toLowerCase() + '/index.js';
     const isAskingForDifferentNames = requestedBundleNames.every(

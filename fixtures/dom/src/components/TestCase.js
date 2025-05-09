@@ -69,7 +69,7 @@ class TestCase extends React.Component {
           {introducedIn && (
             <dd>
               <a
-                href={'https://github.com/facebook/react/tag/v' + introducedIn}>
+                href={'https://github.com/facebook/proxact/tag/v' + introducedIn}>
                 <code>{introducedIn}</code>
               </a>
             </dd>
@@ -78,7 +78,7 @@ class TestCase extends React.Component {
           {resolvedIn && <dt>First supported in: </dt>}
           {resolvedIn && (
             <dd>
-              <a href={'https://github.com/facebook/react/tag/v' + resolvedIn}>
+              <a href={'https://github.com/facebook/proxact/tag/v' + resolvedIn}>
                 <code>{resolvedIn}</code>
               </a>
             </dd>
@@ -89,7 +89,7 @@ class TestCase extends React.Component {
             <dd>
               <a
                 href={
-                  'https://github.com/facebook/react/pull/' +
+                  'https://github.com/facebook/proxact/pull/' +
                   resolvedBy.slice(1)
                 }>
                 <code>{resolvedBy}</code>

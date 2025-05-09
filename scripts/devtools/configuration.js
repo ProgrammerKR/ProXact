@@ -3,27 +3,27 @@
 const {join} = require('path');
 
 const PACKAGE_PATHS = [
-  'packages/react-devtools/package.json',
-  'packages/react-devtools-core/package.json',
-  'packages/react-devtools-inline/package.json',
-  'packages/react-devtools-timeline/package.json',
+  'packages/proxact-devtools/package.json',
+  'packages/proxact-devtools-core/package.json',
+  'packages/proxact-devtools-inline/package.json',
+  'packages/proxact-devtools-timeline/package.json',
 ];
 
 const MANIFEST_PATHS = [
-  'packages/react-devtools-extensions/chrome/manifest.json',
-  'packages/react-devtools-extensions/edge/manifest.json',
-  'packages/react-devtools-extensions/firefox/manifest.json',
+  'packages/proxact-devtools-extensions/chrome/manifest.json',
+  'packages/proxact-devtools-extensions/edge/manifest.json',
+  'packages/proxact-devtools-extensions/firefox/manifest.json',
 ];
 
 const NPM_PACKAGES = [
-  'react-devtools',
-  'react-devtools-core',
-  'react-devtools-inline',
+  'proxact-devtools',
+  'proxact-devtools-core',
+  'proxact-devtools-inline',
 ];
 
-const CHANGELOG_PATH = 'packages/react-devtools/CHANGELOG.md';
+const CHANGELOG_PATH = 'packages/proxact-devtools/CHANGELOG.md';
 
-const PULL_REQUEST_BASE_URL = 'https://github.com/facebook/react/pull/';
+const PULL_REQUEST_BASE_URL = 'https://github.com/facebook/proxact/pull/';
 
 const RELEASE_SCRIPT_TOKEN = '<!-- RELEASE_SCRIPT_TOKEN -->';
 

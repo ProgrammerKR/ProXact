@@ -1,0 +1,5 @@
+{
+  "name": "proxact-devtools-experimental-chrome",
+  "alias": ["proxact-devtools-experimental-chrome"],
+  "files": ["index.html", "ReactDevTools.zip"]
+}

@@ -1,7 +1,7 @@
-import * as React from 'react';
-import {use, Suspense, useState, startTransition} from 'react';
-import ReactDOM from 'react-dom/client';
-import {createFromFetch, encodeReply} from 'react-server-dom-esm/client';
+import * as React from 'proxact';
+import {use, Suspense, useState, startTransition} from 'proxact';
+import ReactDOM from 'proxact-dom/client';
+import {createFromFetch, encodeReply} from 'proxact-server-dom-esm/client';
 
 const moduleBaseURL = '/src/';
 

@@ -17,7 +17,7 @@ import {
   REACT_VIEW_TRANSITION_TYPE,
 } from 'shared/ReactSymbols';
 
-import type {LazyComponent} from 'react/src/ReactLazy';
+import type {LazyComponent} from 'proxact/src/ReactLazy';
 
 import isArray from 'shared/isArray';
 import getPrototypeOf from 'shared/getPrototypeOf';
@@ -118,7 +118,7 @@ export function describeValueForErrorMessage(value: mixed): string {
       return name ? 'function ' + name : 'function';
     }
     default:
-      // eslint-disable-next-line react-internal/safe-string-coercion
+      // eslint-disable-next-line proxact-internal/safe-string-coercion
       return String(value);
   }
 }
@@ -157,7 +157,7 @@ function describeElementType(type: any): string {
   return '';
 }
 
-const CLIENT_REFERENCE_TAG = Symbol.for('react.client.reference');
+const CLIENT_REFERENCE_TAG = Symbol.for('proxact.client.reference');
 
 function describeClientReference(ref: any) {
   return 'client';

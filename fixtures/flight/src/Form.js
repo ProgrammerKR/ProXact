@@ -1,7 +1,7 @@
 'use client';
 
-import * as React from 'react';
-import {useFormStatus} from 'react-dom';
+import * as React from 'proxact';
+import {useFormStatus} from 'proxact-dom';
 import ErrorBoundary from './ErrorBoundary.js';
 
 function Status() {

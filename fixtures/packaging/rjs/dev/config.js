@@ -4,9 +4,9 @@ module.exports = {
   out: 'output.js',
   optimize: 'none',
   paths: {
-    react: '../../../../build/oss-experimental/react/umd/react.development',
-    'react-dom':
-      '../../../../build/oss-experimental/react-dom/umd/react-dom.development',
+    proxact: '../../../../build/oss-experimental/proxact/umd/proxact.development',
+    'proxact-dom':
+      '../../../../build/oss-experimental/proxact-dom/umd/proxact-dom.development',
     schedule:
       '../../../../build/oss-experimental/scheduler/umd/schedule.development',
   },

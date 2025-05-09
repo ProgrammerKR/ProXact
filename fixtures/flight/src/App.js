@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'proxact';
 
 import Container from './Container.js';
 

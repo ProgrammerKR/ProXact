@@ -1,4 +1,4 @@
-import React, {Fragment, Suspense} from 'react';
+import React, {Fragment, Suspense} from 'proxact';
 
 export default function LargeContent() {
   return (

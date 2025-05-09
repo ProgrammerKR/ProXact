@@ -35,7 +35,7 @@ jobs:
             const actor = '${{ inputs.actor }}';
             const res = await github.rest.repos.getContent({
               owner: 'facebook',
-              repo: 'react',
+              repo: 'proxact',
               path: 'MAINTAINERS',
               ref: 'main',
               headers: { Accept: 'application/vnd.github+json' }

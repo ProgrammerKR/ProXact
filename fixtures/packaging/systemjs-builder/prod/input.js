@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'proxact';
+import ReactDOM from 'proxact-dom';
 
 ReactDOM.render(
   React.createElement('h1', null, 'Hello World!'),

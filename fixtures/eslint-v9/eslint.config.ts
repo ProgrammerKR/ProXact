@@ -1,5 +1,5 @@
 import type {Linter} from 'eslint';
-import * as reactHooks from 'eslint-plugin-react-hooks';
+import * as proxactHooks from 'eslint-plugin-proxact-hooks';
 
 export default [
   {
@@ -13,10 +13,10 @@ export default [
       },
     },
   },
-  reactHooks.configs['recommended'],
+  proxactHooks.configs['recommended'],
   {
     rules: {
-      'react-hooks/exhaustive-deps': 'error',
+      'proxact-hooks/exhaustive-deps': 'error',
     },
   },
 ] satisfies Linter.Config[];

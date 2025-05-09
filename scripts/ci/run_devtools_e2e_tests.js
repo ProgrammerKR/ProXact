@@ -6,9 +6,9 @@ const {spawn} = require('child_process');
 const {join} = require('path');
 
 const ROOT_PATH = join(__dirname, '..', '..');
-const reactVersion = process.argv[2];
-const inlinePackagePath = join(ROOT_PATH, 'packages', 'react-devtools-inline');
-const shellPackagePath = join(ROOT_PATH, 'packages', 'react-devtools-shell');
+const proxactVersion = process.argv[2];
+const inlinePackagePath = join(ROOT_PATH, 'packages', 'proxact-devtools-inline');
+const shellPackagePath = join(ROOT_PATH, 'packages', 'proxact-devtools-shell');
 const screenshotPath = join(ROOT_PATH, 'tmp', 'screenshots');
 
 const {SUCCESSFUL_COMPILATION_MESSAGE} = require(
@@ -79,12 +79,12 @@ function runTestShell() {
 
   logBright('Starting testing shell server');
 
-  if (!reactVersion) {
+  if (!proxactVersion) {
     serverProcess = spawn('yarn', ['start'], {cwd: shellPackagePath});
   } else {
     serverProcess = spawn('yarn', ['start'], {
       cwd: shellPackagePath,
-      env: {...process.env, REACT_VERSION: reactVersion},
+      env: {...process.env, REACT_VERSION: proxactVersion},
     });
   }
 
@@ -120,14 +120,14 @@ function runTestShell() {
 
 async function runEndToEndTests() {
   logBright('Running e2e tests');
-  if (!reactVersion) {
+  if (!proxactVersion) {
     testProcess = spawn('yarn', ['test:e2e', `--output=${screenshotPath}`], {
       cwd: inlinePackagePath,
     });
   } else {
     testProcess = spawn('yarn', ['test:e2e', `--output=${screenshotPath}`], {
       cwd: inlinePackagePath,
-      env: {...process.env, REACT_VERSION: reactVersion},
+      env: {...process.env, REACT_VERSION: proxactVersion},
     });
   }
 

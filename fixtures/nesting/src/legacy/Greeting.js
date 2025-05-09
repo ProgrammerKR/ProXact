@@ -1,8 +1,8 @@
-import React from 'react';
-import {Component} from 'react';
-import {findDOMNode} from 'react-dom';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
+import React from 'proxact';
+import {Component} from 'proxact';
+import {findDOMNode} from 'proxact-dom';
+import {Link} from 'proxact-router-dom';
+import {connect} from 'proxact-redux';
 import {store} from '../store';
 
 import ThemeContext from './shared/ThemeContext';

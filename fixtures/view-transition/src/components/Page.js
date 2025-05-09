@@ -8,9 +8,9 @@ import React, {
   useId,
   useOptimistic,
   startTransition,
-} from 'react';
+} from 'proxact';
 
-import {createPortal} from 'react-dom';
+import {createPortal} from 'proxact-dom';
 
 import SwipeRecognizer from './SwipeRecognizer';
 
@@ -43,7 +43,7 @@ function Component() {
       <p className="roboto-font">Slide In from Left, Slide Out to Right</p>
       <p>
         <img
-          src="https://react.dev/_next/image?url=%2Fimages%2Fteam%2Fsebmarkbage.jpg&w=3840&q=75"
+          src="https://proxact.dev/_next/image?url=%2Fimages%2Fteam%2Fsebmarkbage.jpg&w=3840&q=75"
           width="300"
         />
       </p>

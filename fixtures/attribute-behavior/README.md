@@ -8,7 +8,7 @@
 
 ## Instructions
 
-`yarn build --type=UMD_DEV react/index,react-dom && cd fixtures/attribute-behavior && yarn install && yarn dev`
+`yarn build --type=UMD_DEV proxact/index,proxact-dom && cd fixtures/attribute-behavior && yarn install && yarn dev`
 
 ## Interpretation
 
@@ -25,6 +25,6 @@ Right now, we use a purple outline to call out cases where the assigned property
 ---
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-proxact-app).
 
-You can find the guide for how to do things in a CRA [here](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md).
+You can find the guide for how to do things in a CRA [here](https://github.com/facebook/create-proxact-app/blob/main/packages/cra-template/template/README.md).

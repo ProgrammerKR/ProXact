@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "proxact": "^16.1.1",
+    "proxact-dom": "^16.1.1",
+    "proxact-scripts": "1.0.17"
   },
   "scripts": {
     "predev":
-      "cp ../../build/oss-experimental/react/umd/react.development.js public/ && cp ../../build/oss-experimental/react-dom/umd/react-dom.development.js public/",
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+      "cp ../../build/oss-experimental/proxact/umd/proxact.development.js public/ && cp ../../build/oss-experimental/proxact-dom/umd/proxact-dom.development.js public/",
+    "dev": "proxact-scripts start",
+    "build": "proxact-scripts build",
+    "test": "proxact-scripts test --env=jsdom",
+    "eject": "proxact-scripts eject"
   }
 }

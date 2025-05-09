@@ -10,9 +10,9 @@ const theme = require('../theme');
 const {execRead} = require('../utils');
 
 const run = async ({cwd, packages, tags}) => {
-  // Tags are named after the react version.
+  // Tags are named after the proxact version.
   const {version} = readJsonSync(
-    `${cwd}/build/node_modules/react/package.json`
+    `${cwd}/build/node_modules/proxact/package.json`
   );
 
   clear();
@@ -91,7 +91,7 @@ const run = async ({cwd, packages, tags}) => {
       console.log();
       console.log(theme.header`Lastly, please fill in the release on GitHub.`);
       console.log(
-        theme.link`https://github.com/facebook/react/releases/tag/v%s`,
+        theme.link`https://github.com/facebook/proxact/releases/tag/v%s`,
         version
       );
       console.log(
@@ -112,7 +112,7 @@ const run = async ({cwd, packages, tags}) => {
         }
       }
 
-      // Update reactjs.org so the React version shown in the header is up to date.
+      // Update proxactjs.org so the React version shown in the header is up to date.
       console.log();
       console.log(
         theme.header`Once you've pushed changes, update the docs site.`

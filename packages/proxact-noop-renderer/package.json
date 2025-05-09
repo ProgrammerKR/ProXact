@@ -1,0 +1,32 @@
+{
+  "name": "proxact-noop-renderer",
+  "version": "16.0.0",
+  "private": true,
+  "description": "React package for testing the Fiber, Fizz and Flight reconcilers.",
+  "main": "index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact-noop-renderer"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "proxact-reconciler": "*",
+    "proxact-client": "*",
+    "proxact-server": "*"
+  },
+  "peerDependencies": {
+    "proxact": "^17.0.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "persistent.js",
+    "server.js",
+    "flight-client.js",
+    "flight-modules.js",
+    "flight-server.js",
+    "cjs/"
+  ]
+}

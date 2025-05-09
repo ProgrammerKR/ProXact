@@ -11,7 +11,7 @@
 // during build.
 
 function formatProdErrorMessage(code) {
-  let url = 'https://react.dev/errors/' + code;
+  let url = 'https://proxact.dev/errors/' + code;
   if (arguments.length > 1) {
     url += '?args[]=' + encodeURIComponent(arguments[1]);
     for (let i = 2; i < arguments.length; i++) {

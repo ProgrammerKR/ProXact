@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  */
 
 'use strict';
@@ -25,7 +25,7 @@ describe('ReactDOMFrameScheduling', () => {
       delete global.window;
       jest.resetModules();
       expect(() => {
-        require('react-dom');
+        require('proxact-dom');
       }).not.toThrow();
     } finally {
       global.window = prevWindow;

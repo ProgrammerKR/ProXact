@@ -276,9 +276,9 @@
 ## `action` (on `<form>` inside `<div>`)
 | Test Case | Flags | Result |
 | --- | --- | --- |
-| `action=(string)`| (changed)| `"https://reactjs.com/"` |
+| `action=(string)`| (changed)| `"https://proxactjs.com/"` |
 | `action=(empty string)`| (initial)| `"http://localhost:3000/"` |
-| `action=(array with string)`| (changed)| `"https://reactjs.com/"` |
+| `action=(array with string)`| (changed)| `"https://proxactjs.com/"` |
 | `action=(empty array)`| (initial)| `"http://localhost:3000/"` |
 | `action=(object)`| (changed)| `"http://localhost:3000/result%20of%20toString()"` |
 | `action=(numeric string)`| (changed)| `"http://localhost:3000/42"` |
@@ -1501,9 +1501,9 @@
 ## `cite` (on `<blockquote>` inside `<div>`)
 | Test Case | Flags | Result |
 | --- | --- | --- |
-| `cite=(string)`| (changed)| `"https://reactjs.com/"` |
+| `cite=(string)`| (changed)| `"https://proxactjs.com/"` |
 | `cite=(empty string)`| (changed)| `"http://localhost:3000/"` |
-| `cite=(array with string)`| (changed)| `"https://reactjs.com/"` |
+| `cite=(array with string)`| (changed)| `"https://proxactjs.com/"` |
 | `cite=(empty array)`| (changed)| `"http://localhost:3000/"` |
 | `cite=(object)`| (changed)| `"http://localhost:3000/result%20of%20toString()"` |
 | `cite=(numeric string)`| (changed)| `"http://localhost:3000/42"` |
@@ -4201,9 +4201,9 @@
 ## `formAction` (on `<input>` inside `<div>`)
 | Test Case | Flags | Result |
 | --- | --- | --- |
-| `formAction=(string)`| (changed, warning)| `"https://reactjs.com/"` |
+| `formAction=(string)`| (changed, warning)| `"https://proxactjs.com/"` |
 | `formAction=(empty string)`| (initial, warning)| `"http://localhost:3000/"` |
-| `formAction=(array with string)`| (changed, warning)| `"https://reactjs.com/"` |
+| `formAction=(array with string)`| (changed, warning)| `"https://proxactjs.com/"` |
 | `formAction=(empty array)`| (initial, warning)| `"http://localhost:3000/"` |
 | `formAction=(object)`| (changed, warning)| `"http://localhost:3000/result%20of%20toString()"` |
 | `formAction=(numeric string)`| (changed, warning)| `"http://localhost:3000/42"` |
@@ -5076,9 +5076,9 @@
 ## `href` (on `<a>` inside `<div>`)
 | Test Case | Flags | Result |
 | --- | --- | --- |
-| `href=(string)`| (changed)| `"https://reactjs.com/"` |
+| `href=(string)`| (changed)| `"https://proxactjs.com/"` |
 | `href=(empty string)`| (changed)| `"http://localhost:3000/"` |
-| `href=(array with string)`| (changed)| `"https://reactjs.com/"` |
+| `href=(array with string)`| (changed)| `"https://proxactjs.com/"` |
 | `href=(empty array)`| (changed)| `"http://localhost:3000/"` |
 | `href=(object)`| (changed)| `"http://localhost:3000/result%20of%20toString()"` |
 | `href=(numeric string)`| (changed)| `"http://localhost:3000/42"` |
@@ -8526,9 +8526,9 @@
 ## `poster` (on `<video>` inside `<div>`)
 | Test Case | Flags | Result |
 | --- | --- | --- |
-| `poster=(string)`| (changed)| `"https://reactjs.com/"` |
+| `poster=(string)`| (changed)| `"https://proxactjs.com/"` |
 | `poster=(empty string)`| (changed)| `"http://localhost:3000/"` |
-| `poster=(array with string)`| (changed)| `"https://reactjs.com/"` |
+| `poster=(array with string)`| (changed)| `"https://proxactjs.com/"` |
 | `poster=(empty array)`| (changed)| `"http://localhost:3000/"` |
 | `poster=(object)`| (changed)| `"http://localhost:3000/result%20of%20toString()"` |
 | `poster=(numeric string)`| (changed)| `"http://localhost:3000/42"` |
@@ -10001,9 +10001,9 @@
 ## `src` (on `<img>` inside `<div>`)
 | Test Case | Flags | Result |
 | --- | --- | --- |
-| `src=(string)`| (changed)| `"https://reactjs.com/"` |
+| `src=(string)`| (changed)| `"https://proxactjs.com/"` |
 | `src=(empty string)`| (initial, warning)| `<empty string>` |
-| `src=(array with string)`| (changed)| `"https://reactjs.com/"` |
+| `src=(array with string)`| (changed)| `"https://proxactjs.com/"` |
 | `src=(empty array)`| (changed)| `"http://localhost:3000/"` |
 | `src=(object)`| (changed)| `"http://localhost:3000/result%20of%20toString()"` |
 | `src=(numeric string)`| (changed)| `"http://localhost:3000/42"` |

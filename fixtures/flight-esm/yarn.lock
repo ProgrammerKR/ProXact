@@ -539,17 +539,17 @@ raw-body@2.5.2:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-dom@experimental:
+proxact-dom@experimental:
   version "0.0.0-experimental-b9be4537c-20230905"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-0.0.0-experimental-b9be4537c-20230905.tgz#b078d6d06041e0c98ce5a2f5e9ff26a2e308eb41"
+  resolved "https://registry.yarnpkg.com/proxact-dom/-/proxact-dom-0.0.0-experimental-b9be4537c-20230905.tgz#b078d6d06041e0c98ce5a2f5e9ff26a2e308eb41"
   integrity sha512-veAFNVj81lUYhYlucYm3kbj2BhakG57XYkWC/QHVEZDk4Hm2qxM9RUk7gn8dWs9Eq7KR6Q+JWiSH3ZbObQTV9g==
   dependencies:
     loose-envify "^1.1.0"
     scheduler "0.0.0-experimental-b9be4537c-20230905"
 
-react@experimental:
+proxact@experimental:
   version "0.0.0-experimental-b9be4537c-20230905"
-  resolved "https://registry.yarnpkg.com/react/-/react-0.0.0-experimental-b9be4537c-20230905.tgz#3c2352b42b8024544a12dcd96f2700313cebcb6b"
+  resolved "https://registry.yarnpkg.com/proxact/-/proxact-0.0.0-experimental-b9be4537c-20230905.tgz#3c2352b42b8024544a12dcd96f2700313cebcb6b"
   integrity sha512-QNeK74S7AU94j4vCxet2S76HqxpF6CJo1pG3XcgY2NravyXdWYszrRDNHrfu86gGNwAQvSU+YpStYn/i0b9tLA==
   dependencies:
     loose-envify "^1.1.0"

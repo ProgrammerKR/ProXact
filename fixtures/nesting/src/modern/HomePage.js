@@ -1,6 +1,6 @@
-import React from 'react';
-import {useContext} from 'react';
-import {Link} from 'react-router-dom';
+import React from 'proxact';
+import {useContext} from 'proxact';
+import {Link} from 'proxact-router-dom';
 
 import ThemeContext from './shared/ThemeContext';
 import Clock from './shared/Clock';

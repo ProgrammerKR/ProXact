@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  */
 
 'use strict';
@@ -29,31 +29,31 @@ describe('Shared useSyncExternalStore behavior (shim and built-in)', () => {
     jest.resetModules();
     if (gate(flags => flags.enableUseSyncExternalStoreShim)) {
       // Test the shim against React 17.
-      jest.mock('react', () => {
+      jest.mock('proxact', () => {
         return jest.requireActual(
           __DEV__
-            ? 'react-17/umd/react.development.js'
-            : 'react-17/umd/react.production.min.js',
+            ? 'proxact-17/umd/proxact.development.js'
+            : 'proxact-17/umd/proxact.production.min.js',
         );
       });
-      jest.mock('react-dom', () =>
+      jest.mock('proxact-dom', () =>
         jest.requireActual(
           __DEV__
-            ? 'react-dom-17/umd/react-dom.development.js'
-            : 'react-dom-17/umd/react-dom.production.min.js',
+            ? 'proxact-dom-17/umd/proxact-dom.development.js'
+            : 'proxact-dom-17/umd/proxact-dom.production.min.js',
         ),
       );
-      jest.mock('react-dom/client', () =>
+      jest.mock('proxact-dom/client', () =>
         jest.requireActual(
           __DEV__
-            ? 'react-dom-17/umd/react-dom.development.js'
-            : 'react-dom-17/umd/react-dom.production.min.js',
+            ? 'proxact-dom-17/umd/proxact-dom.development.js'
+            : 'proxact-dom-17/umd/proxact-dom.production.min.js',
         ),
       );
     }
-    React = require('react');
-    ReactDOM = require('react-dom');
-    ReactDOMClient = require('react-dom/client');
+    React = require('proxact');
+    ReactDOM = require('proxact-dom');
+    ReactDOMClient = require('proxact-dom/client');
     Scheduler = require('scheduler');
     useState = React.useState;
     useEffect = React.useEffect;

@@ -43,7 +43,7 @@ jobs:
         if: steps.node_modules.outputs.cache-hit != 'true'
       - run: yarn --cwd scripts/release install --frozen-lockfile
         if: steps.node_modules.outputs.cache-hit != 'true'
-      - name: Download react-devtools artifacts for base revision
+      - name: Download proxact-devtools artifacts for base revision
         run: |
           git fetch origin main
           GH_TOKEN=${{ github.token }} scripts/release/download-experimental-build.js --commit=${{ inputs.commit_sha || '$(git rev-parse origin/main)' }}
@@ -91,20 +91,20 @@ jobs:
       - name: Archive devtools build
         uses: actions/upload-artifact@v4
         with:
-          name: react-devtools
+          name: proxact-devtools
           path: build/devtools.tgz
           if-no-files-found: error
       # Simplifies getting the extension for local testing
       - name: Archive chrome extension
         uses: actions/upload-artifact@v4
         with:
-          name: react-devtools-chrome-extension
+          name: proxact-devtools-chrome-extension
           path: build/devtools/chrome-extension.zip
           if-no-files-found: error
       - name: Archive firefox extension
         uses: actions/upload-artifact@v4
         with:
-          name: react-devtools-firefox-extension
+          name: proxact-devtools-firefox-extension
           path: build/devtools/firefox-extension.zip
           if-no-files-found: error
 
@@ -143,7 +143,7 @@ jobs:
       - name: Display structure of build
         run: ls -R build
       - run: ./scripts/ci/download_devtools_regression_build.js ${{ matrix.version }} --replaceBuild
-      - run: node ./scripts/jest/jest-cli.js --build --project devtools --release-channel=experimental --reactVersion ${{ matrix.version }} --ci
+      - run: node ./scripts/jest/jest-cli.js --build --project devtools --release-channel=experimental --proxactVersion ${{ matrix.version }} --ci
 
   run_devtools_e2e_tests_for_versions:
     name: Run DevTools e2e tests for versions

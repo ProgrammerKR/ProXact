@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {memo} from 'react';
+import {memo} from 'proxact';
 
 export const IconGitHub = memo<JSX.IntrinsicElements['svg']>(
   function IconGitHub(props) {

@@ -167,12 +167,12 @@
 
   hydrate.onclick = render;
 
-  loadScript(getQueryParam('reactPath'))
+  loadScript(getQueryParam('proxactPath'))
     .then(function () {
       if (needsReactDOM) {
         return Promise.all([
-          loadScript(getQueryParam('reactDOMPath')),
-          loadScript(getQueryParam('reactDOMServerPath')),
+          loadScript(getQueryParam('proxactDOMPath')),
+          loadScript(getQueryParam('proxactDOMServerPath')),
         ]);
       }
     })

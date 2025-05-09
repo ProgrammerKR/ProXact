@@ -1,0 +1,20 @@
+{
+  "name": "proxact-suspense-test-utils",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact-suspense-test-utils"
+  },
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "cjs/"
+  ],
+  "peerDependencies": {
+    "proxact": "^17.0.0"
+  }
+}

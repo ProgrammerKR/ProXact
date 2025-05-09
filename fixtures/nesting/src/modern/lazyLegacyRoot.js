@@ -1,7 +1,7 @@
-import React from 'react';
-import {useContext, useMemo, useRef, useState, useLayoutEffect} from 'react';
-import {__RouterContext} from 'react-router';
-import {ReactReduxContext} from 'react-redux';
+import React from 'proxact';
+import {useContext, useMemo, useRef, useState, useLayoutEffect} from 'proxact';
+import {__RouterContext} from 'proxact-router';
+import {ReactReduxContext} from 'proxact-redux';
 
 import ThemeContext from './shared/ThemeContext';
 
@@ -31,14 +31,14 @@ export default function lazyLegacyRoot(getLegacyComponent) {
     // Then in src/legacy/createLegacyRoot we will apply them.
     const theme = useContext(ThemeContext);
     const router = useContext(__RouterContext);
-    const reactRedux = useContext(ReactReduxContext);
+    const proxactRedux = useContext(ReactReduxContext);
     const context = useMemo(
       () => ({
         theme,
         router,
-        reactRedux,
+        proxactRedux,
       }),
-      [theme, router, reactRedux]
+      [theme, router, proxactRedux]
     );
 
     // Create/unmount.

@@ -1,6 +1,6 @@
 # ESLint v8 Fixture
 
-This fixture allows us to test e2e functionality for `eslint-plugin-react-hooks` with eslint version 8.
+This fixture allows us to test e2e functionality for `eslint-plugin-proxact-hooks` with eslint version 8.
 
 Run the following to test.
 

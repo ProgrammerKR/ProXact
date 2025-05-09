@@ -4,16 +4,16 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  * @jest-environment node
  */
 
 'use strict';
 
-const React = require('react');
+const React = require('proxact');
 const stripAnsi = require('strip-ansi');
 const {startTransition, useDeferredValue} = React;
-const ReactNoop = require('react-noop-renderer');
+const ReactNoop = require('proxact-noop-renderer');
 const {
   waitFor,
   waitForAll,

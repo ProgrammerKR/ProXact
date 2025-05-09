@@ -2,13 +2,13 @@
 
 exports[`error transform handles deeply nested expressions 1`] = `
 "var val = (a, (b,
-// eslint-disable-next-line react-internal/prod-error-codes
+// eslint-disable-next-line proxact-internal/prod-error-codes
 new Error('foo')));"
 `;
 
 exports[`error transform handles deeply nested expressions 2`] = `
 "var val = (a, (
-// eslint-disable-next-line react-internal/prod-error-codes
+// eslint-disable-next-line proxact-internal/prod-error-codes
 b, new Error('foo')));"
 `;
 
@@ -21,14 +21,14 @@ exports[`error transform handles ignoring errors that are comment-excluded insid
 "/*! FIXME (minify-errors-in-prod): Unminified error message in production build!*/
 /*! <expected-error-format>"bar"</expected-error-format>*/
 var val = someBool ?
-//eslint-disable-next-line react-internal/prod-error-codes
+//eslint-disable-next-line proxact-internal/prod-error-codes
 new Error('foo') : someOtherBool ? new Error('bar') :
-//eslint-disable-next-line react-internal/prod-error-codes
+//eslint-disable-next-line proxact-internal/prod-error-codes
 new Error('baz');"
 `;
 
 exports[`error transform handles ignoring errors that are comment-excluded outside ternary expressions 1`] = `
-"//eslint-disable-next-line react-internal/prod-error-codes
+"//eslint-disable-next-line proxact-internal/prod-error-codes
 var val = someBool ? new Error('foo') : someOtherBool ? new Error('bar') : new Error('baz');"
 `;
 
@@ -44,7 +44,7 @@ Error('This is not a real error message.');"
 `;
 
 exports[`error transform should output FIXME for errors that don't have a matching error code, unless opted out with a comment 1`] = `
-"// eslint-disable-next-line react-internal/prod-error-codes
+"// eslint-disable-next-line proxact-internal/prod-error-codes
 Error('This is not a real error message.');"
 `;
 

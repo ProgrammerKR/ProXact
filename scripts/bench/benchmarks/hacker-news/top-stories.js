@@ -338,7 +338,7 @@ window.stories = [
     title:
       'Show HN: React Timekeeper – Time picker based on the style of Google Keep',
     type: 'story',
-    url: 'https://catc.github.io/react-timekeeper/',
+    url: 'https://catc.github.io/proxact-timekeeper/',
   },
   {
     by: 'Integer',

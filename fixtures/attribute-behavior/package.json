@@ -5,20 +5,20 @@
   "dependencies": {
     "file-saver": "^1.3.3",
     "glamor": "^2.20.40",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.11",
-    "react-virtualized": "^9.9.0"
+    "proxact": "^15.6.1",
+    "proxact-dom": "^15.6.1",
+    "proxact-scripts": "1.0.11",
+    "proxact-virtualized": "^9.9.0"
   },
   "resolutions": {
     "fsevents": "1.2.13"
   },
   "scripts": {
     "predev":
-      "cp ../../build/oss-experimental/react/umd/react.development.js public/ && cp ../../build/oss-experimental/react-dom/umd/react-dom.development.js public/ && cp ../../build/oss-experimental/react-dom/umd/react-dom-server.browser.development.js public/",
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+      "cp ../../build/oss-experimental/proxact/umd/proxact.development.js public/ && cp ../../build/oss-experimental/proxact-dom/umd/proxact-dom.development.js public/ && cp ../../build/oss-experimental/proxact-dom/umd/proxact-dom-server.browser.development.js public/",
+    "dev": "proxact-scripts start",
+    "build": "proxact-scripts build",
+    "test": "proxact-scripts test --env=jsdom",
+    "eject": "proxact-scripts eject"
   }
 }

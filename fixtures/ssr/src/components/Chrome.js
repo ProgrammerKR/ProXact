@@ -1,4 +1,4 @@
-import React, {Component, Suspense, startTransition} from 'react';
+import React, {Component, Suspense, startTransition} from 'proxact';
 
 import Theme, {ThemeToggleButton} from './Theme';
 

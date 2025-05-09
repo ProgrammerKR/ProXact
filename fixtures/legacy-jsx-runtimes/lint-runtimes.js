@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  */
 
 'use strict';
@@ -33,10 +33,10 @@ async function lint(folder) {
   const eslint = esLints.cjs;
 
   const results = await eslint.lintFiles([
-    __dirname + '/' + folder + '/cjs/react-jsx-dev-runtime.development.js',
-    __dirname + '/' + folder + '/cjs/react-jsx-dev-runtime.production.min.js',
-    __dirname + '/' + folder + '/cjs/react-jsx-runtime.development.js',
-    __dirname + '/' + folder + '/cjs/react-jsx-runtime.production.min.js',
+    __dirname + '/' + folder + '/cjs/proxact-jsx-dev-runtime.development.js',
+    __dirname + '/' + folder + '/cjs/proxact-jsx-dev-runtime.production.min.js',
+    __dirname + '/' + folder + '/cjs/proxact-jsx-runtime.development.js',
+    __dirname + '/' + folder + '/cjs/proxact-jsx-runtime.production.min.js',
   ]);
   if (
     results.some(result => result.errorCount > 0 || result.warningCount > 0)
@@ -51,10 +51,10 @@ async function lint(folder) {
 
 async function lintEverything() {
   console.log(`Linting known bundles...`);
-  await lint('react-14');
-  await lint('react-15');
-  await lint('react-16');
-  await lint('react-17');
+  await lint('proxact-14');
+  await lint('proxact-15');
+  await lint('proxact-16');
+  await lint('proxact-17');
 }
 
 lintEverything().catch(error => {

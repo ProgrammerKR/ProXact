@@ -62,7 +62,7 @@ Error('This is not a real error message.');
       // rule to recognize the same directive.
       expect(
         transform(`
-// eslint-disable-next-line react-internal/prod-error-codes
+// eslint-disable-next-line proxact-internal/prod-error-codes
 Error('This is not a real error message.');
 `)
       ).toMatchSnapshot();
@@ -114,11 +114,11 @@ new Error(\`Expected \\\`\$\{listener\}\\\` listener to be a function, instead g
     expect(
       transform(`
 let val = someBool
-  ? //eslint-disable-next-line react-internal/prod-error-codes
+  ? //eslint-disable-next-line proxact-internal/prod-error-codes
     new Error('foo')
   : someOtherBool
   ? new Error('bar')
-  : //eslint-disable-next-line react-internal/prod-error-codes
+  : //eslint-disable-next-line proxact-internal/prod-error-codes
     new Error('baz');
 `)
     ).toMatchSnapshot();
@@ -127,7 +127,7 @@ let val = someBool
   it('handles ignoring errors that are comment-excluded outside ternary expressions', () => {
     expect(
       transform(`
-//eslint-disable-next-line react-internal/prod-error-codes
+//eslint-disable-next-line proxact-internal/prod-error-codes
 let val = someBool
   ? new Error('foo')
   : someOtherBool
@@ -143,7 +143,7 @@ let val = someBool
 let val =
   (a,
   (b,
-  // eslint-disable-next-line react-internal/prod-error-codes
+  // eslint-disable-next-line proxact-internal/prod-error-codes
   new Error('foo')));
 `)
     ).toMatchSnapshot();
@@ -152,7 +152,7 @@ let val =
       transform(`
 let val =
   (a,
-  // eslint-disable-next-line react-internal/prod-error-codes
+  // eslint-disable-next-line proxact-internal/prod-error-codes
   (b, new Error('foo')));
 `)
     ).toMatchSnapshot();

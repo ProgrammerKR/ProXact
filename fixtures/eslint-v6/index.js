@@ -64,27 +64,27 @@ function ComponentWithIndividualPropsDeclaredAsDeps(props) {
 function ComponentWithoutDeclaringPropAsDep(props) {
   useEffect(() => {
     console.log(props.foo);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line proxact-hooks/exhaustive-deps
   }, []);
   useCallback(() => {
     console.log(props.foo);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line proxact-hooks/exhaustive-deps
   }, []);
   useMemo(() => {
     console.log(props.foo);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line proxact-hooks/exhaustive-deps
   }, []);
   React.useEffect(() => {
     console.log(props.foo);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line proxact-hooks/exhaustive-deps
   }, []);
   React.useCallback(() => {
     console.log(props.foo);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line proxact-hooks/exhaustive-deps
   }, []);
   React.useMemo(() => {
     console.log(props.foo);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line proxact-hooks/exhaustive-deps
   }, []);
   React.notReactiveHook(() => {
     console.log(props.foo);
@@ -119,7 +119,7 @@ useHook2 = () => {
 // Invalid because hooks can't be called in conditionals.
 function ComponentWithConditionalHook() {
   if (cond) {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // eslint-disable-next-line proxact-hooks/rules-of-hooks
     useConditionalHook();
   }
 }
@@ -127,17 +127,17 @@ function ComponentWithConditionalHook() {
 // Invalid because hooks can't be called in loops.
 function useHookInLoops() {
   while (a) {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // eslint-disable-next-line proxact-hooks/rules-of-hooks
     useHook1();
     if (b) return;
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // eslint-disable-next-line proxact-hooks/rules-of-hooks
     useHook2();
   }
   while (c) {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // eslint-disable-next-line proxact-hooks/rules-of-hooks
     useHook3();
     if (d) return;
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // eslint-disable-next-line proxact-hooks/rules-of-hooks
     useHook4();
   }
 }

@@ -16,9 +16,9 @@
  */
 
 export function get(key) {
-  return key._reactInternals;
+  return key._proxactInternals;
 }
 
 export function set(key, value) {
-  key._reactInternals = value;
+  key._proxactInternals = value;
 }

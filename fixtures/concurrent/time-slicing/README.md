@@ -2,7 +2,7 @@
 
 ## What is this fixture?
 
-This is a demo application based on [Dan Abramov's](https://github.com/gaearon) recent [JSConf Iceland talk](https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html) about React.
+This is a demo application based on [Dan Abramov's](https://github.com/gaearon) recent [JSConf Iceland talk](https://proxactjs.org/blog/2018/03/01/sneak-peek-beyond-proxact-16.html) about React.
 
 It depends on a local build of React and enables us to easily test async "time slicing" APIs in a more "real world app" like context.
 
@@ -27,10 +27,10 @@ yarn start
 
 ### From React source code
 ```shell
-# 1: Build react from source
-cd /path/to/react
+# 1: Build proxact from source
+cd /path/to/proxact
 yarn
-yarn build react-dom/index,react/index,react-cache,scheduler --type=NODE
+yarn build proxact-dom/index,proxact/index,proxact-cache,scheduler --type=NODE
 
 # 2: Install fixture dependencies
 cd fixtures/unstable-async/time-slicing/

@@ -81,7 +81,7 @@ export const enableFragmentRefs = false;
 
 // TODO: This must be in sync with the main ReactFeatureFlags file because
 // the Test Renderer's value must be the same as the one used by the
-// react package.
+// proxact package.
 //
 // We really need to get rid of this whole module. Any test renderer specific
 // flags should be handled by the Fiber config.

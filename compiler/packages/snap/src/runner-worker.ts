@@ -7,9 +7,9 @@
 
 import {codeFrameColumns} from '@babel/code-frame';
 import type {PluginObj} from '@babel/core';
-import type {parseConfigPragmaForTests as ParseConfigPragma} from 'babel-plugin-react-compiler/src/Utils/TestUtils';
-import type {printFunctionWithOutlined as PrintFunctionWithOutlined} from 'babel-plugin-react-compiler/src/HIR/PrintHIR';
-import type {printReactiveFunctionWithOutlined as PrintReactiveFunctionWithOutlined} from 'babel-plugin-react-compiler/src/ReactiveScopes/PrintReactiveFunction';
+import type {parseConfigPragmaForTests as ParseConfigPragma} from 'babel-plugin-proxact-compiler/src/Utils/TestUtils';
+import type {printFunctionWithOutlined as PrintFunctionWithOutlined} from 'babel-plugin-proxact-compiler/src/HIR/PrintHIR';
+import type {printReactiveFunctionWithOutlined as PrintReactiveFunctionWithOutlined} from 'babel-plugin-proxact-compiler/src/ReactiveScopes/PrintReactiveFunction';
 import {TransformResult, transformFixtureInput} from './compiler';
 import {
   PARSE_CONFIG_PRAGMA_IMPORT,
@@ -24,7 +24,7 @@ import type {
   CompilerPipelineValue,
   Effect,
   ValueKind,
-} from 'babel-plugin-react-compiler/src';
+} from 'babel-plugin-proxact-compiler/src';
 import chalk from 'chalk';
 
 const originalConsoleError = console.error;
@@ -32,7 +32,7 @@ const originalConsoleError = console.error;
 // Try to avoid clearing the entire require cache, which (as of this PR)
 // contains ~1250 files. This assumes that no dependencies have global caches
 // that may need to be invalidated across Forget reloads.
-const invalidationSubpath = 'packages/babel-plugin-react-compiler/dist';
+const invalidationSubpath = 'packages/babel-plugin-proxact-compiler/dist';
 let version: number | null = null;
 export function clearRequireCache() {
   Object.keys(require.cache).forEach(function (path) {
@@ -96,7 +96,7 @@ async function compile(
             case 'hir':
               printed = printFunctionWithOutlined(value.value);
               break;
-            case 'reactive':
+            case 'proxactive':
               printed = printReactiveFunctionWithOutlined(value.value);
               break;
             case 'debug':

@@ -4,19 +4,19 @@ set -e
 
 mkdir -p build/devtools
 
-cd packages/react-devtools
+cd packages/proxact-devtools
 npm pack
-mv ./react-devtools*.tgz ../../build/devtools/
+mv ./proxact-devtools*.tgz ../../build/devtools/
 
-cd ../react-devtools-core
+cd ../proxact-devtools-core
 npm pack
-mv ./react-devtools-core*.tgz ../../build/devtools/
+mv ./proxact-devtools-core*.tgz ../../build/devtools/
 
-cd ../react-devtools-inline
+cd ../proxact-devtools-inline
 npm pack
-mv ./react-devtools-inline*.tgz ../../build/devtools/
+mv ./proxact-devtools-inline*.tgz ../../build/devtools/
 
-cd ../react-devtools-extensions
+cd ../proxact-devtools-extensions
 if [[ -n "$1" ]]; then
   yarn build:$1
   mv ./$1/build/ReactDevTools.zip ../../build/devtools/$1-extension.zip

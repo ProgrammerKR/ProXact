@@ -42,19 +42,19 @@ module.exports = function replaceJSXImportWithLazy(babel) {
           switch (callee.name) {
             case '_jsxDEV':
               path.node.callee = t.memberExpression(
-                getInlineRequire('react/jsx-dev-runtime'),
+                getInlineRequire('proxact/jsx-dev-runtime'),
                 t.identifier('jsxDEV')
               );
               return;
             case '_jsx':
               path.node.callee = t.memberExpression(
-                getInlineRequire('react/jsx-runtime'),
+                getInlineRequire('proxact/jsx-runtime'),
                 t.identifier('jsx')
               );
               return;
             case '_jsxs':
               path.node.callee = t.memberExpression(
-                getInlineRequire('react/jsx-runtime'),
+                getInlineRequire('proxact/jsx-runtime'),
                 t.identifier('jsxs')
               );
               return;
@@ -69,21 +69,21 @@ module.exports = function replaceJSXImportWithLazy(babel) {
           return;
         }
         if (callee.object.type !== 'Identifier') {
-          // Needs to be _reactJsxDevRuntime or _reactJsxRuntime.
+          // Needs to be _proxactJsxDevRuntime or _proxactJsxRuntime.
           return;
         }
         // Replace the cached identifier with a new require call.
         // Relying on the identifier name is a little flaky. Should ideally pick
-        // this from the import. For some reason it sometimes has the react prefix
+        // this from the import. For some reason it sometimes has the proxact prefix
         // and other times it doesn't.
         switch (callee.object.name) {
-          case '_reactJsxDevRuntime':
+          case '_proxactJsxDevRuntime':
           case '_jsxDevRuntime':
-            callee.object = getInlineRequire('react/jsx-dev-runtime');
+            callee.object = getInlineRequire('proxact/jsx-dev-runtime');
             return;
-          case '_reactJsxRuntime':
+          case '_proxactJsxRuntime':
           case '_jsxRuntime':
-            callee.object = getInlineRequire('react/jsx-runtime');
+            callee.object = getInlineRequire('proxact/jsx-runtime');
             return;
         }
       },

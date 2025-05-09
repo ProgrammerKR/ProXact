@@ -4,7 +4,7 @@ const proxy = require('http-proxy-middleware');
 
 babelRegister({
   ignore: /\/(build|node_modules)\//,
-  presets: ['react-app'],
+  presets: ['proxact-app'],
 });
 
 const express = require('express');
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'development') {
 // Static resources
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
-// Proxy everything else to create-react-app's webpack development server
+// Proxy everything else to create-proxact-app's webpack development server
 if (process.env.NODE_ENV === 'development') {
   app.use(
     '/',

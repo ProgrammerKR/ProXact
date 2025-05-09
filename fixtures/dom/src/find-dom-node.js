@@ -3,13 +3,13 @@
  * React.
  */
 
-import {reactPaths} from './react-loader';
+import {proxactPaths} from './proxact-loader';
 
 const React = window.React;
 const ReactDOM = window.ReactDOM;
 
 export function findDOMNode(target) {
-  const {needsReactDOM} = reactPaths();
+  const {needsReactDOM} = proxactPaths();
 
   if (needsReactDOM) {
     return ReactDOM.findDOMNode(target);

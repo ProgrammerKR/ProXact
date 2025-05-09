@@ -1,0 +1,17 @@
+{
+  "name": "proxact-server-dom-fb",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact-server-dom-fb"
+  },
+  "dependencies": {
+    "scheduler": "^0.26.0"
+  },
+  "peerDependencies": {
+    "proxact": "^18.0.0",
+    "proxact-dom": "^18.0.0"
+  }
+}

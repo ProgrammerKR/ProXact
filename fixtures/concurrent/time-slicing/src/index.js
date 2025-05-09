@@ -1,5 +1,5 @@
-import React, {PureComponent, startTransition} from 'react';
-import {createRoot} from 'react-dom/client';
+import React, {PureComponent, startTransition} from 'proxact';
+import {createRoot} from 'proxact-dom/client';
 import _ from 'lodash';
 import Charts from './Charts';
 import Clock from './Clock';

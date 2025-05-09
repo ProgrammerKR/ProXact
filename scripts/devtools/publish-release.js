@@ -45,7 +45,7 @@ async function printFinalInstructions(currentCommitHash, archivePath) {
   );
   console.log(
     `  ${chalk.blue.underline(
-      'https://fburl.com/publish-react-devtools-extensions'
+      'https://fburl.com/publish-proxact-devtools-extensions'
     )}`
   );
   console.log('');
@@ -54,7 +54,7 @@ async function printFinalInstructions(currentCommitHash, archivePath) {
   console.log(`  Git archive: ${chalk.bold(archivePath)}`);
   console.log('');
   console.log('Also consider syncing this release to Facebook:');
-  console.log(`  ${chalk.bold.green('js1 upgrade react-devtools')}`);
+  console.log(`  ${chalk.bold.green('js1 upgrade proxact-devtools')}`);
 }
 
 async function publishToNPM() {

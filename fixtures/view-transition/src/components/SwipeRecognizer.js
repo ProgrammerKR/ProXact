@@ -3,7 +3,7 @@ import React, {
   useEffect,
   startTransition,
   unstable_startGestureTransition as startGestureTransition,
-} from 'react';
+} from 'proxact';
 
 // Example of a Component that can recognize swipe gestures using a ScrollTimeline
 // without scrolling its own content. Allowing it to be used as an inert gesture

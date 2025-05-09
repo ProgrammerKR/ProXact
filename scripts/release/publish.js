@@ -25,7 +25,7 @@ const run = async () => {
 
     const version =
       params.publishVersion ??
-      readJsonSync('./build/node_modules/react/package.json').version;
+      readJsonSync('./build/node_modules/proxact/package.json').version;
     const isExperimental = version.includes('experimental');
 
     params.cwd = join(__dirname, '..', '..');

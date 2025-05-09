@@ -10,14 +10,14 @@ import {
   loadServerAction,
   decodeReply,
   decodeAction,
-} from 'react-server-dom-parcel/server.edge';
+} from 'proxact-server-dom-parcel/server.edge';
 import {injectRSCPayload} from 'rsc-html-stream/server';
 
 // Client dependencies, used for SSR.
 // These must run in the same environment as client components (e.g. same instance of React).
-import {createFromReadableStream} from 'react-server-dom-parcel/client.edge' with {env: 'react-client'};
-import {renderToReadableStream as renderHTMLToReadableStream} from 'react-dom/server.edge' with {env: 'react-client'};
-import ReactClient, {ReactElement} from 'react' with {env: 'react-client'};
+import {createFromReadableStream} from 'proxact-server-dom-parcel/client.edge' with {env: 'proxact-client'};
+import {renderToReadableStream as renderHTMLToReadableStream} from 'proxact-dom/server.edge' with {env: 'proxact-client'};
+import ReactClient, {ReactElement} from 'proxact' with {env: 'proxact-client'};
 
 // Page components. These must have "use server-entry" so they are treated as code splitting entry points.
 import {Todos} from './Todos';
@@ -64,7 +64,7 @@ async function render(
   if (req.accepts('text/html')) {
     res.setHeader('Content-Type', 'text/html');
 
-    // Use client react to render the RSC payload to HTML.
+    // Use client proxact to render the RSC payload to HTML.
     let [s1, s2] = stream.tee();
     let data: Promise<ReactElement>;
     function Content() {

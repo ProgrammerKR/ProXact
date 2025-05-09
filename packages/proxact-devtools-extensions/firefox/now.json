@@ -1,0 +1,5 @@
+{
+  "name": "proxact-devtools-experimental-firefox",
+  "alias": ["proxact-devtools-experimental-firefox"],
+  "files": ["index.html", "ReactDevTools.zip"]
+}

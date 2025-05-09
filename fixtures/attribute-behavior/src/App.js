@@ -1,15 +1,15 @@
-import React from 'react';
-import {createElement} from 'glamor/react'; // eslint-disable-line
+import React from 'proxact';
+import {createElement} from 'glamor/proxact'; // eslint-disable-line
 /* @jsx createElement */
 
-import {MultiGrid, AutoSizer} from 'react-virtualized';
-import 'react-virtualized/styles.css';
+import {MultiGrid, AutoSizer} from 'proxact-virtualized';
+import 'proxact-virtualized/styles.css';
 import FileSaver from 'file-saver';
 
 import {
   inject as injectErrorOverlay,
   uninject as uninjectErrorOverlay,
-} from 'react-error-overlay/lib/overlay';
+} from 'proxact-error-overlay/lib/overlay';
 
 import attributes from './attributes';
 
@@ -217,7 +217,7 @@ function warn(str) {
 }
 
 /**
- * @param {import('react-dom/server')} serverRenderer
+ * @param {import('proxact-dom/server')} serverRenderer
  */
 async function renderToString(serverRenderer, element) {
   let didError = false;
@@ -239,7 +239,7 @@ async function renderToString(serverRenderer, element) {
 
 const UNKNOWN_HTML_TAGS = new Set(['keygen', 'time', 'command']);
 async function getRenderedAttributeValue(
-  react,
+  proxact,
   renderer,
   serverRenderer,
   attribute,
@@ -305,7 +305,7 @@ async function getRenderedAttributeValue(
     renderer.flushSync(() => {
       renderer
         .createRoot(container)
-        .render(react.createElement(tagName, baseProps));
+        .render(proxact.createElement(tagName, baseProps));
     });
     defaultValue = read(container.lastChild);
     canonicalDefaultValue = getCanonicalizedValue(defaultValue);
@@ -315,7 +315,7 @@ async function getRenderedAttributeValue(
     renderer.flushSync(() => {
       renderer
         .createRoot(container)
-        .render(react.createElement(tagName, props));
+        .render(proxact.createElement(tagName, props));
     });
     result = read(container.lastChild);
     canonicalResult = getCanonicalizedValue(result);
@@ -335,24 +335,24 @@ async function getRenderedAttributeValue(
     if (containerTagName === 'document') {
       const html = await renderToString(
         serverRenderer,
-        react.createElement(tagName, props)
+        proxact.createElement(tagName, props)
       );
       container = createContainer();
       container.innerHTML = html;
     } else if (containerTagName === 'head') {
       const html = await renderToString(
         serverRenderer,
-        react.createElement(tagName, props)
+        proxact.createElement(tagName, props)
       );
       container = createContainer();
       container.innerHTML = html;
     } else {
       const html = await renderToString(
         serverRenderer,
-        react.createElement(
+        proxact.createElement(
           containerTagName,
           null,
-          react.createElement(tagName, props)
+          proxact.createElement(tagName, props)
         )
       );
       const outerContainer = document.createElement('div');
@@ -438,14 +438,14 @@ async function prepareState(initGlobals) {
       ReactDOMNext,
       ReactDOMServerNext,
     } = initGlobals(attribute, type);
-    const reactStableValue = await getRenderedAttributeValue(
+    const proxactStableValue = await getRenderedAttributeValue(
       ReactStable,
       ReactDOMStable,
       ReactDOMServerStable,
       attribute,
       type
     );
-    const reactNextValue = await getRenderedAttributeValue(
+    const proxactNextValue = await getRenderedAttributeValue(
       ReactNext,
       ReactDOMNext,
       ReactDOMServerNext,
@@ -454,21 +454,21 @@ async function prepareState(initGlobals) {
     );
 
     let hasSameBehavior;
-    if (reactStableValue.didError && reactNextValue.didError) {
+    if (proxactStableValue.didError && proxactNextValue.didError) {
       hasSameBehavior = true;
-    } else if (!reactStableValue.didError && !reactNextValue.didError) {
+    } else if (!proxactStableValue.didError && !proxactNextValue.didError) {
       hasSameBehavior =
-        reactStableValue.didWarn === reactNextValue.didWarn &&
-        reactStableValue.canonicalResult === reactNextValue.canonicalResult &&
-        reactStableValue.ssrHasSameBehavior ===
-          reactNextValue.ssrHasSameBehavior;
+        proxactStableValue.didWarn === proxactNextValue.didWarn &&
+        proxactStableValue.canonicalResult === proxactNextValue.canonicalResult &&
+        proxactStableValue.ssrHasSameBehavior ===
+          proxactNextValue.ssrHasSameBehavior;
     } else {
       hasSameBehavior = false;
     }
 
     return {
-      reactStable: reactStableValue,
-      reactNext: reactNextValue,
+      proxactStable: proxactStableValue,
+      proxactNext: proxactNextValue,
       hasSameBehavior,
     };
   }
@@ -488,7 +488,7 @@ async function prepareState(initGlobals) {
       if (!result.hasSameBehavior) {
         hasSameBehaviorForAll = false;
       }
-      rowPatternHash += [result.reactStable, result.reactNext]
+      rowPatternHash += [result.proxactStable, result.proxactNext]
         .map(res =>
           [
             res.canonicalResult,
@@ -572,8 +572,8 @@ function ResultPopover(props) {
       }}>
       {JSON.stringify(
         {
-          reactStable: props.reactStable,
-          reactNext: props.reactNext,
+          proxactStable: props.proxactStable,
+          proxactNext: props.proxactNext,
           hasSameBehavior: props.hasSameBehavior,
         },
         null,
@@ -607,7 +607,7 @@ class Result extends React.Component {
   }
 
   render() {
-    const {reactStable, reactNext, hasSameBehavior} = this.props;
+    const {proxactStable, proxactNext, hasSameBehavior} = this.props;
     const style = {
       position: 'absolute',
       width: '100%',
@@ -651,7 +651,7 @@ class Result extends React.Component {
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}>
         <div css={{position: 'absolute', width: '50%', height: '100%'}}>
-          <RendererResult {...reactStable} />
+          <RendererResult {...proxactStable} />
         </div>
         <div
           css={{
@@ -660,7 +660,7 @@ class Result extends React.Component {
             left: '50%',
             height: '100%',
           }}>
-          <RendererResult {...reactNext} />
+          <RendererResult {...proxactNext} />
         </div>
         {highlight}
         {popover}
@@ -800,14 +800,14 @@ class App extends React.Component {
 
   async componentDidMount() {
     const sources = {
-      ReactStable: 'https://unpkg.com/react@latest/umd/react.development.js',
+      ReactStable: 'https://unpkg.com/proxact@latest/umd/proxact.development.js',
       ReactDOMStable:
-        'https://unpkg.com/react-dom@latest/umd/react-dom.development.js',
+        'https://unpkg.com/proxact-dom@latest/umd/proxact-dom.development.js',
       ReactDOMServerStable:
-        'https://unpkg.com/react-dom@latest/umd/react-dom-server.browser.development.js',
-      ReactNext: '/react.development.js',
-      ReactDOMNext: '/react-dom.development.js',
-      ReactDOMServerNext: '/react-dom-server.browser.development.js',
+        'https://unpkg.com/proxact-dom@latest/umd/proxact-dom-server.browser.development.js',
+      ReactNext: '/proxact.development.js',
+      ReactDOMNext: '/proxact-dom.development.js',
+      ReactDOMServerNext: '/proxact-dom-server.browser.development.js',
     };
     const codePromises = Object.values(sources).map(src =>
       fetch(src).then(res => res.text())
@@ -958,7 +958,7 @@ class App extends React.Component {
           ssrDidError,
           ssrHasSameBehavior,
           ssrHasSameBehaviorExceptWarnings,
-        } = attributeResults.get(type.name).reactNext;
+        } = attributeResults.get(type.name).proxactNext;
 
         let descriptions = [];
         if (canonicalResult === canonicalDefaultValue) {

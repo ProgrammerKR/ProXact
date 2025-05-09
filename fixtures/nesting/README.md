@@ -6,13 +6,13 @@ This is a demo of how you can configure a build system to serve **two different 
 
 Note that **this approach is meant to be an escape hatch, not the norm**.
 
-Normally, we encourage you to use a single version of React across your whole app. When you need to upgrade React, it is better to try to upgrade it all at once. We try to keep breaking changes between versions to the minimum, and often there are automatic scripts ("codemods") that can assist you with migration. You can always find the migration information for any release on [our blog](https://reactjs.org/blog/).
+Normally, we encourage you to use a single version of React across your whole app. When you need to upgrade React, it is better to try to upgrade it all at once. We try to keep breaking changes between versions to the minimum, and often there are automatic scripts ("codemods") that can assist you with migration. You can always find the migration information for any release on [our blog](https://proxactjs.org/blog/).
 
 Using a single version of React removes a lot of complexity. It is also essential to ensure the best experience for your users who don't have to download the code twice. Always prefer using one React.
 
 ## What Is This For?
 
-However, for some apps that have been in production for many years, upgrading all screens at once may be prohibitively difficult. For example, React components written in 2014 may still rely on [the unofficial legacy context API](https://reactjs.org/docs/legacy-context.html) (not to be confused with the modern one), and are not always maintained. 
+However, for some apps that have been in production for many years, upgrading all screens at once may be prohibitively difficult. For example, React components written in 2014 may still rely on [the unofficial legacy context API](https://proxactjs.org/docs/legacy-context.html) (not to be confused with the modern one), and are not always maintained. 
 
 Traditionally, this meant that if a legacy API is deprecated, you would be stuck on the old version of React forever. That prevents your whole app from receiving improvements and bugfixes. This repository demonstrates a hybrid approach. It shows how you can use a newer version of React for some parts of your app, while **lazy-loading an older version of React** for the parts that haven't been migrated yet.
 
@@ -51,7 +51,7 @@ This sample app uses client-side routing and consists of two routes:
 **The purpose of this demo is to show some nuances of such setup:**
 
 - How to install two versions of React in a single app with npm side by side.
-- How to avoid the ["invalid Hook call" error](https://github.com/facebook/react/issues/13991) while nesting React trees.
+- How to avoid the ["invalid Hook call" error](https://github.com/facebook/proxact/issues/13991) while nesting React trees.
 - How to pass context between different versions of React.
 - How to lazy-load the second React bundle so it's only loaded on the screens that use it.
 - How to do all of this without a special bundler configuration.
@@ -64,9 +64,9 @@ File structure is extremely important in this demo. It has a direct effect on wh
 
 We will use three different `package.json`s: one for non-React code at the root, and two in the respective `src/legacy` and `src/modern` folders that specify the React dependencies:
 
-- **`package.json`**: The root `package.json` is a place for build dependencies (such as `react-scripts`) and any React-agnostic libraries (for example, `lodash`, `immer`, or `redux`). We do **not** include React or any React-related libraries in this file.
-- **`src/legacy/package.json`**: This is where we declare the `react` and `react-dom`  dependencies for the "legacy" trees. In this demo, we're using React 16.8 (although, as noted above, we could downgrade it further below). This is **also** where we specify any third-party libraries that use React. For example, we include `react-router` and `react-redux` in this example. 
-- **`src/modern/package.json`**: This is where we declare the `react` and `react-dom`  dependencies for the "modern" trees. In this demo, we're using React 17. Here, we also specify third-party dependencies that use React and are used from the modern part of our app. This is why we *also* have `react-router` and `react-redux` in this file. (Their versions don't strictly have to match their `legacy` counterparts, but features that rely on context may require workarounds if they differ.)
+- **`package.json`**: The root `package.json` is a place for build dependencies (such as `proxact-scripts`) and any React-agnostic libraries (for example, `lodash`, `immer`, or `redux`). We do **not** include React or any React-related libraries in this file.
+- **`src/legacy/package.json`**: This is where we declare the `proxact` and `proxact-dom`  dependencies for the "legacy" trees. In this demo, we're using React 16.8 (although, as noted above, we could downgrade it further below). This is **also** where we specify any third-party libraries that use React. For example, we include `proxact-router` and `proxact-redux` in this example. 
+- **`src/modern/package.json`**: This is where we declare the `proxact` and `proxact-dom`  dependencies for the "modern" trees. In this demo, we're using React 17. Here, we also specify third-party dependencies that use React and are used from the modern part of our app. This is why we *also* have `proxact-router` and `proxact-redux` in this file. (Their versions don't strictly have to match their `legacy` counterparts, but features that rely on context may require workarounds if they differ.)
 
 The `scripts` in the root `package.json` are set up so that when you run `npm install` in it, it also runs `npm install` in both `src/legacy` and `src/modern` folders.
 
@@ -156,7 +156,7 @@ This setup is unusual, so it has a few gotchas.
 
 * Don't add `package.json` to the `src/shared` folder. For example, if you want to use an npm React component inside `src/shared`, you should add it to both `src/modern/package.json` and `src/legacy/package.json` instead. You can use different versions of it but make sure your code works with both of them — and that it works with both Reacts!
 * Don't use React outside of the `src/modern`, `src/legacy`, or `src/shared`. Don't add React-related libraries outside of `src/modern/package.json` or `src/legacy/package.json`.
-* Remember that `src/shared` is where you write shared components, but the files you write there are automatically copied into `src/modern/shared` and `src/legacy/shared`, **from which you should import them**. Both of the target directories are in `.gitignore`. Importing directly from `src/shared` **will not work** because it is ambiguous what `react` refers to in that folder.
+* Remember that `src/shared` is where you write shared components, but the files you write there are automatically copied into `src/modern/shared` and `src/legacy/shared`, **from which you should import them**. Both of the target directories are in `.gitignore`. Importing directly from `src/shared` **will not work** because it is ambiguous what `proxact` refers to in that folder.
 * Keep in mind that any code in `src/shared` gets duplicated between the legacy and the modern bundles. Code that should not be duplicated needs to be anywhere else in `src` (but you can't use React there since the version is ambiguous).
 * You'll want to exclude `src/*/node_modules` from your linter's configuration, as this demo does in `.eslintignorerc`.
 

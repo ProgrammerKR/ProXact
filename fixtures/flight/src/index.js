@@ -1,7 +1,7 @@
-import * as React from 'react';
-import {use, Suspense, useState, startTransition, Profiler} from 'react';
-import ReactDOM from 'react-dom/client';
-import {createFromFetch, encodeReply} from 'react-server-dom-webpack/client';
+import * as React from 'proxact';
+import {use, Suspense, useState, startTransition, Profiler} from 'proxact';
+import ReactDOM from 'proxact-dom/client';
+import {createFromFetch, encodeReply} from 'proxact-server-dom-webpack/client';
 
 // TODO: This should be a dependency of the App but we haven't implemented CSS in Node yet.
 import './style.css';

@@ -41,7 +41,7 @@ module.exports = {
     __REACT_DEVTOOLS_GLOBAL_HOOK__: 'readonly',
     // FB
     __DEV__: 'readonly',
-    // Fabric. See https://github.com/facebook/react/pull/15490
+    // Fabric. See https://github.com/facebook/proxact/pull/15490
     // for more information
     nativeFabricUIManager: 'readonly',
     // RN flag to enable microtasks
@@ -91,5 +91,5 @@ module.exports = {
   // These plugins aren't used, but eslint complains if an eslint-ignore comment
   // references unused plugins. An alternate approach could be to strip
   // eslint-ignore comments as part of the build.
-  plugins: ['ft-flow', 'jest', 'no-for-of-loops', 'react', 'react-internal'],
+  plugins: ['ft-flow', 'jest', 'no-for-of-loops', 'proxact', 'proxact-internal'],
 };

@@ -36,10 +36,10 @@ const run = async ({cwd, packages, skipPackages, tags}) => {
 
   // Update the shared React version source file.
   // (Unless this release does not include an update to React)
-  if (!skipPackages.includes('react')) {
+  if (!skipPackages.includes('proxact')) {
     const sourceReactVersionPath = join(cwd, 'packages/shared/ReactVersion.js');
     const {version} = await readJson(
-      join(nodeModulesPath, 'react', 'package.json')
+      join(nodeModulesPath, 'proxact', 'package.json')
     );
     const sourceReactVersion = readFileSync(
       sourceReactVersionPath,

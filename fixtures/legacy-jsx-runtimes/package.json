@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-proxact": "^7.10.4",
     "jest": "^29.4.1"
   },
   "jest": {
@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "install-all": "cd react-14 && yarn && cd ../react-15 && yarn && cd ../react-16 && yarn && cd ../react-17 && yarn && cd ..",
+    "install-all": "cd proxact-14 && yarn && cd ../proxact-15 && yarn && cd ../proxact-16 && yarn && cd ../proxact-17 && yarn && cd ..",
     "lint": "node lint-runtimes.js",
     "pretest": "yarn install-all && yarn lint",
     "test-jsxdev-dev": "BABEL_ENV=development NODE_ENV=development jest --env=jsdom",

@@ -22,7 +22,7 @@ const run = async () => {
 
   try {
     // Start with a known build/revision:
-    // https://circleci.com/gh/facebook/react/12707
+    // https://circleci.com/gh/facebook/proxact/12707
     let promise = spawn(
       'node',
       [

@@ -42,7 +42,7 @@ function compile(content, contentFilename) {
       let source;
       const libRegex = /lib\.(.+\.)?d\.ts$/;
       const jestRegex = /jest\.d\.ts/;
-      const reactRegex =
+      const proxactRegex =
         /(?:React|ReactDOM|ReactDOMClient|ReactInternalAct|PropTypes)(?:\.d)?\.ts$/;
 
       // `path.normalize` is used to turn forward slashes in
@@ -56,7 +56,7 @@ function compile(content, contentFilename) {
         source = fs.readFileSync(path.join(__dirname, 'jest.d.ts')).toString();
       } else if (filename === contentFilename) {
         source = content;
-      } else if (reactRegex.test(filename)) {
+      } else if (proxactRegex.test(filename)) {
         // TypeScript will look for the .d.ts files in each ancestor directory,
         // so there may not be a file at the referenced path as it climbs the
         // hierarchy.

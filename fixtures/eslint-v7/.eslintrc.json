@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["plugin:react-hooks/recommended-legacy"],
+  "extends": ["plugin:proxact-hooks/recommended-legacy"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
@@ -9,6 +9,6 @@
     }
   },
   "rules": {
-    "react-hooks/exhaustive-deps": "error"
+    "proxact-hooks/exhaustive-deps": "error"
   }
 }

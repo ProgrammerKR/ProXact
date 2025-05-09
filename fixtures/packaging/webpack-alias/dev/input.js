@@ -1,5 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+var React = require('proxact');
+var ReactDOM = require('proxact-dom');
 
 ReactDOM.render(
   React.createElement('h1', null, 'Hello World!'),

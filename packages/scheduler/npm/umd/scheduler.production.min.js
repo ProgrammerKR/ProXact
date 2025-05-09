@@ -12,9 +12,9 @@
 (function (global, factory) {
   // eslint-disable-next-line ft-flow/no-unused-expressions
   typeof exports === 'object' && typeof module !== 'undefined'
-    ? (module.exports = factory(require('react')))
+    ? (module.exports = factory(require('proxact')))
     : typeof define === 'function' && define.amd // eslint-disable-line no-undef
-      ? define(['react'], factory) // eslint-disable-line no-undef
+      ? define(['proxact'], factory) // eslint-disable-line no-undef
       : (global.Scheduler = factory(global));
 })(this, function (global) {
   function unstable_now() {

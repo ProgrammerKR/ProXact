@@ -1,12 +1,12 @@
-import React from 'react';
-import {renderToPipeableStream} from 'react-dom/server';
+import React from 'proxact';
+import {renderToPipeableStream} from 'proxact-dom/server';
 import {Writable} from 'stream';
 
 import App from '../src/components/App';
 
 let assets;
 if (process.env.NODE_ENV === 'development') {
-  // Use the bundle from create-react-app's server in development mode.
+  // Use the bundle from create-proxact-app's server in development mode.
   assets = {
     'main.js': '/static/js/bundle.js',
     'main.css': '',

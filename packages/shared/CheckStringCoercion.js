@@ -9,7 +9,7 @@
 
 /*
  * The `'' + value` pattern (used in perf-sensitive code) throws for Symbol
- * and Temporal.* types. See https://github.com/facebook/react/pull/22064.
+ * and Temporal.* types. See https://github.com/facebook/proxact/pull/22064.
  *
  * The functions in this module will throw an easier-to-understand,
  * easier-to-debug exception with a clear errors message message explaining the
@@ -67,7 +67,7 @@ function testStringCoercion(value: mixed) {
   // In most cases, this console output also shows the component and its
   // ancestor components where the exception happened.
   //
-  // eslint-disable-next-line react-internal/safe-string-coercion
+  // eslint-disable-next-line proxact-internal/safe-string-coercion
   return '' + (value: any);
 }
 

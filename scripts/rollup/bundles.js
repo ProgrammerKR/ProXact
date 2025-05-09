@@ -80,7 +80,7 @@ const bundles = [
       RN_FB_PROFILING,
     ],
     moduleType: ISOMORPHIC,
-    entry: 'react',
+    entry: 'proxact',
     global: 'React',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
@@ -91,9 +91,9 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: ISOMORPHIC,
-    entry: 'react/src/ReactServer.js',
-    name: 'react.react-server',
-    condition: 'react-server',
+    entry: 'proxact/src/ReactServer.js',
+    name: 'proxact.proxact-server',
+    condition: 'proxact-server',
     global: 'React',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
@@ -112,35 +112,35 @@ const bundles = [
       RN_FB_PROFILING,
     ],
     moduleType: ISOMORPHIC,
-    entry: 'react/jsx-runtime',
+    entry: 'proxact/jsx-runtime',
     global: 'JSXRuntime',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact', 'ReactNativeInternalFeatureFlags'],
   },
 
   /******* Compiler Runtime *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD, NODE_PROFILING],
     moduleType: ISOMORPHIC,
-    entry: 'react/compiler-runtime',
+    entry: 'proxact/compiler-runtime',
     global: 'CompilerRuntime',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React JSX Runtime React Server *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: ISOMORPHIC,
-    entry: 'react/src/jsx/ReactJSXServer.js',
-    name: 'react-jsx-runtime.react-server',
-    condition: 'react-server',
+    entry: 'proxact/src/jsx/ReactJSXServer.js',
+    name: 'proxact-jsx-runtime.proxact-server',
+    condition: 'proxact-server',
     global: 'JSXRuntime',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact', 'ReactNativeInternalFeatureFlags'],
   },
 
   /******* React JSX DEV Runtime *******/
@@ -157,170 +157,170 @@ const bundles = [
       RN_FB_PROFILING,
     ],
     moduleType: ISOMORPHIC,
-    entry: 'react/jsx-dev-runtime',
+    entry: 'proxact/jsx-dev-runtime',
     global: 'JSXDEVRuntime',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact', 'ReactNativeInternalFeatureFlags'],
   },
 
   /******* React JSX DEV Runtime React Server *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: ISOMORPHIC,
-    entry: 'react/src/jsx/ReactJSXServer.js',
-    name: 'react-jsx-dev-runtime.react-server',
-    condition: 'react-server',
+    entry: 'proxact/src/jsx/ReactJSXServer.js',
+    name: 'proxact-jsx-dev-runtime.proxact-server',
+    condition: 'proxact-server',
     global: 'JSXDEVRuntime',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact', 'ReactNativeInternalFeatureFlags'],
   },
 
   /******* React DOM *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom',
+    entry: 'proxact-dom',
     global: 'ReactDOM',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: true,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React DOM Client *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom/client',
+    entry: 'proxact-dom/client',
     global: 'ReactDOM',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: true,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React DOM Profiling (Client) *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-dom/profiling',
+    entry: 'proxact-dom/profiling',
     global: 'ReactDOM',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: true,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React DOM (www) *******/
   {
     bundleTypes: [FB_WWW_DEV, FB_WWW_PROD, FB_WWW_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-dom/src/ReactDOMFB.js',
+    entry: 'proxact-dom/src/ReactDOMFB.js',
     global: 'ReactDOM',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: true,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React DOM (fbsource) *******/
   {
     bundleTypes: [RN_FB_DEV, RN_FB_PROD, RN_FB_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-dom',
+    entry: 'proxact-dom',
     global: 'ReactDOM',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact', 'ReactNativeInternalFeatureFlags'],
   },
 
   /******* React DOM Client (fbsource) *******/
   {
     bundleTypes: [RN_FB_DEV, RN_FB_PROD, RN_FB_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-dom/client',
+    entry: 'proxact-dom/client',
     global: 'ReactDOMClient',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact', 'proxact-dom', 'ReactNativeInternalFeatureFlags'],
   },
 
   /******* React DOM Profiling (fbsource) *******/
   {
     bundleTypes: [RN_FB_DEV, RN_FB_PROD, RN_FB_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-dom/profiling',
+    entry: 'proxact-dom/profiling',
     global: 'ReactDOMProfiling',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: true,
-    externals: ['react', 'react-dom', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact', 'proxact-dom', 'ReactNativeInternalFeatureFlags'],
   },
 
   /******* React DOM Test Utils (fbsource) *******/
   {
     moduleType: RENDERER_UTILS,
     bundleTypes: [RN_FB_DEV, RN_FB_PROD, RN_FB_PROFILING],
-    entry: 'react-dom/test-utils',
+    entry: 'proxact-dom/test-utils',
     global: 'ReactDOMTestUtils',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact', 'proxact-dom', 'ReactNativeInternalFeatureFlags'],
   },
 
   /******* React DOM React Server *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom/src/ReactDOMReactServer.js',
-    name: 'react-dom.react-server',
-    condition: 'react-server',
+    entry: 'proxact-dom/src/ReactDOMReactServer.js',
+    name: 'proxact-dom.proxact-server',
+    condition: 'proxact-server',
     global: 'ReactDOM',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* Test Utils *******/
   {
     moduleType: RENDERER_UTILS,
     bundleTypes: [NODE_DEV, NODE_PROD],
-    entry: 'react-dom/test-utils',
+    entry: 'proxact-dom/test-utils',
     global: 'ReactTestUtils',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React DOM - Testing *******/
   {
     moduleType: RENDERER,
     bundleTypes: __EXPERIMENTAL__ ? [NODE_DEV, NODE_PROD] : [],
-    entry: 'react-dom/unstable_testing',
+    entry: 'proxact-dom/unstable_testing',
     global: 'ReactDOMTesting',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React DOM - www - Testing *******/
   {
     moduleType: RENDERER,
     bundleTypes: [FB_WWW_DEV, FB_WWW_PROD],
-    entry: 'react-dom/src/ReactDOMTestingFB.js',
+    entry: 'proxact-dom/src/ReactDOMTestingFB.js',
     global: 'ReactDOMTesting',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React DOM Server *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD, FB_WWW_DEV, FB_WWW_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom/src/server/ReactDOMLegacyServerBrowser.js',
-    name: 'react-dom-server-legacy.browser',
+    entry: 'proxact-dom/src/server/ReactDOMLegacyServerBrowser.js',
+    name: 'proxact-dom-server-legacy.browser',
     global: 'ReactDOMServer',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
     babel: opts =>
       Object.assign({}, opts, {
         plugins: opts.plugins.concat([
@@ -331,9 +331,9 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom/src/server/ReactDOMLegacyServerNode.js',
-    name: 'react-dom-server-legacy.node',
-    externals: ['react', 'stream', 'react-dom'],
+    entry: 'proxact-dom/src/server/ReactDOMLegacyServerNode.js',
+    name: 'proxact-dom-server-legacy.node',
+    externals: ['proxact', 'stream', 'proxact-dom'],
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
     babel: opts =>
@@ -348,64 +348,64 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom/src/server/react-dom-server.browser.js',
-    name: 'react-dom-server.browser',
+    entry: 'proxact-dom/src/server/proxact-dom-server.browser.js',
+    name: 'proxact-dom-server.browser',
     global: 'ReactDOMServer',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom/src/server/react-dom-server.node.js',
-    name: 'react-dom-server.node',
+    entry: 'proxact-dom/src/server/proxact-dom-server.node.js',
+    name: 'proxact-dom-server.node',
     global: 'ReactDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'crypto', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'crypto', 'async_hooks', 'proxact-dom'],
   },
   {
     bundleTypes: __EXPERIMENTAL__ ? [FB_WWW_DEV, FB_WWW_PROD] : [],
     moduleType: RENDERER,
-    entry: 'react-server-dom-fb/src/ReactDOMServerFB.js',
+    entry: 'proxact-server-dom-fb/src/ReactDOMServerFB.js',
     global: 'ReactDOMServerStreaming',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React DOM Fizz Server Edge *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom/src/server/react-dom-server.edge.js',
-    name: 'react-dom-server.edge', // 'node_modules/react/*.js',
+    entry: 'proxact-dom/src/server/proxact-dom-server.edge.js',
+    name: 'proxact-dom-server.edge', // 'node_modules/proxact/*.js',
 
     global: 'ReactDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React DOM Fizz Server Bun *******/
   {
     bundleTypes: [BUN_DEV, BUN_PROD],
     moduleType: RENDERER,
-    entry: 'react-dom/src/server/react-dom-server.bun.js',
-    name: 'react-dom-server.bun', // 'node_modules/react/*.js',
+    entry: 'proxact-dom/src/server/proxact-dom-server.bun.js',
+    name: 'proxact-dom-server.bun', // 'node_modules/proxact/*.js',
 
     global: 'ReactDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React DOM Fizz Server External Runtime *******/
   {
     bundleTypes: __EXPERIMENTAL__ ? [BROWSER_SCRIPT] : [],
     moduleType: RENDERER,
-    entry: 'react-dom/unstable_server-external-runtime',
+    entry: 'proxact-dom/unstable_server-external-runtime',
     outputPath: 'unstable_server-external-runtime.js',
     global: 'ReactDOMServerExternalRuntime',
     minifyWithProdErrorCodes: false,
@@ -417,25 +417,25 @@ const bundles = [
   {
     bundleTypes: __EXPERIMENTAL__ ? [NODE_DEV, NODE_PROD] : [],
     moduleType: RENDERER,
-    entry: 'react-markup/src/ReactMarkupServer.js',
-    name: 'react-markup.react-server',
-    condition: 'react-server',
+    entry: 'proxact-markup/src/ReactMarkupServer.js',
+    name: 'proxact-markup.proxact-server',
+    condition: 'proxact-server',
     global: 'ReactMarkup',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React HTML Client *******/
   {
     bundleTypes: __EXPERIMENTAL__ ? [NODE_DEV, NODE_PROD] : [],
     moduleType: RENDERER,
-    entry: 'react-markup/src/ReactMarkupClient.js',
-    name: 'react-markup',
+    entry: 'proxact-markup/src/ReactMarkupClient.js',
+    name: 'proxact-markup',
     global: 'ReactMarkup',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React Server DOM Webpack Server *******/
@@ -443,92 +443,92 @@ const bundles = [
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
     entry:
-      'react-server-dom-webpack/src/server/react-flight-dom-server.browser',
-    name: 'react-server-dom-webpack-server.browser',
-    condition: 'react-server',
+      'proxact-server-dom-webpack/src/server/proxact-flight-dom-server.browser',
+    name: 'proxact-server-dom-webpack-server.browser',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-webpack/src/server/react-flight-dom-server.node',
-    name: 'react-server-dom-webpack-server.node',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-webpack/src/server/proxact-flight-dom-server.node',
+    name: 'proxact-server-dom-webpack-server.node',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'crypto', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'crypto', 'async_hooks', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
     entry:
-      'react-server-dom-webpack/src/server/react-flight-dom-server.node.unbundled',
-    name: 'react-server-dom-webpack-server.node.unbundled',
-    condition: 'react-server',
+      'proxact-server-dom-webpack/src/server/proxact-flight-dom-server.node.unbundled',
+    name: 'proxact-server-dom-webpack-server.node.unbundled',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'crypto', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'crypto', 'async_hooks', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-webpack/src/server/react-flight-dom-server.edge',
-    name: 'react-server-dom-webpack-server.edge',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-webpack/src/server/proxact-flight-dom-server.edge',
+    name: 'proxact-server-dom-webpack-server.edge',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'crypto', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'crypto', 'async_hooks', 'proxact-dom'],
   },
 
   /******* React Server DOM Webpack Client *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-webpack/client.browser',
+    entry: 'proxact-server-dom-webpack/client.browser',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-webpack/client.node',
+    entry: 'proxact-server-dom-webpack/client.node',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom', 'util', 'crypto'],
+    externals: ['proxact', 'proxact-dom', 'util', 'crypto'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-webpack/client.node.unbundled',
+    entry: 'proxact-server-dom-webpack/client.node.unbundled',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom', 'util', 'crypto'],
+    externals: ['proxact', 'proxact-dom', 'util', 'crypto'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-webpack/client.edge',
+    entry: 'proxact-server-dom-webpack/client.edge',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React Server DOM Webpack Plugin *******/
   {
     bundleTypes: [NODE_ES2015],
     moduleType: RENDERER_UTILS,
-    entry: 'react-server-dom-webpack/plugin',
+    entry: 'proxact-server-dom-webpack/plugin',
     global: 'ReactServerWebpackPlugin',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
@@ -539,8 +539,8 @@ const bundles = [
   {
     bundleTypes: [ESM_PROD],
     moduleType: RENDERER_UTILS,
-    entry: 'react-server-dom-webpack/node-loader',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-webpack/node-loader',
+    condition: 'proxact-server',
     global: 'ReactServerWebpackNodeLoader',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
@@ -551,13 +551,13 @@ const bundles = [
   {
     bundleTypes: [NODE_ES2015],
     moduleType: RENDERER_UTILS,
-    entry: 'react-server-dom-webpack/src/ReactFlightWebpackNodeRegister',
-    name: 'react-server-dom-webpack-node-register',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-webpack/src/ReactFlightWebpackNodeRegister',
+    name: 'proxact-server-dom-webpack-node-register',
+    condition: 'proxact-server',
     global: 'ReactFlightWebpackNodeRegister',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['url', 'module', 'react-server-dom-webpack/server'],
+    externals: ['url', 'module', 'proxact-server-dom-webpack/server'],
   },
 
   /******* React Server DOM Turbopack Server *******/
@@ -565,166 +565,166 @@ const bundles = [
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
     entry:
-      'react-server-dom-turbopack/src/server/react-flight-dom-server.browser',
-    name: 'react-server-dom-turbopack-server.browser',
-    condition: 'react-server',
+      'proxact-server-dom-turbopack/src/server/proxact-flight-dom-server.browser',
+    name: 'proxact-server-dom-turbopack-server.browser',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-turbopack/src/server/react-flight-dom-server.node',
-    name: 'react-server-dom-turbopack-server.node',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-turbopack/src/server/proxact-flight-dom-server.node',
+    name: 'proxact-server-dom-turbopack-server.node',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'async_hooks', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-turbopack/src/server/react-flight-dom-server.edge',
-    name: 'react-server-dom-turbopack-server.edge',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-turbopack/src/server/proxact-flight-dom-server.edge',
+    name: 'proxact-server-dom-turbopack-server.edge',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'async_hooks', 'proxact-dom'],
   },
 
   /******* React Server DOM Turbopack Client *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-turbopack/client.browser',
+    entry: 'proxact-server-dom-turbopack/client.browser',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-turbopack/client.node',
+    entry: 'proxact-server-dom-turbopack/client.node',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom', 'util'],
+    externals: ['proxact', 'proxact-dom', 'util'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-turbopack/client.edge',
+    entry: 'proxact-server-dom-turbopack/client.edge',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React Server DOM Parcel Server *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-parcel/src/server/react-flight-dom-server.browser',
-    name: 'react-server-dom-parcel-server.browser',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-parcel/src/server/proxact-flight-dom-server.browser',
+    name: 'proxact-server-dom-parcel-server.browser',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-parcel/src/server/react-flight-dom-server.node',
-    name: 'react-server-dom-parcel-server.node',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-parcel/src/server/proxact-flight-dom-server.node',
+    name: 'proxact-server-dom-parcel-server.node',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'async_hooks', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-parcel/src/server/react-flight-dom-server.edge',
-    name: 'react-server-dom-parcel-server.edge',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-parcel/src/server/proxact-flight-dom-server.edge',
+    name: 'proxact-server-dom-parcel-server.edge',
+    condition: 'proxact-server',
     global: 'ReactServerDOMServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'async_hooks', 'proxact-dom'],
   },
 
   /******* React Server DOM Parcel Client *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-parcel/client.browser',
+    entry: 'proxact-server-dom-parcel/client.browser',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-parcel/client.node',
+    entry: 'proxact-server-dom-parcel/client.node',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom', 'util'],
+    externals: ['proxact', 'proxact-dom', 'util'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-parcel/client.edge',
+    entry: 'proxact-server-dom-parcel/client.edge',
     global: 'ReactServerDOMClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
 
   /******* React Server DOM ESM Server *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-esm/src/server/react-flight-dom-server.node',
-    name: 'react-server-dom-esm-server.node',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-esm/src/server/proxact-flight-dom-server.node',
+    name: 'proxact-server-dom-esm-server.node',
+    condition: 'proxact-server',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'util', 'crypto', 'async_hooks', 'react-dom'],
+    externals: ['proxact', 'util', 'crypto', 'async_hooks', 'proxact-dom'],
   },
 
   /******* React Server DOM ESM Client *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD, ESM_DEV, ESM_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-esm/client.browser',
+    entry: 'proxact-server-dom-esm/client.browser',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom'],
+    externals: ['proxact', 'proxact-dom'],
   },
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-server-dom-esm/client.node',
+    entry: 'proxact-server-dom-esm/client.node',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'react-dom', 'util', 'crypto'],
+    externals: ['proxact', 'proxact-dom', 'util', 'crypto'],
   },
 
   /******* React Server DOM ESM Node.js Loader *******/
   {
     bundleTypes: [ESM_PROD],
     moduleType: RENDERER_UTILS,
-    entry: 'react-server-dom-esm/node-loader',
-    condition: 'react-server',
+    entry: 'proxact-server-dom-esm/node-loader',
+    condition: 'proxact-server',
     global: 'ReactServerESMNodeLoader',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
@@ -735,27 +735,27 @@ const bundles = [
   {
     bundleTypes: [NODE_ES2015],
     moduleType: RENDERER_UTILS,
-    entry: 'react-suspense-test-utils',
+    entry: 'proxact-suspense-test-utils',
     global: 'ReactSuspenseTestUtils',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React ART *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD, FB_WWW_DEV, FB_WWW_PROD],
     moduleType: RENDERER,
-    entry: 'react-art',
+    entry: 'proxact-art',
     global: 'ReactART',
-    externals: ['react'],
+    externals: ['proxact'],
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: true,
     babel: opts =>
       Object.assign({}, opts, {
         // Include JSX
         presets: opts.presets.concat([
-          require.resolve('@babel/preset-react'),
+          require.resolve('@babel/preset-proxact'),
           require.resolve('@babel/preset-flow'),
         ]),
         plugins: opts.plugins.concat([
@@ -770,9 +770,9 @@ const bundles = [
       ? []
       : [RN_FB_DEV, RN_FB_PROD, RN_FB_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-native-renderer',
+    entry: 'proxact-native-renderer',
     global: 'ReactNativeRenderer',
-    externals: ['react-native', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact-native', 'ReactNativeInternalFeatureFlags'],
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
     babel: opts =>
@@ -785,11 +785,11 @@ const bundles = [
   {
     bundleTypes: [RN_OSS_DEV, RN_OSS_PROD, RN_OSS_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-native-renderer',
+    entry: 'proxact-native-renderer',
     global: 'ReactNativeRenderer',
     // ReactNativeInternalFeatureFlags temporary until we land enableRemoveConsolePatches.
     // Needs to be done before the next RN OSS release.
-    externals: ['react-native', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact-native', 'ReactNativeInternalFeatureFlags'],
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
     babel: opts =>
@@ -806,9 +806,9 @@ const bundles = [
       ? []
       : [RN_FB_DEV, RN_FB_PROD, RN_FB_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-native-renderer/fabric',
+    entry: 'proxact-native-renderer/fabric',
     global: 'ReactFabric',
-    externals: ['react-native', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact-native', 'ReactNativeInternalFeatureFlags'],
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
     babel: opts =>
@@ -821,11 +821,11 @@ const bundles = [
   {
     bundleTypes: [RN_OSS_DEV, RN_OSS_PROD, RN_OSS_PROFILING],
     moduleType: RENDERER,
-    entry: 'react-native-renderer/fabric',
+    entry: 'proxact-native-renderer/fabric',
     global: 'ReactFabric',
     // ReactNativeInternalFeatureFlags temporary until we land enableRemoveConsolePatches.
     // Needs to be done before the next RN OSS release.
-    externals: ['react-native', 'ReactNativeInternalFeatureFlags'],
+    externals: ['proxact-native', 'ReactNativeInternalFeatureFlags'],
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
     babel: opts =>
@@ -847,10 +847,10 @@ const bundles = [
       RN_FB_PROFILING,
     ],
     moduleType: RENDERER,
-    entry: 'react-test-renderer',
+    entry: 'proxact-test-renderer',
     global: 'ReactTestRenderer',
     externals: [
-      'react',
+      'proxact',
       'scheduler',
       'scheduler/unstable_mock',
       'ReactNativeInternalFeatureFlags',
@@ -869,49 +869,49 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-noop-renderer',
+    entry: 'proxact-noop-renderer',
     global: 'ReactNoopRenderer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'scheduler', 'scheduler/unstable_mock', 'expect'],
+    externals: ['proxact', 'scheduler', 'scheduler/unstable_mock', 'expect'],
   },
 
   /******* React Noop Persistent Renderer (used for tests) *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-noop-renderer/persistent',
+    entry: 'proxact-noop-renderer/persistent',
     global: 'ReactNoopRendererPersistent',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'scheduler', 'expect'],
+    externals: ['proxact', 'scheduler', 'expect'],
   },
 
   /******* React Noop Server Renderer (used for tests) *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-noop-renderer/server',
+    entry: 'proxact-noop-renderer/server',
     global: 'ReactNoopRendererServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'scheduler', 'expect'],
+    externals: ['proxact', 'scheduler', 'expect'],
   },
 
   /******* React Noop Flight Server (used for tests) *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-noop-renderer/flight-server',
-    condition: 'react-server',
+    entry: 'proxact-noop-renderer/flight-server',
+    condition: 'proxact-server',
     global: 'ReactNoopFlightServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
     externals: [
-      'react',
+      'proxact',
       'scheduler',
       'expect',
-      'react-noop-renderer/flight-modules',
+      'proxact-noop-renderer/flight-modules',
     ],
   },
 
@@ -919,15 +919,15 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RENDERER,
-    entry: 'react-noop-renderer/flight-client',
+    entry: 'proxact-noop-renderer/flight-client',
     global: 'ReactNoopFlightClient',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
     externals: [
-      'react',
+      'proxact',
       'scheduler',
       'expect',
-      'react-noop-renderer/flight-modules',
+      'proxact-noop-renderer/flight-modules',
     ],
   },
 
@@ -935,52 +935,52 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD, NODE_PROFILING, FB_WWW_DEV, FB_WWW_PROD],
     moduleType: RECONCILER,
-    entry: 'react-reconciler',
+    entry: 'proxact-reconciler',
     global: 'ReactReconciler',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React Server *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RECONCILER,
-    entry: 'react-server',
+    entry: 'proxact-server',
     global: 'ReactServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React Flight Server *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RECONCILER,
-    entry: 'react-server/flight',
-    condition: 'react-server',
+    entry: 'proxact-server/flight',
+    condition: 'proxact-server',
     global: 'ReactFlightServer',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* React Flight Client *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: RECONCILER,
-    entry: 'react-client/flight',
+    entry: 'proxact-client/flight',
     global: 'ReactFlightClient',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* Reconciler Reflection *******/
   {
     moduleType: RENDERER_UTILS,
     bundleTypes: [NODE_DEV, NODE_PROD],
-    entry: 'react-reconciler/reflection',
+    entry: 'proxact-reconciler/reflection',
     global: 'ReactFiberTreeReflection',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
@@ -991,7 +991,7 @@ const bundles = [
   {
     moduleType: RENDERER_UTILS,
     bundleTypes: [NODE_DEV, NODE_PROD, FB_WWW_DEV, FB_WWW_PROD],
-    entry: 'react-reconciler/constants',
+    entry: 'proxact-reconciler/constants',
     global: 'ReactReconcilerConstants',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
@@ -1010,7 +1010,7 @@ const bundles = [
       RN_FB_PROFILING,
     ],
     moduleType: ISOMORPHIC,
-    entry: 'react-is',
+    entry: 'proxact-is',
     global: 'ReactIs',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: false,
@@ -1021,7 +1021,7 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: ISOMORPHIC,
-    entry: 'react-debug-tools',
+    entry: 'proxact-debug-tools',
     global: 'ReactDebugTools',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
@@ -1032,11 +1032,11 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD, FB_WWW_DEV, FB_WWW_PROD],
     moduleType: ISOMORPHIC,
-    entry: 'react-cache',
+    entry: 'proxact-cache',
     global: 'ReactCacheOld',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'scheduler'],
+    externals: ['proxact', 'scheduler'],
   },
 
   /******* Hook for managing subscriptions safely *******/
@@ -1047,7 +1047,7 @@ const bundles = [
     global: 'useSubscription',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: true,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* useSyncExternalStore *******/
@@ -1058,7 +1058,7 @@ const bundles = [
     global: 'useSyncExternalStore',
     minifyWithProdErrorCodes: true,
     wrapWithModuleBoundaries: true,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* useSyncExternalStore (shim) *******/
@@ -1069,7 +1069,7 @@ const bundles = [
     global: 'useSyncExternalStore',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* useSyncExternalStore (shim, native) *******/
@@ -1080,7 +1080,7 @@ const bundles = [
     global: 'useSyncExternalStore',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* useSyncExternalStoreWithSelector *******/
@@ -1091,7 +1091,7 @@ const bundles = [
     global: 'useSyncExternalStoreWithSelector',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
-    externals: ['react'],
+    externals: ['proxact'],
   },
 
   /******* useSyncExternalStoreWithSelector (shim) *******/
@@ -1102,7 +1102,7 @@ const bundles = [
     global: 'useSyncExternalStoreWithSelector',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: true,
-    externals: ['react', 'use-sync-external-store/shim'],
+    externals: ['proxact', 'use-sync-external-store/shim'],
   },
 
   /******* React Scheduler (experimental) *******/
@@ -1175,11 +1175,11 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: ISOMORPHIC,
-    entry: 'jest-react',
+    entry: 'jest-proxact',
     global: 'JestReact',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
-    externals: ['react', 'scheduler', 'scheduler/unstable_mock'],
+    externals: ['proxact', 'scheduler', 'scheduler/unstable_mock'],
   },
 
   /******* ESLint Plugin for Hooks *******/
@@ -1188,23 +1188,23 @@ const bundles = [
     // no reason to have both dev and prod for this package.  It's
     // currently required in order for the package to be copied over correctly.
     // So, it would be worth improving that flow.
-    name: 'eslint-plugin-react-hooks',
+    name: 'eslint-plugin-proxact-hooks',
     bundleTypes: [NODE_DEV, NODE_PROD, CJS_DTS],
     moduleType: ISOMORPHIC,
-    entry: 'eslint-plugin-react-hooks/src/index.ts',
+    entry: 'eslint-plugin-proxact-hooks/src/index.ts',
     global: 'ESLintPluginReactHooks',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
     externals: [],
-    tsconfig: './packages/eslint-plugin-react-hooks/tsconfig.json',
-    prebuild: `mkdir -p ./compiler/packages/babel-plugin-react-compiler/dist && echo "module.exports = require('../src/index.ts');" > ./compiler/packages/babel-plugin-react-compiler/dist/index.js`,
+    tsconfig: './packages/eslint-plugin-proxact-hooks/tsconfig.json',
+    prebuild: `mkdir -p ./compiler/packages/babel-plugin-proxact-compiler/dist && echo "module.exports = require('../src/index.ts');" > ./compiler/packages/babel-plugin-proxact-compiler/dist/index.js`,
   },
 
   /******* React Fresh *******/
   {
     bundleTypes: [NODE_DEV, NODE_PROD],
     moduleType: ISOMORPHIC,
-    entry: 'react-refresh/babel',
+    entry: 'proxact-refresh/babel',
     global: 'ReactFreshBabelPlugin',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
@@ -1213,7 +1213,7 @@ const bundles = [
   {
     bundleTypes: [NODE_DEV, NODE_PROD, FB_WWW_DEV],
     moduleType: ISOMORPHIC,
-    entry: 'react-refresh/runtime',
+    entry: 'proxact-refresh/runtime',
     global: 'ReactFreshRuntime',
     minifyWithProdErrorCodes: false,
     wrapWithModuleBoundaries: false,
@@ -1244,7 +1244,7 @@ deepFreeze(moduleTypes);
 function getFilename(bundle, bundleType) {
   let name = bundle.name || bundle.entry;
   const globalName = bundle.global;
-  // we do this to replace / to -, for react-dom/server
+  // we do this to replace / to -, for proxact-dom/server
   name = name.replace('/index.', '.').replace('/', '-');
   switch (bundleType) {
     case NODE_ES2015:

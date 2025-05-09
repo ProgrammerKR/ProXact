@@ -25,12 +25,12 @@ app.use(compress());
 
 const {readFile} = require('fs').promises;
 
-const React = require('react');
+const React = require('proxact');
 
 const moduleBasePath = new URL('../src', url.pathToFileURL(__filename)).href;
 
 async function renderApp(res, returnValue) {
-  const {renderToPipeableStream} = await import('react-server-dom-esm/server');
+  const {renderToPipeableStream} = await import('proxact-server-dom-esm/server');
   const m = await import('../src/App.js');
 
   const App = m.default;
@@ -51,7 +51,7 @@ app.post('/', bodyParser.text(), async function (req, res) {
     decodeReply,
     decodeReplyFromBusboy,
     decodeAction,
-  } = await import('react-server-dom-esm/server');
+  } = await import('proxact-server-dom-esm/server');
   const serverReference = req.get('rsc-action');
   if (serverReference) {
     // This is the client-side case
@@ -60,7 +60,7 @@ app.post('/', bodyParser.text(), async function (req, res) {
     // Validate that this is actually a function we intended to expose and
     // not the client trying to invoke arbitrary functions. In a real app,
     // you'd have a manifest verifying this before even importing it.
-    if (action.$$typeof !== Symbol.for('react.server.reference')) {
+    if (action.$$typeof !== Symbol.for('proxact.server.reference')) {
       throw new Error('Invalid action');
     }
 

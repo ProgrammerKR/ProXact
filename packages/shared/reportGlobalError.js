@@ -22,9 +22,9 @@ const reportGlobalError: (error: mixed) => void =
             typeof error === 'object' &&
             error !== null &&
             typeof error.message === 'string'
-              ? // eslint-disable-next-line react-internal/safe-string-coercion
+              ? // eslint-disable-next-line proxact-internal/safe-string-coercion
                 String(error.message)
-              : // eslint-disable-next-line react-internal/safe-string-coercion
+              : // eslint-disable-next-line proxact-internal/safe-string-coercion
                 String(error);
           const event = new window.ErrorEvent('error', {
             bubbles: true,

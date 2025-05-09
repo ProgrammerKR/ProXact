@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type {EditorProps} from '@monaco-editor/react';
+import type {EditorProps} from '@monaco-editor/proxact';
 
 export const monacoOptions: Partial<EditorProps['options']> = {
   fontSize: 14,

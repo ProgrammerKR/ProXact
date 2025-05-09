@@ -1,6 +1,6 @@
 'use client';
 
-import {startTransition, useOptimistic} from 'react';
+import {startTransition, useOptimistic} from 'proxact';
 import {deleteTodo, setTodoComplete, type Todo as ITodo} from './actions';
 
 export function TodoItem({

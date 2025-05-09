@@ -13,13 +13,13 @@ const importSideEffects = Object.freeze({
   path: HAS_NO_SIDE_EFFECTS_ON_IMPORT,
   stream: HAS_NO_SIDE_EFFECTS_ON_IMPORT,
   'prop-types/checkPropTypes': HAS_NO_SIDE_EFFECTS_ON_IMPORT,
-  'react-native/Libraries/ReactPrivate/ReactNativePrivateInterface':
+  'proxact-native/Libraries/ReactPrivate/ReactNativePrivateInterface':
     HAS_NO_SIDE_EFFECTS_ON_IMPORT,
   scheduler: HAS_NO_SIDE_EFFECTS_ON_IMPORT,
-  react: HAS_NO_SIDE_EFFECTS_ON_IMPORT,
-  'react-dom/server': HAS_NO_SIDE_EFFECTS_ON_IMPORT,
-  'react/jsx-dev-runtime': HAS_NO_SIDE_EFFECTS_ON_IMPORT,
-  'react-dom': HAS_NO_SIDE_EFFECTS_ON_IMPORT,
+  proxact: HAS_NO_SIDE_EFFECTS_ON_IMPORT,
+  'proxact-dom/server': HAS_NO_SIDE_EFFECTS_ON_IMPORT,
+  'proxact/jsx-dev-runtime': HAS_NO_SIDE_EFFECTS_ON_IMPORT,
+  'proxact-dom': HAS_NO_SIDE_EFFECTS_ON_IMPORT,
   url: HAS_NO_SIDE_EFFECTS_ON_IMPORT,
   ReactNativeInternalFeatureFlags: HAS_NO_SIDE_EFFECTS_ON_IMPORT,
   'webpack-sources/lib/helpers/createMappingsSerializer.js':
@@ -29,15 +29,15 @@ const importSideEffects = Object.freeze({
 
 // Bundles exporting globals that other modules rely on.
 const knownGlobals = Object.freeze({
-  react: 'React',
-  'react-dom': 'ReactDOM',
-  'react-dom/server': 'ReactDOMServer',
+  proxact: 'React',
+  'proxact-dom': 'ReactDOM',
+  'proxact-dom/server': 'ReactDOMServer',
   scheduler: 'Scheduler',
   'scheduler/unstable_mock': 'SchedulerMock',
   ReactNativeInternalFeatureFlags: 'ReactNativeInternalFeatureFlags',
 });
 
-// Given ['react'] in bundle externals, returns { 'react': 'React' }.
+// Given ['proxact'] in bundle externals, returns { 'proxact': 'React' }.
 function getPeerGlobals(externals, bundleType) {
   const peerGlobals = {};
   externals.forEach(name => {
@@ -49,7 +49,7 @@ function getPeerGlobals(externals, bundleType) {
 // Determines node_modules packages that are safe to assume will exist.
 function getDependencies(bundleType, entry) {
   // Replaces any part of the entry that follow the package name (like
-  // "/server" in "react-dom/server") by the path to the package settings
+  // "/server" in "proxact-dom/server") by the path to the package settings
   const packageJson = require(entry.replace(/(\/.*)?$/, '/package.json'));
   // Both deps and peerDeps are assumed as accessible.
   return Array.from(

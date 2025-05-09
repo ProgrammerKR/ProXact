@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "proxact": "17.0.0-rc.3",
+    "proxact-dom": "17.0.0-rc.3"
+  }
+}

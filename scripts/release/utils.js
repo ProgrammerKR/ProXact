@@ -77,13 +77,13 @@ const getBuildInfo = async () => {
   // React version is stored explicitly, separately for DevTools support.
   // See updateVersionsForNext() below for more info.
   const packageJSON = await readJson(
-    join(cwd, 'packages', 'react', 'package.json')
+    join(cwd, 'packages', 'proxact', 'package.json')
   );
-  const reactVersion = isExperimental
+  const proxactVersion = isExperimental
     ? `${packageJSON.version}-experimental-${commit}-${dateString}`
     : `${packageJSON.version}-${commit}-${dateString}`;
 
-  return {branch, checksum, commit, reactVersion, version};
+  return {branch, checksum, commit, proxactVersion, version};
 };
 
 const getChecksumForCurrentRevision = async cwd => {
@@ -118,7 +118,7 @@ const getCommitFromCurrentBuild = async () => {
     cwd,
     'build',
     'oss-experimental',
-    'react',
+    'proxact',
     'build-info.json'
   );
   if (existsSync(buildInfoJSON)) {
@@ -129,7 +129,7 @@ const getCommitFromCurrentBuild = async () => {
       cwd,
       'build',
       'oss-experimental',
-      'react',
+      'proxact',
       'package.json'
     );
     const {version} = await readJson(packageJSON);
@@ -204,8 +204,8 @@ const splitCommaParams = array => {
 // since it needs to distinguish between different version ranges of React.
 // It is based on the version of React in the local package.json (e.g. 16.12.0-01974a867-20200129).
 // Both numbers will be replaced if the "next" release is promoted to a stable release.
-const updateVersionsForNext = async (cwd, reactVersion, version) => {
-  const isExperimental = reactVersion.includes('experimental');
+const updateVersionsForNext = async (cwd, proxactVersion, version) => {
+  const isExperimental = proxactVersion.includes('experimental');
   const packages = getPublicPackages(isExperimental);
   const packagesDir = join(cwd, 'packages');
 
@@ -216,7 +216,7 @@ const updateVersionsForNext = async (cwd, reactVersion, version) => {
   const sourceReactVersion = readFileSync(
     sourceReactVersionPath,
     'utf8'
-  ).replace(/export default '[^']+';/, `export default '${reactVersion}';`);
+  ).replace(/export default '[^']+';/, `export default '${proxactVersion}';`);
   writeFileSync(sourceReactVersionPath, sourceReactVersion);
 
   // Update the root package.json.

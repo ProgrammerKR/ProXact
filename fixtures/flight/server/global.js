@@ -22,7 +22,7 @@ babelRegister({
       return false;
     },
   ],
-  presets: ['@babel/preset-react'],
+  presets: ['@babel/preset-proxact'],
 });
 
 // Ensure environment variables are read.
@@ -33,10 +33,10 @@ const compress = require('compression');
 const chalk = require('chalk');
 const express = require('express');
 const http = require('http');
-const React = require('react');
+const React = require('proxact');
 
-const {renderToPipeableStream} = require('react-dom/server');
-const {createFromNodeStream} = require('react-server-dom-webpack/client');
+const {renderToPipeableStream} = require('proxact-dom/server');
+const {createFromNodeStream} = require('proxact-server-dom-webpack/client');
 const {PassThrough} = require('stream');
 
 const app = express();
@@ -132,7 +132,7 @@ async function renderApp(req, res, next) {
       // Read the module map from the virtual file system.
       const serverConsumerManifest = JSON.parse(
         await virtualFs.readFile(
-          path.join(buildPath, 'react-ssr-manifest.json'),
+          path.join(buildPath, 'proxact-ssr-manifest.json'),
           'utf8'
         )
       );

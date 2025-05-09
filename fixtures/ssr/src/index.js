@@ -1,6 +1,6 @@
-import React from 'react';
-import {Profiler} from 'react';
-import {hydrateRoot} from 'react-dom/client';
+import React from 'proxact';
+import {Profiler} from 'proxact';
+import {hydrateRoot} from 'proxact-dom/client';
 
 import App from './components/App';
 

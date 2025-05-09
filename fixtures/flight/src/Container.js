@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'proxact';
 
 export default function Container({children}) {
   return <div>{children}</div>;

@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  * @jest-environment node
  */
 
@@ -97,7 +97,7 @@ describe('SchedulerNoDOM', () => {
   });
 });
 
-// See: https://github.com/facebook/react/pull/13088
+// See: https://github.com/facebook/proxact/pull/13088
 describe('does not crash non-node SSR environments', () => {
   it('if setTimeout is undefined', () => {
     jest.resetModules();

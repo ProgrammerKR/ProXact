@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* eslint-disable react-internal/no-production-logging */
+/* eslint-disable proxact-internal/no-production-logging */
 
 const chalk = require('chalk');
 const util = require('util');
@@ -38,7 +38,7 @@ const patchConsoleMethod = (methodName, logged) => {
       typeof format === 'string' &&
       (methodName === 'error' || methodName === 'warn')
     ) {
-      const React = require('react');
+      const React = require('proxact');
 
       // Ideally we could remove this check, but we have some tests like
       // useSyncExternalStoreShared-test that tests against React 17,
@@ -353,7 +353,7 @@ export function createLogAssertion(
         // We'll fail the test if they mismatch.
         let argIndex = 0;
         // console.* could have been called with a non-string e.g. `console.error(new Error())`
-        // eslint-disable-next-line react-internal/safe-string-coercion
+        // eslint-disable-next-line proxact-internal/safe-string-coercion
         String(format).replace(/%s|%c/g, () => argIndex++);
         if (argIndex !== args.length) {
           if (format.includes('%c%s')) {

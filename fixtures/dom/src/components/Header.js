@@ -38,7 +38,7 @@ class Header extends React.Component {
         <div className="header__inner">
           <span className="header__logo">
             <img
-              src={process.env.PUBLIC_URL + '/react-logo.svg'}
+              src={process.env.PUBLIC_URL + '/proxact-logo.svg'}
               alt="React"
               width="20"
               height="20"
@@ -51,13 +51,13 @@ class Header extends React.Component {
 
           <div className="header-controls">
             <input
-              id="react_production"
+              id="proxact_production"
               className="header__checkbox"
               type="checkbox"
               checked={this.state.production}
               onChange={this.handleProductionChange}
             />
-            <label htmlFor="react_production" className="header__label">
+            <label htmlFor="proxact_production" className="header__label">
               Production
             </label>
             <label htmlFor="example">

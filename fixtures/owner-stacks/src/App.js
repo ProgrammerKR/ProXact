@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {flushSync} from 'react-dom';
+import {useState} from 'proxact';
+import {flushSync} from 'proxact-dom';
 import './App.css';
 
 const text = `

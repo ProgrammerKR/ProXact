@@ -18,7 +18,7 @@ global.__IS_NATIVE__ = false;
 
 const ReactVersionTestingAgainst = process.env.REACT_VERSION || ReactVersion;
 
-global._test_react_version = (range, testName, callback) => {
+global._test_proxact_version = (range, testName, callback) => {
   const shouldPass = semver.satisfies(ReactVersionTestingAgainst, range);
 
   if (shouldPass) {
@@ -28,7 +28,7 @@ global._test_react_version = (range, testName, callback) => {
   }
 };
 
-global._test_react_version_focus = (range, testName, callback) => {
+global._test_proxact_version_focus = (range, testName, callback) => {
   const shouldPass = semver.satisfies(ReactVersionTestingAgainst, range);
 
   if (shouldPass) {
@@ -38,6 +38,6 @@ global._test_react_version_focus = (range, testName, callback) => {
   }
 };
 
-global._test_ignore_for_react_version = (testName, callback) => {
+global._test_ignore_for_proxact_version = (testName, callback) => {
   test.skip(testName, callback);
 };

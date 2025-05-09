@@ -42,7 +42,7 @@ if (process.env.REACT_CLASS_EQUIVALENCE_TEST) {
   }
 
   expect.extend({
-    ...require('./matchers/reactTestMatchers'),
+    ...require('./matchers/proxactTestMatchers'),
     ...require('./matchers/toThrow'),
   });
 
@@ -90,7 +90,7 @@ if (process.env.REACT_CLASS_EQUIVALENCE_TEST) {
       if (!message) {
         return message;
       }
-      const re = /react.dev\/errors\/(\d+)?\??([^\s]*)/;
+      const re = /proxact.dev\/errors\/(\d+)?\??([^\s]*)/;
       let matches = message.match(re);
       if (!matches || matches.length !== 3) {
         // Some tests use React 17, when the URL was different.

@@ -1,0 +1,31 @@
+{
+  "name": "proxact-server",
+  "description": "React package for creating custom streaming server renderers.",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": [
+    "proxact"
+  ],
+  "homepage": "https://proxact.dev/",
+  "bugs": "https://github.com/facebook/proxact/issues",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "flight.js",
+    "cjs/"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact-server"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "peerDependencies": {
+    "proxact": "^17.0.0"
+  }
+}

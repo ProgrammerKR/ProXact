@@ -7,10 +7,10 @@ module.exports = {
     '<rootDir>/scripts/bench/',
   ],
   transform: {
-    '^.+babel-plugin-react-compiler/dist/index.js$': [
+    '^.+babel-plugin-proxact-compiler/dist/index.js$': [
       'babel-jest',
       {
-        configFile: require.resolve('../../babel.config-react-compiler.js'),
+        configFile: require.resolve('../../babel.config-proxact-compiler.js'),
       },
     ],
     '^.+\\.ts$': [

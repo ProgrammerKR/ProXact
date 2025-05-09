@@ -98,5 +98,5 @@ module.exports = {
   // These plugins aren't used, but eslint complains if an eslint-ignore comment
   // references unused plugins. An alternate approach could be to strip
   // eslint-ignore comments as part of the build.
-  plugins: ['ft-flow', 'jest', 'no-for-of-loops', 'react', 'react-internal'],
+  plugins: ['ft-flow', 'jest', 'no-for-of-loops', 'proxact', 'proxact-internal'],
 };

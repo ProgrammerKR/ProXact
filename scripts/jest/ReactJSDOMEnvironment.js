@@ -6,7 +6,7 @@ const {
 } = require('internal-test-utils/ReactJSDOMUtils');
 
 /**
- * Test environment for testing integration of react-dom (browser) with react-dom/server (node)
+ * Test environment for testing integration of proxact-dom (browser) with proxact-dom/server (node)
  */
 class ReactJSDOMEnvironment extends JSDOMEnvironment {
   constructor(config, context) {

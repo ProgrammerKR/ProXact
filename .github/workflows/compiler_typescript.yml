@@ -36,7 +36,7 @@ jobs:
 
   # Hardcoded to improve parallelism
   lint:
-    name: Lint babel-plugin-react-compiler
+    name: Lint babel-plugin-proxact-compiler
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -54,11 +54,11 @@ jobs:
           key: compiler-node_modules-v6-${{ runner.arch }}-${{ runner.os }}-${{ hashFiles('compiler/yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.node_modules.outputs.cache-hit != 'true'
-      - run: yarn workspace babel-plugin-react-compiler lint
+      - run: yarn workspace babel-plugin-proxact-compiler lint
 
   # Hardcoded to improve parallelism
   jest:
-    name: Jest babel-plugin-react-compiler
+    name: Jest babel-plugin-proxact-compiler
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -76,7 +76,7 @@ jobs:
           key: compiler-node_modules-v6-${{ runner.arch }}-${{ runner.os }}-${{ hashFiles('compiler/yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.node_modules.outputs.cache-hit != 'true'
-      - run: yarn workspace babel-plugin-react-compiler jest
+      - run: yarn workspace babel-plugin-proxact-compiler jest
 
   test:
     name: Test ${{ matrix.workspace_name }}
@@ -103,6 +103,6 @@ jobs:
       - run: yarn install --frozen-lockfile
         if: steps.node_modules.outputs.cache-hit != 'true'
       - run: xvfb-run -a yarn workspace ${{ matrix.workspace_name }} test
-        if: runner.os == 'Linux' && matrix.workspace_name == 'react-forgive'
+        if: runner.os == 'Linux' && matrix.workspace_name == 'proxact-forgive'
       - run: yarn workspace ${{ matrix.workspace_name }} test
-        if: matrix.workspace_name != 'react-forgive'
+        if: matrix.workspace_name != 'proxact-forgive'

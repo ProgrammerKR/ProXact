@@ -3,7 +3,7 @@ import VersionPicker from '../../VersionPicker';
 import {SAMPLE_CODE} from './data';
 import {CodeEditor, CodeError} from './Code';
 import {compile} from './code-transformer';
-import {reactPaths} from '../../../react-loader';
+import {proxactPaths} from '../../../proxact-loader';
 import qs from 'query-string';
 
 const React = window.React;
@@ -85,7 +85,7 @@ class Hydration extends React.Component {
   render() {
     const {code, error, hydrate, version} = this.state;
     const src =
-      '/renderer.html?' + qs.stringify({hydrate, ...reactPaths(version)});
+      '/renderer.html?' + qs.stringify({hydrate, ...proxactPaths(version)});
 
     return (
       <div className="hydration">

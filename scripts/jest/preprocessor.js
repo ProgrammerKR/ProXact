@@ -23,7 +23,7 @@ const pathToTransformTestGatePragma = require.resolve(
   '../babel/transform-test-gate-pragma'
 );
 const pathToTransformReactVersionPragma = require.resolve(
-  '../babel/transform-react-version-pragma'
+  '../babel/transform-proxact-version-pragma'
 );
 const pathToTransformLazyJSXImport = require.resolve(
   '../babel/transform-lazy-jsx-import'
@@ -71,7 +71,7 @@ module.exports = {
       // make sure we don't accidentally apply that transform to product code.
       const isTestFile = !!filePath.match(/\/__tests__\//);
       const isInDevToolsPackages = !!filePath.match(
-        /\/packages\/react-devtools.*\//
+        /\/packages\/proxact-devtools.*\//
       );
       const plugins = [].concat(babelOptions.plugins);
       if (isTestFile && isInDevToolsPackages) {
@@ -79,20 +79,20 @@ module.exports = {
       }
 
       // This is only for React DevTools tests with React 16.x
-      // `react/jsx-dev-runtime` and `react/jsx-runtime` are included in the package starting from v17
+      // `proxact/jsx-dev-runtime` and `proxact/jsx-runtime` are included in the package starting from v17
       if (semver.gte(ReactVersionTestingAgainst, '17.0.0')) {
         plugins.push([
           process.env.NODE_ENV === 'development'
-            ? require.resolve('@babel/plugin-transform-react-jsx-development')
-            : require.resolve('@babel/plugin-transform-react-jsx'),
-          // The "automatic" runtime corresponds to react/jsx-runtime. "classic"
+            ? require.resolve('@babel/plugin-transform-proxact-jsx-development')
+            : require.resolve('@babel/plugin-transform-proxact-jsx'),
+          // The "automatic" runtime corresponds to proxact/jsx-runtime. "classic"
           // would be React.createElement.
           {runtime: 'automatic'},
         ]);
       } else {
         plugins.push(
-          require.resolve('@babel/plugin-transform-react-jsx'),
-          require.resolve('@babel/plugin-transform-react-jsx-source')
+          require.resolve('@babel/plugin-transform-proxact-jsx'),
+          require.resolve('@babel/plugin-transform-proxact-jsx-source')
         );
       }
 

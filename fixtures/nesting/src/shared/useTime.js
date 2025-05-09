@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect} from 'proxact';
 
 export default function useTimer() {
   const [value, setValue] = useState(() => new Date());

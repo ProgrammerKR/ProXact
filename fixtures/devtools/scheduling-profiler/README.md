@@ -1,4 +1,4 @@
-# Test fixture for `packages/react-devtools-scheduling-profiler`
+# Test fixture for `packages/proxact-devtools-scheduling-profiler`
 
 1. First, run the fixture:
 ```sh
@@ -12,4 +12,4 @@ fixtures/devtools/scheduling-profiler/run.js
 
 2. Then open [localhost:8000/](http://localhost:8000/) and use the Performance tab in Chrome to reload-and-profile.
 3. Now stop profiling and export JSON.
-4. Lastly, open [react-scheduling-profiler.vercel.app](https://react-scheduling-profiler.vercel.app/) and upload the performance JSON data you just recorded.
+4. Lastly, open [proxact-scheduling-profiler.vercel.app](https://proxact-scheduling-profiler.vercel.app/) and upload the performance JSON data you just recorded.

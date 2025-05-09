@@ -6,7 +6,7 @@
  */
 
 import {Resizable} from 're-resizable';
-import React, {useCallback} from 'react';
+import React, {useCallback} from 'proxact';
 
 type TabsRecord = Map<string, React.ReactNode>;
 

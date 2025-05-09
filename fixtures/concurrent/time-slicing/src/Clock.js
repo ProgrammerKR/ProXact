@@ -1,4 +1,4 @@
-import React, {createRef, PureComponent} from 'react';
+import React, {createRef, PureComponent} from 'proxact';
 
 const SPEED = 0.003 / Math.PI;
 const FRAMES = 10;

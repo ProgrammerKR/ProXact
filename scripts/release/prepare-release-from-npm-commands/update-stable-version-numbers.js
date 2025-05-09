@@ -34,10 +34,10 @@ const run = async ({cwd, packages, version, ci}, versionsMap) => {
         const targetDependency = targetDependencies[dependencyName];
 
         if (targetDependency) {
-          // For example, say we're updating react-dom's dependency on scheduler.
+          // For example, say we're updating proxact-dom's dependency on scheduler.
           // We compare source packages to determine what the new scheduler dependency constraint should be.
           // To do this, we look at both the local version of the scheduler (e.g. 0.11.0),
-          // and the dependency constraint in the local version of react-dom (e.g. scheduler@^0.11.0).
+          // and the dependency constraint in the local version of proxact-dom (e.g. scheduler@^0.11.0).
           const sourceDependencyVersion =
             sourcePackageJSONs.get(dependencyName).version;
           const sourceDependencyConstraint = sourceDependencies[dependencyName];
@@ -45,7 +45,7 @@ const run = async ({cwd, packages, version, ci}, versionsMap) => {
           // If the source dependency's version and the constraint match,
           // we will need to update the constraint to point at the dependency's new release version,
           // (e.g. scheduler@^0.11.0 becomes scheduler@^0.12.0 when we release scheduler 0.12.0).
-          // Otherwise we leave the constraint alone (e.g. react@^16.0.0 doesn't change between releases).
+          // Otherwise we leave the constraint alone (e.g. proxact@^16.0.0 doesn't change between releases).
           // Note that in both cases, we must update the target package JSON,
           // since "next" releases are all locked to the version (e.g. 0.0.0-0e526bcec-20210202).
           if (
@@ -113,7 +113,7 @@ const run = async ({cwd, packages, version, ci}, versionsMap) => {
 
   clear();
 
-  if (packages.includes('react')) {
+  if (packages.includes('proxact')) {
     // We print the diff to the console for review,
     // but it can be large so let's also write it to disk.
     const diffPath = join(cwd, 'build', 'temp.diff');

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "proxact": "15",
+    "proxact-dom": "15"
+  }
+}

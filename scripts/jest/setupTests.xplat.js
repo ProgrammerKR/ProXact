@@ -12,7 +12,7 @@ jest.mock('shared/ReactFeatureFlags', () => {
   );
 
   // Lots of tests use these, but we don't want to expose it to RN.
-  // Ideally, tests for xplat wouldn't use react-dom, but many of our tests do.
+  // Ideally, tests for xplat wouldn't use proxact-dom, but many of our tests do.
   // Since the xplat tests run with the www entry points, some of these flags
   // need to be set to the www value for the entrypoint, otherwise gating would
   // fail due to the tests passing. Ideally, the www entry points for these APIs
@@ -28,8 +28,8 @@ jest.mock('shared/ReactFeatureFlags', () => {
   return actual;
 });
 
-jest.mock('react-noop-renderer', () =>
-  jest.requireActual('react-noop-renderer/persistent')
+jest.mock('proxact-noop-renderer', () =>
+  jest.requireActual('proxact-noop-renderer/persistent')
 );
 
 global.__PERSISTENT__ = true;

@@ -10,9 +10,9 @@ import {
   ExclamationIcon,
   InformationCircleIcon,
   XIcon,
-} from '@heroicons/react/solid';
+} from '@heroicons/proxact/solid';
 import {CustomContentProps, SnackbarContent, useSnackbar} from 'notistack';
-import {forwardRef} from 'react';
+import {forwardRef} from 'proxact';
 import {MessageLevel, MessageSource} from '../lib/stores';
 
 // https://notistack.com/examples/advanced/custom-component#custom-variant-(typescript)

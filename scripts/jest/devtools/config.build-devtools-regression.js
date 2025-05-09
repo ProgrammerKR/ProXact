@@ -22,11 +22,11 @@ if (REACT_VERSION) {
       `<rootDir>/build/${NODE_MODULES_DIR}/schedule/tracing-profiling`;
   }
 
-  // react-dom/client is only in v18.0.0 and up, so we
-  // map it to react-dom instead
+  // proxact-dom/client is only in v18.0.0 and up, so we
+  // map it to proxact-dom instead
   if (semver.satisfies(REACT_VERSION, '<18.0')) {
-    moduleNameMapper['^react-dom/client$'] =
-      `<rootDir>/build/${NODE_MODULES_DIR}/react-dom`;
+    moduleNameMapper['^proxact-dom/client$'] =
+      `<rootDir>/build/${NODE_MODULES_DIR}/proxact-dom`;
   }
 
   setupFiles.push(require.resolve('./setupTests.build-devtools-regression'));

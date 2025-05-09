@@ -101,7 +101,7 @@ async function getCommitLog(sha) {
 
   const hasGh = await hasGithubCLI();
   const rawLog = await execRead(`
-    git log --topo-order --pretty=format:'%s' ${sha}...HEAD -- packages/react-devtools*
+    git log --topo-order --pretty=format:'%s' ${sha}...HEAD -- packages/proxact-devtools*
   `);
   const lines = rawLog.split('\n');
   for (let i = 0; i < lines.length; i++) {
@@ -113,7 +113,7 @@ async function getCommitLog(sha) {
       let username;
       if (hasGh) {
         const response = await execRead(
-          `gh api /repos/facebook/react/pulls/${pr}`
+          `gh api /repos/facebook/proxact/pulls/${pr}`
         );
         const {user} = JSON.parse(response);
         username = `[${user.login}](${user.html_url})`;
@@ -268,7 +268,7 @@ function updatePackageVersions(previousVersion, nextVersion) {
     json.version = nextVersion;
 
     for (let key in json.dependencies) {
-      if (key.startsWith('react-devtools')) {
+      if (key.startsWith('proxact-devtools')) {
         const version = json.dependencies[key];
 
         json.dependencies[key] = version.replace(previousVersion, nextVersion);

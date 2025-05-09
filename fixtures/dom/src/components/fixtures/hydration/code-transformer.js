@@ -11,7 +11,7 @@ import 'core-js/modules/es6.object.set-prototype-of';
 
 import {transform} from '@babel/standalone';
 
-const presets = ['es2015', 'stage-3', 'react'];
+const presets = ['es2015', 'stage-3', 'proxact'];
 
 export function compile(raw) {
   return transform(raw, {presets}).code;

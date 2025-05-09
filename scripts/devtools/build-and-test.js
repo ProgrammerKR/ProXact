@@ -26,11 +26,11 @@ async function main() {
 
     console.log('Stop all NPM DEV scripts in the following directories:');
     console.log(
-      chalk.bold('  ' + join(packagesPath, 'react-devtools-core')),
+      chalk.bold('  ' + join(packagesPath, 'proxact-devtools-core')),
       chalk.gray('(start:backend, start:standalone)')
     );
     console.log(
-      chalk.bold('  ' + join(packagesPath, 'react-devtools-inline')),
+      chalk.bold('  ' + join(packagesPath, 'proxact-devtools-inline')),
       chalk.gray('(start)')
     );
 
@@ -79,7 +79,7 @@ async function buildAndTestExtensions() {
   const extensionsPackagePath = join(
     ROOT_PATH,
     'packages',
-    'react-devtools-extensions'
+    'proxact-devtools-extensions'
   );
   const buildExtensionsPromise = exec('yarn build', {
     cwd: extensionsPackagePath,
@@ -112,7 +112,7 @@ async function buildAndTestExtensions() {
 }
 
 async function buildAndTestStandalonePackage() {
-  const corePackagePath = join(ROOT_PATH, 'packages', 'react-devtools-core');
+  const corePackagePath = join(ROOT_PATH, 'packages', 'proxact-devtools-core');
   const corePackageDest = join(corePackagePath, 'dist');
 
   await exec(`rm -rf ${corePackageDest}`);
@@ -120,13 +120,13 @@ async function buildAndTestStandalonePackage() {
 
   await logger(
     buildCorePromise,
-    `Building ${chalk.bold('react-devtools-core')} package.`,
+    `Building ${chalk.bold('proxact-devtools-core')} package.`,
     {
       estimate: 25000,
     }
   );
 
-  const standalonePackagePath = join(ROOT_PATH, 'packages', 'react-devtools');
+  const standalonePackagePath = join(ROOT_PATH, 'packages', 'proxact-devtools');
   const safariFixturePath = join(
     ROOT_PATH,
     'fixtures',
@@ -137,7 +137,7 @@ async function buildAndTestStandalonePackage() {
 
   console.log('');
   console.log(
-    `Test the ${chalk.bold('react-devtools-core')} target before continuing:`
+    `Test the ${chalk.bold('proxact-devtools-core')} target before continuing:`
   );
   console.log(`  ${chalk.bold.green('cd ' + standalonePackagePath)}`);
   console.log(`  ${chalk.bold.green('yarn start')}`);
@@ -154,7 +154,7 @@ async function buildAndTestInlinePackage() {
   const inlinePackagePath = join(
     ROOT_PATH,
     'packages',
-    'react-devtools-inline'
+    'proxact-devtools-inline'
   );
   const inlinePackageDest = join(inlinePackagePath, 'dist');
 
@@ -163,16 +163,16 @@ async function buildAndTestInlinePackage() {
 
   await logger(
     buildPromise,
-    `Building ${chalk.bold('react-devtools-inline')} package.`,
+    `Building ${chalk.bold('proxact-devtools-inline')} package.`,
     {
       estimate: 10000,
     }
   );
 
-  const shellPackagePath = join(ROOT_PATH, 'packages', 'react-devtools-shell');
+  const shellPackagePath = join(ROOT_PATH, 'packages', 'proxact-devtools-shell');
 
   console.log('');
-  console.log(`Built ${chalk.bold('react-devtools-inline')} target.`);
+  console.log(`Built ${chalk.bold('proxact-devtools-inline')} target.`);
   console.log('');
   console.log('Test this build before continuing:');
   console.log(`  ${chalk.bold.green('cd ' + shellPackagePath)}`);

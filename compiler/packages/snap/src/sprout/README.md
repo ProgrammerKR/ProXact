@@ -19,7 +19,7 @@ type FixtureEntrypoint<T> = {
   // function to be invoked
   fn: ((...params: Array<T>) => any),
   // params to pass to fn
-  // (if `fn` is a react component, this should be an array
+  // (if `fn` is a proxact component, this should be an array
   // with exactly one element -- props)
   params: Array<T>,
 }
@@ -57,11 +57,11 @@ function customHelper(val1, val2) {
 ```
 
 #### Notes
-- If your fixture needs to import from an external module, we currently only support importing from `react` (see Milestones todo list).
+- If your fixture needs to import from an external module, we currently only support importing from `proxact` (see Milestones todo list).
 
 - Any fixture can use React hooks, but they need to be first imported. We may later enforce that only `isComponent: true` fixtures can use React hooks.
     ```ts
-    import {useState} from 'react';
+    import {useState} from 'proxact';
     ```
 
 - If your fixture wants to export multiple functions to Sprout to run, please split up the fixture into multiple files (e.g. `test-case-1`, `test-case-2`, etc).
@@ -71,7 +71,7 @@ function customHelper(val1, val2) {
 - Sprout does not run fixtures listed in [`SproutTodoFilter.ts`](./src/SproutTodoFilter.ts), even in filter mode.
 
 ### Milestones:
-- [✅] Render fixtures with React runtime / `testing-library/react`.
+- [✅] Render fixtures with React runtime / `testing-library/proxact`.
 - [✅] Make Sprout CLI -runnable and report results in process exit code.
 - [✅] Enable Sprout by default and run it in the Github Actions pipeline.
 - [🚧] Make all existing test fixtures Sprout compatible (see `SproutTodoFilter.ts`). This involves each fixture being annotated with `FIXTURE_ENTRYPOINT` and using shared functions and/or defining its own helpers.

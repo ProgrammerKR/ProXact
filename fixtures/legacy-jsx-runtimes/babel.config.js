@@ -1,7 +1,7 @@
 module.exports = {
   presets: [
     [
-      '@babel/react',
+      '@babel/proxact',
       {
         runtime: 'automatic',
         development: process.env.BABEL_ENV === 'development',

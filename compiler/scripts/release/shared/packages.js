@@ -6,10 +6,10 @@
  */
 
 const PUBLISHABLE_PACKAGES = [
-  'babel-plugin-react-compiler',
-  'eslint-plugin-react-compiler',
-  'react-compiler-healthcheck',
-  'react-compiler-runtime',
+  'babel-plugin-proxact-compiler',
+  'eslint-plugin-proxact-compiler',
+  'proxact-compiler-healthcheck',
+  'proxact-compiler-runtime',
 ];
 
 module.exports = {

@@ -7,7 +7,7 @@
  * @flow
  */
 
-import type {LazyComponent} from 'react/src/ReactLazy';
+import type {LazyComponent} from 'proxact/src/ReactLazy';
 import type {ReactContext, ReactConsumerType} from 'shared/ReactTypes';
 
 import {
@@ -34,7 +34,7 @@ import {
   enableViewTransition,
 } from './ReactFeatureFlags';
 
-// Keep in sync with react-reconciler/getComponentNameFromFiber
+// Keep in sync with proxact-reconciler/getComponentNameFromFiber
 function getWrappedName(
   outerType: mixed,
   innerType: any,
@@ -48,12 +48,12 @@ function getWrappedName(
   return functionName !== '' ? `${wrapperName}(${functionName})` : wrapperName;
 }
 
-// Keep in sync with react-reconciler/getComponentNameFromFiber
+// Keep in sync with proxact-reconciler/getComponentNameFromFiber
 function getContextName(type: ReactContext<any>) {
   return type.displayName || 'Context';
 }
 
-const REACT_CLIENT_REFERENCE = Symbol.for('react.client.reference');
+const REACT_CLIENT_REFERENCE = Symbol.for('proxact.client.reference');
 
 // Note that the reconciler package should generally prefer to use getComponentNameFromFiber() instead.
 export default function getComponentNameFromType(type: mixed): string | null {

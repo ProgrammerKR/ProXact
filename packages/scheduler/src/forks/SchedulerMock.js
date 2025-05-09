@@ -8,7 +8,7 @@
  */
 
 /* eslint-disable no-var */
-/* eslint-disable react-internal/prod-error-codes */
+/* eslint-disable proxact-internal/prod-error-codes */
 
 import type {PriorityLevel} from '../SchedulerPriorities';
 
@@ -608,7 +608,7 @@ function unstable_flushAll(): void {
 }
 
 function log(value: mixed): void {
-  // eslint-disable-next-line react-internal/no-production-logging
+  // eslint-disable-next-line proxact-internal/no-production-logging
   if (console.log.name === 'disabledLog' || disableYieldValue) {
     // If console.log has been patched, we assume we're in render
     // replaying and we ignore any values yielding in the second pass.
@@ -622,7 +622,7 @@ function log(value: mixed): void {
 }
 
 function unstable_advanceTime(ms: number) {
-  // eslint-disable-next-line react-internal/no-production-logging
+  // eslint-disable-next-line proxact-internal/no-production-logging
   if (console.log.name === 'disabledLog' || disableYieldValue) {
     // If console.log has been patched, we assume we're in render
     // replaying and we ignore any time advancing in the second pass.

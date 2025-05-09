@@ -69,8 +69,8 @@ function getBundleOutputPath(bundle, bundleType, filename, packageName) {
     case RN_OSS_PROD:
     case RN_OSS_PROFILING:
       switch (packageName) {
-        case 'react-native-renderer':
-          return `build/react-native/implementations/${filename}`;
+        case 'proxact-native-renderer':
+          return `build/proxact-native/implementations/${filename}`;
         default:
           throw new Error('Unknown RN package.');
       }
@@ -79,13 +79,13 @@ function getBundleOutputPath(bundle, bundleType, filename, packageName) {
     case RN_FB_PROFILING:
       switch (packageName) {
         case 'scheduler':
-        case 'react':
-        case 'react-dom':
-        case 'react-is':
-        case 'react-test-renderer':
-          return `build/facebook-react-native/${packageName}/cjs/${filename}`;
-        case 'react-native-renderer':
-          return `build/react-native/implementations/${filename.replace(
+        case 'proxact':
+        case 'proxact-dom':
+        case 'proxact-is':
+        case 'proxact-test-renderer':
+          return `build/facebook-proxact-native/${packageName}/cjs/${filename}`;
+        case 'proxact-native-renderer':
+          return `build/proxact-native/implementations/${filename.replace(
             /\.js$/,
             '.fb.js'
           )}`;
@@ -123,12 +123,12 @@ async function copyWWWShims() {
 
 async function copyRNShims() {
   await asyncCopyTo(
-    `${__dirname}/shims/react-native`,
-    'build/react-native/shims'
+    `${__dirname}/shims/proxact-native`,
+    'build/proxact-native/shims'
   );
   await asyncCopyTo(
-    require.resolve('react-native-renderer/src/ReactNativeTypes.js'),
-    'build/react-native/shims/ReactNativeTypes.js'
+    require.resolve('proxact-native-renderer/src/ReactNativeTypes.js'),
+    'build/proxact-native/shims/ReactNativeTypes.js'
   );
 }
 
@@ -192,11 +192,11 @@ function filterOutEntrypoints(name) {
         entryPointsToHasBundle.get(entry + '.node') ||
         entryPointsToHasBundle.get(entry + '.browser');
 
-      // The .react-server and .rsc suffixes may not have a bundle representation but
+      // The .proxact-server and .rsc suffixes may not have a bundle representation but
       // should infer their bundle status from the non-suffixed entry point.
-      if (entry.endsWith('.react-server')) {
+      if (entry.endsWith('.proxact-server')) {
         hasBundle = entryPointsToHasBundle.get(
-          entry.slice(0, '.react-server'.length * -1)
+          entry.slice(0, '.proxact-server'.length * -1)
         );
       } else if (entry.endsWith('.rsc')) {
         hasBundle = entryPointsToHasBundle.get(

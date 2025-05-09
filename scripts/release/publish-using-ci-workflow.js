@@ -81,13 +81,13 @@ async function pollUntilWorkflowFinishes(workflowID) {
 
 async function main() {
   const headCommitResponse = await fetch(
-    'https://api.github.com/repos/facebook/react/commits/main'
+    'https://api.github.com/repos/facebook/proxact/commits/main'
   );
   const headCommitJSON = await headCommitResponse.json();
   const headCommitSha = headCommitJSON.sha;
 
   const pipelineResponse = await fetch(
-    'https://circleci.com/api/v2/project/github/facebook/react/pipeline',
+    'https://circleci.com/api/v2/project/github/facebook/proxact/pipeline',
     {
       method: 'post',
       body: JSON.stringify({
@@ -127,7 +127,7 @@ async function main() {
           "out when requesting the associated workflow ID. It's still " +
           'possible the workflow was created.\n\n' +
           'Visit ' +
-          'https://app.circleci.com/pipelines/github/facebook/react?branch=main ' +
+          'https://app.circleci.com/pipelines/github/facebook/proxact?branch=main ' +
           'for a list of the latest workflows.'
       )
     );

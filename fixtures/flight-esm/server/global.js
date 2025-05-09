@@ -10,10 +10,10 @@ const compress = require('compression');
 const chalk = require('chalk');
 const express = require('express');
 const http = require('http');
-const React = require('react');
+const React = require('proxact');
 
-const {renderToPipeableStream} = require('react-dom/server');
-const {createFromNodeStream} = require('react-server-dom-esm/client');
+const {renderToPipeableStream} = require('proxact-dom/server');
+const {createFromNodeStream} = require('proxact-server-dom-esm/client');
 
 const moduleBasePath = new URL('../src', url.pathToFileURL(__filename)).href;
 
@@ -88,11 +88,11 @@ app.all('/', async function (req, res, next) {
       const {pipe} = renderToPipeableStream(React.createElement(Root), {
         importMap: {
           imports: {
-            react: 'https://esm.sh/react@experimental?pin=v124&dev',
-            'react-dom': 'https://esm.sh/react-dom@experimental?pin=v124&dev',
-            'react-dom/': 'https://esm.sh/react-dom@experimental&pin=v124&dev/',
-            'react-server-dom-esm/client':
-              '/node_modules/react-server-dom-esm/esm/react-server-dom-esm-client.browser.development.js',
+            proxact: 'https://esm.sh/proxact@experimental?pin=v124&dev',
+            'proxact-dom': 'https://esm.sh/proxact-dom@experimental?pin=v124&dev',
+            'proxact-dom/': 'https://esm.sh/proxact-dom@experimental&pin=v124&dev/',
+            'proxact-server-dom-esm/client':
+              '/node_modules/proxact-server-dom-esm/esm/proxact-server-dom-esm-client.browser.development.js',
           },
         },
         bootstrapModules: ['/src/index.js'],
@@ -127,8 +127,8 @@ app.all('/', async function (req, res, next) {
 app.use(express.static('public'));
 app.use('/src', express.static('src'));
 app.use(
-  '/node_modules/react-server-dom-esm/esm',
-  express.static('node_modules/react-server-dom-esm/esm')
+  '/node_modules/proxact-server-dom-esm/esm',
+  express.static('node_modules/proxact-server-dom-esm/esm')
 );
 
 if (process.env.NODE_ENV === 'development') {

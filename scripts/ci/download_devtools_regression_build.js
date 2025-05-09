@@ -9,7 +9,7 @@ const semver = require('semver');
 const yargs = require('yargs');
 const fs = require('fs');
 
-const INSTALL_PACKAGES = ['react-dom', 'react', 'react-test-renderer'];
+const INSTALL_PACKAGES = ['proxact-dom', 'proxact', 'proxact-test-renderer'];
 const REGRESSION_FOLDER = 'build-regression';
 
 const ROOT_PATH = join(__dirname, '..', '..');
@@ -82,12 +82,12 @@ async function downloadRegressionBuild() {
   );
   await exec(`mv ${movePackageString} ${buildPath}`);
 
-  const reactVersion = semver.coerce(version).version;
+  const proxactVersion = semver.coerce(version).version;
   // For React versions earlier than 18.0.0, we explicitly scheduler v0.20.1, which
   // is the first version that has unstable_mock, which DevTools tests need, but also
   // has Scheduler.unstable_trace, which, although we don't use in DevTools tests
   // is imported by older React versions and will break if it's not there
-  if (semver.lte(reactVersion, '18.0.0')) {
+  if (semver.lte(proxactVersion, '18.0.0')) {
     await exec(`npm install --prefix ${REGRESSION_FOLDER} scheduler@0.20.1`);
   }
 
@@ -110,19 +110,19 @@ async function downloadRegressionBuild() {
     );
   }
 
-  if (semver.gte(reactVersion, '18.2.0') && semver.lt(reactVersion, '19.0.0')) {
-    console.log(chalk.white(`Downloading react-compiler-runtime\n`));
+  if (semver.gte(proxactVersion, '18.2.0') && semver.lt(proxactVersion, '19.0.0')) {
+    console.log(chalk.white(`Downloading proxact-compiler-runtime\n`));
     await exec(
-      `npm install --prefix ${REGRESSION_FOLDER} react-compiler-runtime`
+      `npm install --prefix ${REGRESSION_FOLDER} proxact-compiler-runtime`
     );
 
     console.log(
       chalk.white(
-        `Moving react-compiler-runtime to react/compiler-runtime.js\n`
+        `Moving proxact-compiler-runtime to proxact/compiler-runtime.js\n`
       )
     );
     await exec(
-      `mv ${REGRESSION_FOLDER}/node_modules/react-compiler-runtime/dist/index.js ${buildPath}/react/compiler-runtime.js`
+      `mv ${REGRESSION_FOLDER}/node_modules/proxact-compiler-runtime/dist/index.js ${buildPath}/proxact/compiler-runtime.js`
     );
   }
 }

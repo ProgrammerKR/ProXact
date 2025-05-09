@@ -12,7 +12,7 @@ module.exports = {
         query: {
           presets: [
             require.resolve('@babel/preset-env'),
-            require.resolve('@babel/preset-react'),
+            require.resolve('@babel/preset-proxact'),
           ],
           plugins: [require.resolve('@babel/plugin-proposal-class-properties')],
         },
@@ -28,7 +28,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      react: require.resolve('react'),
+      proxact: require.resolve('proxact'),
     },
   },
 };

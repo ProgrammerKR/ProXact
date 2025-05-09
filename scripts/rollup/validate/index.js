@@ -19,7 +19,7 @@ function getFormat(filepath) {
     }
     return 'fb';
   }
-  if (filepath.includes('react-native')) {
+  if (filepath.includes('proxact-native')) {
     if (filepath.includes('shims')) {
       // We don't currently lint these shims. We rely on the downstream Facebook
       // repo to transform them.
@@ -30,9 +30,9 @@ function getFormat(filepath) {
   }
   if (filepath.includes('cjs')) {
     if (
-      filepath.includes('react-server-dom-webpack-plugin') ||
-      filepath.includes('react-server-dom-webpack-node-register') ||
-      filepath.includes('react-suspense-test-utils')
+      filepath.includes('proxact-server-dom-webpack-plugin') ||
+      filepath.includes('proxact-server-dom-webpack-node-register') ||
+      filepath.includes('proxact-suspense-test-utils')
     ) {
       return 'cjs2015';
     }

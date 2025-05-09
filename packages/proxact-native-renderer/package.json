@@ -1,0 +1,16 @@
+{
+  "name": "proxact-native-renderer",
+  "version": "16.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact-native-renderer"
+  },
+  "dependencies": {
+    "scheduler": "^0.26.0"
+  },
+  "peerDependencies": {
+    "proxact": "^18.0.0"
+  }
+}

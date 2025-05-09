@@ -1,5 +1,5 @@
-import React from 'react';
-import {hydrateRoot} from 'react-dom/client';
+import React from 'proxact';
+import {hydrateRoot} from 'proxact-dom/client';
 
 import App from './components/App';
 

@@ -1,9 +1,9 @@
 import {
   resolve,
-  load as reactLoad,
+  load as proxactLoad,
   getSource as getSourceImpl,
-  transformSource as reactTransformSource,
-} from 'react-server-dom-webpack/node-loader';
+  transformSource as proxactTransformSource,
+} from 'proxact-server-dom-webpack/node-loader';
 
 export {resolve};
 
@@ -14,7 +14,7 @@ const babelOptions = {
   ignore: [/\/(build|node_modules)\//],
   plugins: [
     '@babel/plugin-syntax-import-meta',
-    '@babel/plugin-transform-react-jsx',
+    '@babel/plugin-transform-proxact-jsx',
   ],
   sourceMaps: process.env.NODE_ENV === 'development' ? 'inline' : false,
 };
@@ -40,7 +40,7 @@ async function babelLoad(url, context, defaultLoad) {
 }
 
 export async function load(url, context, defaultLoad) {
-  return await reactLoad(url, context, (u, c) => {
+  return await proxactLoad(url, context, (u, c) => {
     return babelLoad(u, c, defaultLoad);
   });
 }
@@ -64,7 +64,7 @@ async function babelTransformSource(source, context, defaultTransformSource) {
 }
 
 async function transformSourceImpl(source, context, defaultTransformSource) {
-  return await reactTransformSource(source, context, (s, c) => {
+  return await proxactTransformSource(source, context, (s, c) => {
     return babelTransformSource(s, c, defaultTransformSource);
   });
 }

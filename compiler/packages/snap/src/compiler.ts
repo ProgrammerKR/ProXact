@@ -17,9 +17,9 @@ import type {
   PluginOptions,
   CompilerReactTarget,
   CompilerPipelineValue,
-} from 'babel-plugin-react-compiler/src/Entrypoint';
-import type {Effect, ValueKind} from 'babel-plugin-react-compiler/src/HIR';
-import type {parseConfigPragmaForTests as ParseConfigPragma} from 'babel-plugin-react-compiler/src/Utils/TestUtils';
+} from 'babel-plugin-proxact-compiler/src/Entrypoint';
+import type {Effect, ValueKind} from 'babel-plugin-proxact-compiler/src/HIR';
+import type {parseConfigPragmaForTests as ParseConfigPragma} from 'babel-plugin-proxact-compiler/src/Utils/TestUtils';
 import * as HermesParser from 'hermes-parser';
 import invariant from 'invariant';
 import path from 'path';
@@ -32,7 +32,7 @@ export function parseLanguage(source: string): 'flow' | 'typescript' {
 }
 
 /**
- * Parse react compiler plugin + environment options from test fixture. Note
+ * Parse proxact compiler plugin + environment options from test fixture. Note
  * that although this primarily uses `Environment:parseConfigPragma`, it also
  * has test fixture specific (i.e. not applicable to playground) parsing logic.
  */
@@ -145,7 +145,7 @@ function getEvaluatorPresets(
     plugins: ['@babel/plugin-syntax-jsx'],
   });
   presets.push(
-    ['@babel/preset-react', {throwIfNamespace: false}],
+    ['@babel/preset-proxact', {throwIfNamespace: false}],
     {
       plugins: ['@babel/plugin-transform-modules-commonjs'],
     },

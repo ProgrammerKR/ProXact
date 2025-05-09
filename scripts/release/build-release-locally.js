@@ -24,15 +24,15 @@ const updateVersionNumbers = require('./build-release-locally-commands/update-ve
 const run = async () => {
   try {
     const cwd = join(__dirname, '..', '..');
-    const {branch, checksum, commit, reactVersion, version} =
+    const {branch, checksum, commit, proxactVersion, version} =
       await getBuildInfo();
-    const tempDirectory = join(tmpdir(), `react-${commit}`);
+    const tempDirectory = join(tmpdir(), `proxact-${commit}`);
     const params = {
       branch,
       checksum,
       commit,
       cwd,
-      reactVersion,
+      proxactVersion,
       tempDirectory,
       version,
     };

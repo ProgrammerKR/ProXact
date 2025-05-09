@@ -5,14 +5,14 @@
     <script>
       System.config({
         paths: {
-          react: '../../../build/oss-experimental/react/umd/react.development.js',
-          'react-dom': '../../../build/oss-experimental/react-dom/umd/react-dom.development.js'
+          proxact: '../../../build/oss-experimental/proxact/umd/proxact.development.js',
+          'proxact-dom': '../../../build/oss-experimental/proxact-dom/umd/proxact-dom.development.js'
         }
       });
 
       Promise.all([
-        System.import("react"),
-        System.import("react-dom")
+        System.import("proxact"),
+        System.import("proxact-dom")
       ]).then(function (deps) {
         var React = deps[0];
         var ReactDOM = deps[1];

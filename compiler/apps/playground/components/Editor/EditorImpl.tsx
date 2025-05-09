@@ -21,11 +21,11 @@ import BabelPluginReactCompiler, {
   parsePluginOptions,
   printReactiveFunctionWithOutlined,
   printFunctionWithOutlined,
-} from 'babel-plugin-react-compiler';
+} from 'babel-plugin-proxact-compiler';
 import clsx from 'clsx';
 import invariant from 'invariant';
 import {useSnackbar} from 'notistack';
-import {useDeferredValue, useMemo} from 'react';
+import {useDeferredValue, useMemo} from 'proxact';
 import {useMountEffect} from '../../hooks';
 import {defaultStore} from '../../lib/defaultStore';
 import {
@@ -175,9 +175,9 @@ function compile(source: string): [CompilerOutput, 'flow' | 'typescript'] {
           });
           break;
         }
-        case 'reactive': {
+        case 'proxactive': {
           upsert({
-            kind: 'reactive',
+            kind: 'proxactive',
             fnName: result.value.id,
             name: result.name,
             value: printReactiveFunctionWithOutlined(result.value),

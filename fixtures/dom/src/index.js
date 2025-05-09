@@ -1,8 +1,8 @@
 import './polyfills';
-import loadReact, {isLocal} from './react-loader';
+import loadReact, {isLocal} from './proxact-loader';
 
 if (isLocal()) {
-  Promise.all([import('react'), import('react-dom/client')])
+  Promise.all([import('proxact'), import('proxact-dom/client')])
     .then(([React, ReactDOMClient]) => {
       if (React === undefined || ReactDOMClient === undefined) {
         throw new Error(

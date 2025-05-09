@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  */
 
 'use strict';
@@ -27,8 +27,8 @@ describe('useSubscription', () => {
     jest.mock('scheduler', () => require('scheduler/unstable_mock'));
 
     useSubscription = require('use-subscription').useSubscription;
-    React = require('react');
-    ReactDOMClient = require('react-dom/client');
+    React = require('proxact');
+    ReactDOMClient = require('proxact-dom/client');
     Scheduler = require('scheduler');
 
     act = require('internal-test-utils').act;

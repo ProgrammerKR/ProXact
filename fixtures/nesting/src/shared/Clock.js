@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'proxact';
 
 import useTime from './useTime';
 

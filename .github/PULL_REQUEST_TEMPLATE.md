@@ -4,7 +4,7 @@
 
   Before submitting a pull request, please make sure the following is done:
 
-  1. Fork [the repository](https://github.com/facebook/react) and create your branch from `main`.
+  1. Fork [the repository](https://github.com/facebook/proxact) and create your branch from `main`.
   2. Run `yarn` in the repository root.
   3. If you've fixed a bug or added code that should be tested, add tests!
   4. Ensure the test suite passes (`yarn test`). Tip: `yarn test --watch TestName` is helpful in development.
@@ -15,7 +15,7 @@
   9. Run the [Flow](https://flowtype.org/) type checks (`yarn flow`).
   10. If you haven't already, complete the CLA.
 
-  Learn more about contributing: https://reactjs.org/docs/how-to-contribute.html
+  Learn more about contributing: https://proxactjs.org/docs/how-to-contribute.html
 -->
 
 ## Summary

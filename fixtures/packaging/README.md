@@ -13,7 +13,7 @@ Run them when you make changes to how we package React and ReactDOM.
 First, build React and the fixtures:
 
 ```
-cd react
+cd proxact
 npm run build
 node fixtures/packaging/build-all.js
 ```

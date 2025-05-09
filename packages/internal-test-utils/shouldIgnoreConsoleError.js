@@ -31,7 +31,7 @@ module.exports = function shouldIgnoreConsoleError(format, args) {
         format.indexOf(
           'ReactDOM.hydrate has not been supported since React 18',
         ) !== -1 ||
-        format.indexOf('react-test-renderer is deprecated.') !== -1
+        format.indexOf('proxact-test-renderer is deprecated.') !== -1
       ) {
         // We haven't finished migrating our tests to use createRoot.
         return true;

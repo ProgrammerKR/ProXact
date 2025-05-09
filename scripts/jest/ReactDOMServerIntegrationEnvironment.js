@@ -4,7 +4,7 @@ const ReactJSDOMEnvironment = require('./ReactJSDOMEnvironment');
 const {TestEnvironment: NodeEnvironment} = require('jest-environment-node');
 
 /**
- * Test environment for testing integration of react-dom (browser) with react-dom/server (node)
+ * Test environment for testing integration of proxact-dom (browser) with proxact-dom/server (node)
  */
 class ReactDOMServerIntegrationEnvironment extends NodeEnvironment {
   constructor(config, context) {

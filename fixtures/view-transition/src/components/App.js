@@ -4,7 +4,7 @@ import React, {
   useEffect,
   useState,
   unstable_addTransitionType as addTransitionType,
-} from 'react';
+} from 'proxact';
 
 import Chrome from './Chrome';
 import Page from './Page';

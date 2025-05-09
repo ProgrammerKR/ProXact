@@ -51,7 +51,7 @@ function findNearestExistingForkFile(path, segmentedIdentifier, suffix) {
 // the behavior is easier to predict.
 const forks = Object.freeze({
   // Without this fork, importing `shared/ReactSharedInternals` inside
-  // the `react` package itself would not work due to a cyclical dependency.
+  // the `proxact` package itself would not work due to a cyclical dependency.
   './packages/shared/ReactSharedInternals.js': (
     bundleType,
     entry,
@@ -59,29 +59,29 @@ const forks = Object.freeze({
     _moduleType,
     bundle
   ) => {
-    if (entry === 'react') {
-      return './packages/react/src/ReactSharedInternalsClient.js';
+    if (entry === 'proxact') {
+      return './packages/proxact/src/ReactSharedInternalsClient.js';
     }
-    if (entry === 'react/src/ReactServer.js') {
-      return './packages/react/src/ReactSharedInternalsServer.js';
+    if (entry === 'proxact/src/ReactServer.js') {
+      return './packages/proxact/src/ReactSharedInternalsServer.js';
     }
-    if (entry === 'react-markup/src/ReactMarkupServer.js') {
+    if (entry === 'proxact-markup/src/ReactMarkupServer.js') {
       // Inside the ReactMarkupServer render we don't refer to any shared internals
       // but instead use our own internal copy of the state because you cannot use
       // any of this state from a component anyway. E.g. you can't use a client hook.
-      return './packages/react/src/ReactSharedInternalsClient.js';
+      return './packages/proxact/src/ReactSharedInternalsClient.js';
     }
-    if (bundle.condition === 'react-server') {
-      return './packages/react-server/src/ReactSharedInternalsServer.js';
+    if (bundle.condition === 'proxact-server') {
+      return './packages/proxact-server/src/ReactSharedInternalsServer.js';
     }
-    if (!entry.startsWith('react/') && dependencies.indexOf('react') === -1) {
+    if (!entry.startsWith('proxact/') && dependencies.indexOf('proxact') === -1) {
       // React internals are unavailable if we can't reference the package.
       // We return an error because we only want to throw if this module gets used.
       return new Error(
         'Cannot use a module that depends on ReactSharedInternals ' +
           'from "' +
           entry +
-          '" because it does not declare "react" in the package ' +
+          '" because it does not declare "proxact" in the package ' +
           'dependencies or peerDependencies.'
       );
     }
@@ -89,33 +89,33 @@ const forks = Object.freeze({
   },
 
   // Without this fork, importing `shared/ReactDOMSharedInternals` inside
-  // the `react-dom` package itself would not work due to a cyclical dependency.
+  // the `proxact-dom` package itself would not work due to a cyclical dependency.
   './packages/shared/ReactDOMSharedInternals.js': (
     bundleType,
     entry,
     dependencies
   ) => {
     if (
-      entry === 'react-dom' ||
-      entry === 'react-dom/src/ReactDOMFB.js' ||
-      entry === 'react-dom/src/ReactDOMTestingFB.js' ||
-      entry === 'react-dom/src/ReactDOMServer.js' ||
-      entry === 'react-markup/src/ReactMarkupClient.js' ||
-      entry === 'react-markup/src/ReactMarkupServer.js'
+      entry === 'proxact-dom' ||
+      entry === 'proxact-dom/src/ReactDOMFB.js' ||
+      entry === 'proxact-dom/src/ReactDOMTestingFB.js' ||
+      entry === 'proxact-dom/src/ReactDOMServer.js' ||
+      entry === 'proxact-markup/src/ReactMarkupClient.js' ||
+      entry === 'proxact-markup/src/ReactMarkupServer.js'
     ) {
       if (
         bundleType === FB_WWW_DEV ||
         bundleType === FB_WWW_PROD ||
         bundleType === FB_WWW_PROFILING
       ) {
-        return './packages/react-dom/src/ReactDOMSharedInternalsFB.js';
+        return './packages/proxact-dom/src/ReactDOMSharedInternalsFB.js';
       } else {
-        return './packages/react-dom/src/ReactDOMSharedInternals.js';
+        return './packages/proxact-dom/src/ReactDOMSharedInternals.js';
       }
     }
     if (
-      !entry.startsWith('react-dom/') &&
-      dependencies.indexOf('react-dom') === -1
+      !entry.startsWith('proxact-dom/') &&
+      dependencies.indexOf('proxact-dom') === -1
     ) {
       // React DOM internals are unavailable if we can't reference the package.
       // We return an error because we only want to throw if this module gets used.
@@ -123,7 +123,7 @@ const forks = Object.freeze({
         'Cannot use a module that depends on ReactDOMSharedInternals ' +
           'from "' +
           entry +
-          '" because it does not declare "react-dom" in the package ' +
+          '" because it does not declare "proxact-dom" in the package ' +
           'dependencies or peerDependencies.'
       );
     }
@@ -133,7 +133,7 @@ const forks = Object.freeze({
   // We have a few forks for different environments.
   './packages/shared/ReactFeatureFlags.js': (bundleType, entry) => {
     switch (entry) {
-      case 'react-native-renderer':
+      case 'proxact-native-renderer':
         switch (bundleType) {
           case RN_FB_DEV:
           case RN_FB_PROD:
@@ -148,7 +148,7 @@ const forks = Object.freeze({
               `Unexpected entry (${entry}) and bundleType (${bundleType})`
             );
         }
-      case 'react-native-renderer/fabric':
+      case 'proxact-native-renderer/fabric':
         switch (bundleType) {
           case RN_FB_DEV:
           case RN_FB_PROD:
@@ -163,7 +163,7 @@ const forks = Object.freeze({
               `Unexpected entry (${entry}) and bundleType (${bundleType})`
             );
         }
-      case 'react-test-renderer':
+      case 'proxact-test-renderer':
         switch (bundleType) {
           case RN_FB_DEV:
           case RN_FB_PROD:
@@ -239,13 +239,13 @@ const forks = Object.freeze({
     return null;
   },
 
-  './packages/react-reconciler/src/ReactFiberConfig.js': (
+  './packages/proxact-reconciler/src/ReactFiberConfig.js': (
     bundleType,
     entry,
     dependencies,
     moduleType
   ) => {
-    if (dependencies.indexOf('react-reconciler') !== -1) {
+    if (dependencies.indexOf('proxact-reconciler') !== -1) {
       return null;
     }
     if (moduleType !== RENDERER && moduleType !== RECONCILER) {
@@ -255,7 +255,7 @@ const forks = Object.freeze({
     for (let rendererInfo of inlinedHostConfigs) {
       if (rendererInfo.entryPoints.indexOf(entry) !== -1) {
         const foundFork = findNearestExistingForkFile(
-          './packages/react-reconciler/src/forks/ReactFiberConfig.',
+          './packages/proxact-reconciler/src/forks/ReactFiberConfig.',
           rendererInfo.shortName,
           '.js'
         );
@@ -273,13 +273,13 @@ const forks = Object.freeze({
     );
   },
 
-  './packages/react-server/src/ReactServerStreamConfig.js': (
+  './packages/proxact-server/src/ReactServerStreamConfig.js': (
     bundleType,
     entry,
     dependencies,
     moduleType
   ) => {
-    if (dependencies.indexOf('react-server') !== -1) {
+    if (dependencies.indexOf('proxact-server') !== -1) {
       return null;
     }
     if (moduleType !== RENDERER && moduleType !== RECONCILER) {
@@ -292,7 +292,7 @@ const forks = Object.freeze({
           return null;
         }
         const foundFork = findNearestExistingForkFile(
-          './packages/react-server/src/forks/ReactServerStreamConfig.',
+          './packages/proxact-server/src/forks/ReactServerStreamConfig.',
           rendererInfo.shortName,
           '.js'
         );
@@ -310,13 +310,13 @@ const forks = Object.freeze({
     );
   },
 
-  './packages/react-server/src/ReactFizzConfig.js': (
+  './packages/proxact-server/src/ReactFizzConfig.js': (
     bundleType,
     entry,
     dependencies,
     moduleType
   ) => {
-    if (dependencies.indexOf('react-server') !== -1) {
+    if (dependencies.indexOf('proxact-server') !== -1) {
       return null;
     }
     if (moduleType !== RENDERER && moduleType !== RECONCILER) {
@@ -329,7 +329,7 @@ const forks = Object.freeze({
           return null;
         }
         const foundFork = findNearestExistingForkFile(
-          './packages/react-server/src/forks/ReactFizzConfig.',
+          './packages/proxact-server/src/forks/ReactFizzConfig.',
           rendererInfo.shortName,
           '.js'
         );
@@ -347,13 +347,13 @@ const forks = Object.freeze({
     );
   },
 
-  './packages/react-server/src/ReactFlightServerConfig.js': (
+  './packages/proxact-server/src/ReactFlightServerConfig.js': (
     bundleType,
     entry,
     dependencies,
     moduleType
   ) => {
-    if (dependencies.indexOf('react-server') !== -1) {
+    if (dependencies.indexOf('proxact-server') !== -1) {
       return null;
     }
     if (moduleType !== RENDERER && moduleType !== RECONCILER) {
@@ -373,7 +373,7 @@ const forks = Object.freeze({
           );
         }
         const foundFork = findNearestExistingForkFile(
-          './packages/react-server/src/forks/ReactFlightServerConfig.',
+          './packages/proxact-server/src/forks/ReactFlightServerConfig.',
           rendererInfo.shortName,
           '.js'
         );
@@ -391,13 +391,13 @@ const forks = Object.freeze({
     );
   },
 
-  './packages/react-client/src/ReactFlightClientConfig.js': (
+  './packages/proxact-client/src/ReactFlightClientConfig.js': (
     bundleType,
     entry,
     dependencies,
     moduleType
   ) => {
-    if (dependencies.indexOf('react-client') !== -1) {
+    if (dependencies.indexOf('proxact-client') !== -1) {
       return null;
     }
     if (moduleType !== RENDERER && moduleType !== RECONCILER) {
@@ -417,7 +417,7 @@ const forks = Object.freeze({
           );
         }
         const foundFork = findNearestExistingForkFile(
-          './packages/react-client/src/forks/ReactFlightClientConfig.',
+          './packages/proxact-client/src/forks/ReactFlightClientConfig.',
           rendererInfo.shortName,
           '.js'
         );
@@ -436,7 +436,7 @@ const forks = Object.freeze({
   },
 
   // We wrap top-level listeners into guards on www.
-  './packages/react-dom-bindings/src/events/EventListener.js': (
+  './packages/proxact-dom-bindings/src/events/EventListener.js': (
     bundleType,
     entry
   ) => {
@@ -449,7 +449,7 @@ const forks = Object.freeze({
           return null;
         } else {
           // Use the www fork which is integrated with TimeSlice profiling.
-          return './packages/react-dom-bindings/src/events/forks/EventListener-www.js';
+          return './packages/proxact-dom-bindings/src/events/forks/EventListener-www.js';
         }
       default:
         return null;
@@ -465,7 +465,7 @@ const forks = Object.freeze({
     }
     if (entry !== 'use-sync-external-store') {
       // Internal modules that aren't shims should use the native API from the
-      // react package.
+      // proxact package.
       return './packages/use-sync-external-store/src/forks/useSyncExternalStore.forward-to-built-in.js';
     }
     return null;

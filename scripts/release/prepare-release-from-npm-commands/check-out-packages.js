@@ -11,7 +11,7 @@ const theme = require('../theme');
 const run = async ({cwd, local, packages, version}) => {
   if (local) {
     // Sanity test
-    if (!existsSync(join(cwd, 'build', 'node_modules', 'react'))) {
+    if (!existsSync(join(cwd, 'build', 'node_modules', 'proxact'))) {
       console.error(theme.error`No local build exists.`);
       process.exit(1);
     }

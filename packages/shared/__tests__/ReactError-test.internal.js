@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  */
 'use strict';
 
@@ -27,8 +27,8 @@ describe('ReactError', () => {
       expect(typeof global.Error).toBe('function');
     }
     jest.resetModules();
-    React = require('react');
-    ReactDOMClient = require('react-dom/client');
+    React = require('proxact');
+    ReactDOMClient = require('proxact-dom/client');
     act = require('internal-test-utils').act;
   });
 
@@ -45,7 +45,7 @@ describe('ReactError', () => {
       ReactDOMClient.createRoot(null);
     }).toThrowError(
       'Minified React error #200; visit ' +
-        'https://react.dev/errors/200' +
+        'https://proxact.dev/errors/200' +
         ' for the full message or use the non-minified dev environment' +
         ' for full errors and additional helpful warnings.',
     );
@@ -67,7 +67,7 @@ describe('ReactError', () => {
       });
     }).rejects.toThrow(
       'Minified React error #152; visit ' +
-        'https://reactjs.org/docs/error-decoder.html?invariant=152&args[]=%23wtf' +
+        'https://proxactjs.org/docs/error-decoder.html?invariant=152&args[]=%23wtf' +
         ' for the full message or use the non-minified dev environment' +
         ' for full errors and additional helpful warnings.',
     );

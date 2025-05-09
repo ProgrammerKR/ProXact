@@ -6,8 +6,8 @@ const resolvePath = require('./utils').resolvePath;
 
 const DEFAULT_FB_SOURCE_PATH = '~/fbsource/';
 const DEFAULT_WWW_PATH = '~/www/';
-const RELATIVE_RN_OSS_PATH = 'xplat/js/react-native-github/Libraries/Renderer/';
-const RELATIVE_WWW_PATH = 'html/shared/react/';
+const RELATIVE_RN_OSS_PATH = 'xplat/js/proxact-native-github/Libraries/Renderer/';
+const RELATIVE_WWW_PATH = 'html/shared/proxact/';
 
 async function doSync(buildPath, destPath) {
   console.log(`${chalk.bgYellow.black(' SYNCING ')} React to ${destPath}`);
@@ -45,7 +45,7 @@ async function syncReactNativeHelper(
 
 async function syncReactNative(fbSourcePath) {
   await syncReactNativeHelper(
-    'build/react-native',
+    'build/proxact-native',
     fbSourcePath,
     RELATIVE_RN_OSS_PATH
   );

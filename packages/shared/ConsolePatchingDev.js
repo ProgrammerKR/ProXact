@@ -22,12 +22,12 @@ let prevGroupCollapsed;
 let prevGroupEnd;
 
 function disabledLog() {}
-disabledLog.__reactDisabledLog = true;
+disabledLog.__proxactDisabledLog = true;
 
 export function disableLogs(): void {
   if (__DEV__) {
     if (disabledDepth === 0) {
-      /* eslint-disable react-internal/no-production-logging */
+      /* eslint-disable proxact-internal/no-production-logging */
       prevLog = console.log;
       prevInfo = console.info;
       prevWarn = console.warn;
@@ -35,7 +35,7 @@ export function disableLogs(): void {
       prevGroup = console.group;
       prevGroupCollapsed = console.groupCollapsed;
       prevGroupEnd = console.groupEnd;
-      // https://github.com/facebook/react/issues/19099
+      // https://github.com/facebook/proxact/issues/19099
       const props = {
         configurable: true,
         enumerable: true,

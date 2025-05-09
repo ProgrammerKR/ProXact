@@ -1,7 +1,7 @@
 'use strict';
 
 // Fork Start
-const ReactFlightWebpackPlugin = require('react-server-dom-webpack/plugin');
+const ReactFlightWebpackPlugin = require('proxact-server-dom-webpack/plugin');
 // Fork End
 
 const fs = require('fs');
@@ -14,17 +14,17 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
-const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
+const ModuleScopePlugin = require('proxact-dev-utils/ModuleScopePlugin');
+const getCSSModuleLocalIdent = require('proxact-dev-utils/getCSSModuleLocalIdent');
 const paths = require('./paths');
 const modules = require('./modules');
 const getClientEnvironment = require('./env');
-const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
+const ModuleNotFoundPlugin = require('proxact-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin =
   process.env.TSC_COMPILE_ON_ERROR === 'true'
-    ? require('react-dev-utils/ForkTsCheckerWarningWebpackPlugin')
-    : require('react-dev-utils/ForkTsCheckerWebpackPlugin');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+    ? require('proxact-dev-utils/ForkTsCheckerWarningWebpackPlugin')
+    : require('proxact-dev-utils/ForkTsCheckerWebpackPlugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/proxact-refresh-webpack-plugin');
 const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 
 function createEnvironmentHash(env) {
@@ -37,11 +37,11 @@ function createEnvironmentHash(env) {
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
-const reactRefreshRuntimeEntry = require.resolve('react-refresh/runtime');
-const reactRefreshWebpackPluginRuntimeEntry = require.resolve(
-  '@pmmmwh/react-refresh-webpack-plugin'
+const proxactRefreshRuntimeEntry = require.resolve('proxact-refresh/runtime');
+const proxactRefreshWebpackPluginRuntimeEntry = require.resolve(
+  '@pmmmwh/proxact-refresh-webpack-plugin'
 );
-const babelRuntimeEntry = require.resolve('babel-preset-react-app');
+const babelRuntimeEntry = require.resolve('babel-preset-proxact-app');
 const babelRuntimeEntryHelpers = require.resolve(
   '@babel/runtime/helpers/esm/assertThisInitialized',
   {paths: [babelRuntimeEntry]}
@@ -81,7 +81,7 @@ const hasJsxRuntime = (() => {
   }
 
   try {
-    require.resolve('react/jsx-runtime');
+    require.resolve('proxact/jsx-runtime');
     return true;
   } catch (e) {
     return false;
@@ -131,7 +131,7 @@ module.exports = function (webpackEnv) {
         options: {
           postcssOptions: {
             // Necessary for external CSS imports to work
-            // https://github.com/facebook/create-react-app/issues/2677
+            // https://github.com/facebook/create-proxact-app/issues/2677
             ident: 'postcss',
             config: false,
             plugins: !useTailwind
@@ -265,19 +265,19 @@ module.exports = function (webpackEnv) {
               // to apply any minification steps that turns valid ecma 5 code
               // into invalid ecma 5 code. This is why the 'compress' and 'output'
               // sections only apply transformations that are ecma 5 safe
-              // https://github.com/facebook/create-react-app/pull/4234
+              // https://github.com/facebook/create-proxact-app/pull/4234
               ecma: 8,
             },
             compress: {
               ecma: 5,
               warnings: false,
               // Disabled because of an issue with Uglify breaking seemingly valid code:
-              // https://github.com/facebook/create-react-app/issues/2376
+              // https://github.com/facebook/create-proxact-app/issues/2376
               // Pending further investigation:
               // https://github.com/mishoo/UglifyJS2/issues/2011
               comparisons: false,
               // Disabled because of an issue with Terser breaking valid code:
-              // https://github.com/facebook/create-react-app/issues/5250
+              // https://github.com/facebook/create-proxact-app/issues/5250
               // Pending further investigation:
               // https://github.com/terser-js/terser/issues/120
               inline: 2,
@@ -292,7 +292,7 @@ module.exports = function (webpackEnv) {
               ecma: 5,
               comments: false,
               // Turned on because emoji and regex is not minified properly using default
-              // https://github.com/facebook/create-react-app/issues/2488
+              // https://github.com/facebook/create-proxact-app/issues/2488
               ascii_only: true,
             },
           },
@@ -305,14 +305,14 @@ module.exports = function (webpackEnv) {
       // This allows you to set a fallback for where webpack should look for modules.
       // We placed these paths second because we want `node_modules` to "win"
       // if there are any conflicts. This matches Node resolution mechanism.
-      // https://github.com/facebook/create-react-app/issues/253
+      // https://github.com/facebook/create-proxact-app/issues/253
       modules: ['node_modules', paths.appNodeModules].concat(
         modules.additionalModulePaths || []
       ),
       // These are the reasonable defaults supported by the Node ecosystem.
       // We also include JSX as a common component filename extension to support
       // some tools, although we do not recommend using it, see:
-      // https://github.com/facebook/create-react-app/issues/290
+      // https://github.com/facebook/create-proxact-app/issues/290
       // `web` extension prefixes have been added for better support
       // for React Native Web.
       extensions: paths.moduleFileExtensions
@@ -320,11 +320,11 @@ module.exports = function (webpackEnv) {
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
         // Support React Native Web
-        // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-        'react-native': 'react-native-web',
+        // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-proxact-native-for-web/
+        'proxact-native': 'proxact-native-web',
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
-          'react-dom$': 'react-dom/profiling',
+          'proxact-dom$': 'proxact-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
@@ -337,8 +337,8 @@ module.exports = function (webpackEnv) {
         // Make sure your source files are compiled, as they will not be processed in any way.
         new ModuleScopePlugin(paths.appSrc, [
           paths.appPackageJson,
-          reactRefreshRuntimeEntry,
-          reactRefreshWebpackPluginRuntimeEntry,
+          proxactRefreshRuntimeEntry,
+          proxactRefreshWebpackPluginRuntimeEntry,
           babelRuntimeEntry,
           babelRuntimeEntryHelpers,
           babelRuntimeRegenerator,
@@ -418,11 +418,11 @@ module.exports = function (webpackEnv) {
               loader: require.resolve('babel-loader'),
               options: {
                 customize: require.resolve(
-                  'babel-preset-react-app/webpack-overrides'
+                  'babel-preset-proxact-app/webpack-overrides'
                 ),
                 presets: [
                   [
-                    require.resolve('babel-preset-react-app'),
+                    require.resolve('babel-preset-proxact-app'),
                     {
                       runtime: hasJsxRuntime ? 'automatic' : 'classic',
                     },
@@ -432,7 +432,7 @@ module.exports = function (webpackEnv) {
                 plugins: [
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
-                    require.resolve('react-refresh/babel'),
+                    require.resolve('proxact-refresh/babel'),
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -455,7 +455,7 @@ module.exports = function (webpackEnv) {
                 compact: false,
                 presets: [
                   [
-                    require.resolve('babel-preset-react-app/dependencies'),
+                    require.resolve('babel-preset-proxact-app/dependencies'),
                     {helpers: true},
                   ],
                 ],
@@ -583,7 +583,7 @@ module.exports = function (webpackEnv) {
       // Otherwise React will be compiled in the very slow development mode.
       new webpack.DefinePlugin(env.stringified),
       // Experimental hot reloading for React .
-      // https://github.com/facebook/react/tree/main/packages/react-refresh
+      // https://github.com/facebook/proxact/tree/main/packages/proxact-refresh
       isEnvDevelopment &&
         shouldUseReactRefresh &&
         new ReactRefreshWebpackPlugin({
@@ -591,7 +591,7 @@ module.exports = function (webpackEnv) {
         }),
       // Watcher doesn't work well if you mistype casing in a path so we use
       // a plugin that prints an error when you attempt to do this.
-      // See https://github.com/facebook/create-react-app/issues/240
+      // See https://github.com/facebook/create-proxact-app/issues/240
       isEnvDevelopment && new CaseSensitivePathsPlugin(),
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output

@@ -1,9 +1,9 @@
-import { c as _c } from "react/compiler-runtime"; // 
+import { c as _c } from "proxact/compiler-runtime"; // 
         @compilationMode:"all"
 function nonReactFn() {
   const $ = _c(1);
   let t0;
-  if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+  if ($[0] === Symbol.for("proxact.memo_cache_sentinel")) {
     t0 = {};
     $[0] = t0;
   } else {

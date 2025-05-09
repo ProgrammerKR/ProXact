@@ -1,5 +1,5 @@
 {
-  "name": "react-benchmark",
+  "name": "proxact-benchmark",
   "version": "0.0.1",
   "main": "runner.js",
   "scripts": {

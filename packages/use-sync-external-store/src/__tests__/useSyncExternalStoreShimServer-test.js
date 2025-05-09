@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  *
  * @jest-environment node
  */
@@ -30,18 +30,18 @@ describe('useSyncExternalStore (userspace shim, server rendering)', () => {
     //
     // Longer term, we'll probably test this branch using an actual build of
     // React 17.
-    jest.mock('react', () => {
+    jest.mock('proxact', () => {
       const {
         startTransition: _,
         useSyncExternalStore: __,
         ...otherExports
-      } = jest.requireActual('react');
+      } = jest.requireActual('proxact');
       return otherExports;
     });
 
-    React = require('react');
-    ReactDOM = require('react-dom');
-    ReactDOMServer = require('react-dom/server');
+    React = require('proxact');
+    ReactDOM = require('proxact-dom');
+    ReactDOMServer = require('proxact-dom/server');
     Scheduler = require('scheduler');
 
     const InternalTestUtils = require('internal-test-utils');

@@ -9,7 +9,7 @@ const {logPromise} = require('../utils');
 const theme = require('../theme');
 
 const run = async ({commit, cwd, tempDirectory}) => {
-  const directory = `react-${commit}`;
+  const directory = `proxact-${commit}`;
   const temp = tmpdir();
 
   if (tempDirectory !== join(tmpdir(), directory)) {
@@ -17,11 +17,11 @@ const run = async ({commit, cwd, tempDirectory}) => {
   }
 
   await exec(`rm -rf ${directory}`, {cwd: temp});
-  await exec(`git archive --format=tar --output=${temp}/react.tgz ${commit}`, {
+  await exec(`git archive --format=tar --output=${temp}/proxact.tgz ${commit}`, {
     cwd,
   });
   await exec(`mkdir ${directory}`, {cwd: temp});
-  await exec(`tar -xf ./react.tgz -C ./${directory}`, {cwd: temp});
+  await exec(`tar -xf ./proxact.tgz -C ./${directory}`, {cwd: temp});
 };
 
 module.exports = async params => {

@@ -5,18 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import MonacoEditor, {loader, type Monaco} from '@monaco-editor/react';
-import {CompilerErrorDetail} from 'babel-plugin-react-compiler';
+import MonacoEditor, {loader, type Monaco} from '@monaco-editor/proxact';
+import {CompilerErrorDetail} from 'babel-plugin-proxact-compiler';
 import invariant from 'invariant';
 import type {editor} from 'monaco-editor';
 import * as monaco from 'monaco-editor';
 import {Resizable} from 're-resizable';
-import {useEffect, useState} from 'react';
-import {renderReactCompilerMarkers} from '../../lib/reactCompilerMonacoDiagnostics';
+import {useEffect, useState} from 'proxact';
+import {renderReactCompilerMarkers} from '../../lib/proxactCompilerMonacoDiagnostics';
 import {useStore, useStoreDispatch} from '../StoreContext';
 import {monacoOptions} from './monacoOptions';
 // @ts-expect-error TODO: Make TS recognize .d.ts files, in addition to loading them with webpack.
-import React$Types from '../../node_modules/@types/react/index.d.ts';
+import React$Types from '../../node_modules/@types/proxact/index.d.ts';
 
 loader.config({monaco});
 
@@ -112,12 +112,12 @@ export default function Input({errors, language}: Props): JSX.Element {
     });
 
     // Add React type declarations to Monaco
-    const reactLib = [
+    const proxactLib = [
       React$Types,
-      'file:///node_modules/@types/react/index.d.ts',
+      'file:///node_modules/@types/proxact/index.d.ts',
     ] as [any, string];
-    monaco.languages.typescript.javascriptDefaults.addExtraLib(...reactLib);
-    monaco.languages.typescript.typescriptDefaults.addExtraLib(...reactLib);
+    monaco.languages.typescript.javascriptDefaults.addExtraLib(...proxactLib);
+    monaco.languages.typescript.typescriptDefaults.addExtraLib(...proxactLib);
 
     /**
      * Remeasure the font in case the custom font is loaded only after

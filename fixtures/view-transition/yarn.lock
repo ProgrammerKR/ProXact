@@ -789,30 +789,30 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
 
-"@babel/plugin-transform-react-constant-elements@^7.12.1":
+"@babel/plugin-transform-proxact-constant-elements@^7.12.1":
   version "7.25.9"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-constant-elements/-/plugin-transform-react-constant-elements-7.25.9.tgz#08a1de35a301929b60fdf2788a54b46cd8ecd0ef"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-proxact-constant-elements/-/plugin-transform-proxact-constant-elements-7.25.9.tgz#08a1de35a301929b60fdf2788a54b46cd8ecd0ef"
   integrity sha512-Ncw2JFsJVuvfRsa2lSHiC55kETQVLSnsYGQ1JDDwkUeWGTL/8Tom8aLTnlqgoeuopWrbbGndrc9AlLYrIosrow==
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
 
-"@babel/plugin-transform-react-display-name@^7.16.0", "@babel/plugin-transform-react-display-name@^7.25.9":
+"@babel/plugin-transform-proxact-display-name@^7.16.0", "@babel/plugin-transform-proxact-display-name@^7.25.9":
   version "7.25.9"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.25.9.tgz#4b79746b59efa1f38c8695065a92a9f5afb24f7d"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-proxact-display-name/-/plugin-transform-proxact-display-name-7.25.9.tgz#4b79746b59efa1f38c8695065a92a9f5afb24f7d"
   integrity sha512-KJfMlYIUxQB1CJfO3e0+h0ZHWOTLCPP115Awhaz8U0Zpq36Gl/cXlpoyMRnUWlhNUBAzldnCiAZNvCDj7CrKxQ==
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
 
-"@babel/plugin-transform-react-jsx-development@^7.25.9":
+"@babel/plugin-transform-proxact-jsx-development@^7.25.9":
   version "7.25.9"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-development/-/plugin-transform-react-jsx-development-7.25.9.tgz#8fd220a77dd139c07e25225a903b8be8c829e0d7"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-proxact-jsx-development/-/plugin-transform-proxact-jsx-development-7.25.9.tgz#8fd220a77dd139c07e25225a903b8be8c829e0d7"
   integrity sha512-9mj6rm7XVYs4mdLIpbZnHOYdpW42uoiBCTVowg7sP1thUOiANgMb4UtpRivR0pp5iL+ocvUv7X4mZgFRpJEzGw==
   dependencies:
-    "@babel/plugin-transform-react-jsx" "^7.25.9"
+    "@babel/plugin-transform-proxact-jsx" "^7.25.9"
 
-"@babel/plugin-transform-react-jsx@^7.25.9":
+"@babel/plugin-transform-proxact-jsx@^7.25.9":
   version "7.25.9"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.25.9.tgz#06367940d8325b36edff5e2b9cbe782947ca4166"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-proxact-jsx/-/plugin-transform-proxact-jsx-7.25.9.tgz#06367940d8325b36edff5e2b9cbe782947ca4166"
   integrity sha512-s5XwpQYCqGerXl+Pu6VDL3x0j2d82eiV77UJ8a2mDHAW7j9SWRqQ2y1fNo1Z74CdcYipl5Z41zvjj4Nfzq36rw==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.25.9"
@@ -821,9 +821,9 @@
     "@babel/plugin-syntax-jsx" "^7.25.9"
     "@babel/types" "^7.25.9"
 
-"@babel/plugin-transform-react-pure-annotations@^7.25.9":
+"@babel/plugin-transform-proxact-pure-annotations@^7.25.9":
   version "7.25.9"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-pure-annotations/-/plugin-transform-react-pure-annotations-7.25.9.tgz#ea1c11b2f9dbb8e2d97025f43a3b5bc47e18ae62"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-proxact-pure-annotations/-/plugin-transform-proxact-pure-annotations-7.25.9.tgz#ea1c11b2f9dbb8e2d97025f43a3b5bc47e18ae62"
   integrity sha512-KQ/Takk3T8Qzj5TppkS1be588lkbTp5uj7w6a0LeQaTMSckU/wK0oJ/pih+T690tkgI5jfmg2TqDJvd41Sj1Cg==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.25.9"
@@ -1026,17 +1026,17 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/preset-react@^7.12.5", "@babel/preset-react@^7.16.0":
+"@babel/preset-proxact@^7.12.5", "@babel/preset-proxact@^7.16.0":
   version "7.26.3"
-  resolved "https://registry.yarnpkg.com/@babel/preset-react/-/preset-react-7.26.3.tgz#7c5e028d623b4683c1f83a0bd4713b9100560caa"
+  resolved "https://registry.yarnpkg.com/@babel/preset-proxact/-/preset-proxact-7.26.3.tgz#7c5e028d623b4683c1f83a0bd4713b9100560caa"
   integrity sha512-Nl03d6T9ky516DGK2YMxrTqvnpUW63TnJMOMonj+Zae0JiPC5BC9xPMSL6L8fiSpA5vP88qfygavVQvnLp+6Cw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
     "@babel/helper-validator-option" "^7.25.9"
-    "@babel/plugin-transform-react-display-name" "^7.25.9"
-    "@babel/plugin-transform-react-jsx" "^7.25.9"
-    "@babel/plugin-transform-react-jsx-development" "^7.25.9"
-    "@babel/plugin-transform-react-pure-annotations" "^7.25.9"
+    "@babel/plugin-transform-proxact-display-name" "^7.25.9"
+    "@babel/plugin-transform-proxact-jsx" "^7.25.9"
+    "@babel/plugin-transform-proxact-jsx-development" "^7.25.9"
+    "@babel/plugin-transform-proxact-pure-annotations" "^7.25.9"
 
 "@babel/preset-typescript@^7.16.0":
   version "7.26.0"
@@ -1580,9 +1580,9 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
+"@pmmmwh/proxact-refresh-webpack-plugin@^0.5.3":
   version "0.5.15"
-  resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.15.tgz#f126be97c30b83ed777e2aeabd518bc592e6e7c4"
+  resolved "https://registry.yarnpkg.com/@pmmmwh/proxact-refresh-webpack-plugin/-/proxact-refresh-webpack-plugin-0.5.15.tgz#f126be97c30b83ed777e2aeabd518bc592e6e7c4"
   integrity sha512-LFWllMA55pzB9D34w/wXUCf8+c+IYKuJDgxiZ3qMhl64KRMBHYM1I3VdGaD2BV5FNPV2/S2596bppxHbv2ZydQ==
   dependencies:
     ansi-html "^0.0.9"
@@ -1699,9 +1699,9 @@
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-svg-em-dimensions/-/babel-plugin-svg-em-dimensions-5.4.0.tgz#6543f69526632a133ce5cabab965deeaea2234a0"
   integrity sha512-cPzDbDA5oT/sPXDCUYoVXEmm3VIoAWAPT6mSPTJNbQaBNUuEKVKyGH93oDY4e42PYHRW67N5alJx/eEol20abw==
 
-"@svgr/babel-plugin-transform-react-native-svg@^5.4.0":
+"@svgr/babel-plugin-transform-proxact-native-svg@^5.4.0":
   version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-transform-react-native-svg/-/babel-plugin-transform-react-native-svg-5.4.0.tgz#00bf9a7a73f1cad3948cdab1f8dfb774750f8c80"
+  resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-transform-proxact-native-svg/-/babel-plugin-transform-proxact-native-svg-5.4.0.tgz#00bf9a7a73f1cad3948cdab1f8dfb774750f8c80"
   integrity sha512-3eYP/SaopZ41GHwXma7Rmxcv9uRslRDTY1estspeB1w1ueZWd/tPlMfEOoccYpEMZU3jD4OU7YitnXcF5hLW2Q==
 
 "@svgr/babel-plugin-transform-svg-component@^5.5.0":
@@ -1720,7 +1720,7 @@
     "@svgr/babel-plugin-replace-jsx-attribute-value" "^5.0.1"
     "@svgr/babel-plugin-svg-dynamic-title" "^5.4.0"
     "@svgr/babel-plugin-svg-em-dimensions" "^5.4.0"
-    "@svgr/babel-plugin-transform-react-native-svg" "^5.4.0"
+    "@svgr/babel-plugin-transform-proxact-native-svg" "^5.4.0"
     "@svgr/babel-plugin-transform-svg-component" "^5.5.0"
 
 "@svgr/core@^5.5.0":
@@ -1764,9 +1764,9 @@
   integrity sha512-DOBOK255wfQxguUta2INKkzPj6AIS6iafZYiYmHn6W3pHlycSRRlvWKCfLDG10fXfLWqE3DJHgRUOyJYmARa7g==
   dependencies:
     "@babel/core" "^7.12.3"
-    "@babel/plugin-transform-react-constant-elements" "^7.12.1"
+    "@babel/plugin-transform-proxact-constant-elements" "^7.12.1"
     "@babel/preset-env" "^7.12.1"
-    "@babel/preset-react" "^7.12.5"
+    "@babel/preset-proxact" "^7.12.5"
     "@svgr/core" "^5.5.0"
     "@svgr/plugin-jsx" "^5.5.0"
     "@svgr/plugin-svgo" "^5.5.0"
@@ -2771,9 +2771,9 @@ babel-plugin-polyfill-regenerator@^0.6.1:
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.6.3"
 
-babel-plugin-transform-react-remove-prop-types@^0.4.24:
+babel-plugin-transform-proxact-remove-prop-types@^0.4.24:
   version "0.4.24"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-proxact-remove-prop-types/-/babel-plugin-transform-proxact-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
   integrity sha512-eqj0hVcJUR57/Ug2zE1Yswsw4LhuqqHhD+8v120T1cl3kjg76QwtyBrdIk4WVwK+lAhBJVYCd/v+4nc4y+8JsA==
 
 babel-preset-current-node-syntax@^1.0.0:
@@ -2805,9 +2805,9 @@ babel-preset-jest@^27.5.1:
     babel-plugin-jest-hoist "^27.5.1"
     babel-preset-current-node-syntax "^1.0.0"
 
-babel-preset-react-app@^10.0.1:
+babel-preset-proxact-app@^10.0.1:
   version "10.0.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-react-app/-/babel-preset-react-app-10.0.1.tgz#ed6005a20a24f2c88521809fa9aea99903751584"
+  resolved "https://registry.yarnpkg.com/babel-preset-proxact-app/-/babel-preset-proxact-app-10.0.1.tgz#ed6005a20a24f2c88521809fa9aea99903751584"
   integrity sha512-b0D9IZ1WhhCWkrTXyFuIIgqGzSkRIH5D5AmB0bXbzYAB1OBAwHcUeyWW2LorutLWF5btNo/N7r/cIdmvvKJlYg==
   dependencies:
     "@babel/core" "^7.16.0"
@@ -2818,14 +2818,14 @@ babel-preset-react-app@^10.0.1:
     "@babel/plugin-proposal-optional-chaining" "^7.16.0"
     "@babel/plugin-proposal-private-methods" "^7.16.0"
     "@babel/plugin-transform-flow-strip-types" "^7.16.0"
-    "@babel/plugin-transform-react-display-name" "^7.16.0"
+    "@babel/plugin-transform-proxact-display-name" "^7.16.0"
     "@babel/plugin-transform-runtime" "^7.16.4"
     "@babel/preset-env" "^7.16.4"
-    "@babel/preset-react" "^7.16.0"
+    "@babel/preset-proxact" "^7.16.0"
     "@babel/preset-typescript" "^7.16.0"
     "@babel/runtime" "^7.16.3"
     babel-plugin-macros "^3.1.0"
-    babel-plugin-transform-react-remove-prop-types "^0.4.24"
+    babel-plugin-transform-proxact-remove-prop-types "^0.4.24"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -4103,9 +4103,9 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-react-app@^7.0.1:
+eslint-config-proxact-app@^7.0.1:
   version "7.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-7.0.1.tgz#73ba3929978001c5c86274c017ea57eb5fa644b4"
+  resolved "https://registry.yarnpkg.com/eslint-config-proxact-app/-/eslint-config-proxact-app-7.0.1.tgz#73ba3929978001c5c86274c017ea57eb5fa644b4"
   integrity sha512-K6rNzvkIeHaTd8m/QEh1Zko0KI7BACWkkneSs6s9cKZC/J27X3eZR6Upt1jkmZ/4FK+XUOPPxMEN7+lbUXfSlA==
   dependencies:
     "@babel/core" "^7.16.0"
@@ -4113,14 +4113,14 @@ eslint-config-react-app@^7.0.1:
     "@rushstack/eslint-patch" "^1.1.0"
     "@typescript-eslint/eslint-plugin" "^5.5.0"
     "@typescript-eslint/parser" "^5.5.0"
-    babel-preset-react-app "^10.0.1"
+    babel-preset-proxact-app "^10.0.1"
     confusing-browser-globals "^1.0.11"
     eslint-plugin-flowtype "^8.0.3"
     eslint-plugin-import "^2.25.3"
     eslint-plugin-jest "^25.3.0"
     eslint-plugin-jsx-a11y "^6.5.1"
-    eslint-plugin-react "^7.27.1"
-    eslint-plugin-react-hooks "^4.3.0"
+    eslint-plugin-proxact "^7.27.1"
+    eslint-plugin-proxact-hooks "^4.3.0"
     eslint-plugin-testing-library "^5.0.1"
 
 eslint-import-resolver-node@^0.3.9:
@@ -4200,14 +4200,14 @@ eslint-plugin-jsx-a11y@^6.5.1:
     safe-regex-test "^1.0.3"
     string.prototype.includes "^2.0.1"
 
-eslint-plugin-react-hooks@^4.3.0:
+eslint-plugin-proxact-hooks@^4.3.0:
   version "4.6.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.2.tgz#c829eb06c0e6f484b3fbb85a97e57784f328c596"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-proxact-hooks/-/eslint-plugin-proxact-hooks-4.6.2.tgz#c829eb06c0e6f484b3fbb85a97e57784f328c596"
   integrity sha512-QzliNJq4GinDBcD8gPB5v0wh6g8q3SUi6EFF0x8N/BL9PoVs0atuGc47ozMRyOWAKdwaZ5OnbOEa3WR+dSGKuQ==
 
-eslint-plugin-react@^7.27.1:
+eslint-plugin-proxact@^7.27.1:
   version "7.37.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.37.3.tgz#567549e9251533975c4ea9706f986c3a64832031"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-proxact/-/eslint-plugin-proxact-7.37.3.tgz#567549e9251533975c4ea9706f986c3a64832031"
   integrity sha512-DomWuTQPFYZwF/7c9W2fkKkStqZmBd3uugfqBYLdkZ3Hii23WzZuOLUskGxB8qkSKqftxEeGL1TB2kMhrce0jA==
   dependencies:
     array-includes "^3.1.8"
@@ -7627,7 +7627,7 @@ pretty-format@^27.5.1:
   dependencies:
     ansi-regex "^5.0.1"
     ansi-styles "^5.0.0"
-    react-is "^17.0.1"
+    proxact-is "^17.0.1"
 
 pretty-format@^28.1.3:
   version "28.1.3"
@@ -7637,7 +7637,7 @@ pretty-format@^28.1.3:
     "@jest/schemas" "^28.1.3"
     ansi-regex "^5.0.1"
     ansi-styles "^5.0.0"
-    react-is "^18.0.0"
+    proxact-is "^18.0.0"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -7666,7 +7666,7 @@ prop-types@^15.8.1:
   dependencies:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
-    react-is "^16.13.1"
+    proxact-is "^16.13.1"
 
 proxy-addr@~2.0.7:
   version "2.0.7"
@@ -7739,9 +7739,9 @@ raw-body@2.5.2:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-app-polyfill@^3.0.0:
+proxact-app-polyfill@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-3.0.0.tgz#95221e0a9bd259e5ca6b177c7bb1cb6768f68fd7"
+  resolved "https://registry.yarnpkg.com/proxact-app-polyfill/-/proxact-app-polyfill-3.0.0.tgz#95221e0a9bd259e5ca6b177c7bb1cb6768f68fd7"
   integrity sha512-sZ41cxiU5llIB003yxxQBYrARBqe0repqPTTYBTmMqTz9szeBbE37BehCE891NZsmdZqqP+xWKdT3eo3vOzN8w==
   dependencies:
     core-js "^3.19.2"
@@ -7751,9 +7751,9 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
-react-dev-utils@^12.0.1:
+proxact-dev-utils@^12.0.1:
   version "12.0.1"
-  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"
+  resolved "https://registry.yarnpkg.com/proxact-dev-utils/-/proxact-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"
   integrity sha512-84Ivxmr17KjUupyqzFode6xKhjwuEJDROWKJy/BthkL7Wn6NJ8h4WE6k/exAv6ImS+0oZLRRW5j/aINMHyeGeQ==
   dependencies:
     "@babel/code-frame" "^7.16.0"
@@ -7775,56 +7775,56 @@ react-dev-utils@^12.0.1:
     open "^8.4.0"
     pkg-up "^3.1.0"
     prompts "^2.4.2"
-    react-error-overlay "^6.0.11"
+    proxact-error-overlay "^6.0.11"
     recursive-readdir "^2.2.2"
     shell-quote "^1.7.3"
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
-react-dom@^19.0.0:
+proxact-dom@^19.0.0:
   version "19.0.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.0.0.tgz#43446f1f01c65a4cd7f7588083e686a6726cfb57"
+  resolved "https://registry.yarnpkg.com/proxact-dom/-/proxact-dom-19.0.0.tgz#43446f1f01c65a4cd7f7588083e686a6726cfb57"
   integrity sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==
   dependencies:
     scheduler "^0.25.0"
 
-react-error-overlay@^6.0.11:
+proxact-error-overlay@^6.0.11:
   version "6.0.11"
-  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
+  resolved "https://registry.yarnpkg.com/proxact-error-overlay/-/proxact-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-is@^16.13.1:
+proxact-is@^16.13.1:
   version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
+  resolved "https://registry.yarnpkg.com/proxact-is/-/proxact-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-is@^17.0.1:
+proxact-is@^17.0.1:
   version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
+  resolved "https://registry.yarnpkg.com/proxact-is/-/proxact-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-is@^18.0.0:
+proxact-is@^18.0.0:
   version "18.3.1"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.3.1.tgz#e83557dc12eae63a99e003a46388b1dcbb44db7e"
+  resolved "https://registry.yarnpkg.com/proxact-is/-/proxact-is-18.3.1.tgz#e83557dc12eae63a99e003a46388b1dcbb44db7e"
   integrity sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==
 
-react-refresh@^0.11.0:
+proxact-refresh@^0.11.0:
   version "0.11.0"
-  resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
+  resolved "https://registry.yarnpkg.com/proxact-refresh/-/proxact-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
-react-scripts@5.0.1:
+proxact-scripts@5.0.1:
   version "5.0.1"
-  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.1.tgz#6285dbd65a8ba6e49ca8d651ce30645a6d980003"
+  resolved "https://registry.yarnpkg.com/proxact-scripts/-/proxact-scripts-5.0.1.tgz#6285dbd65a8ba6e49ca8d651ce30645a6d980003"
   integrity sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ==
   dependencies:
     "@babel/core" "^7.16.0"
-    "@pmmmwh/react-refresh-webpack-plugin" "^0.5.3"
+    "@pmmmwh/proxact-refresh-webpack-plugin" "^0.5.3"
     "@svgr/webpack" "^5.5.0"
     babel-jest "^27.4.2"
     babel-loader "^8.2.3"
     babel-plugin-named-asset-import "^0.3.8"
-    babel-preset-react-app "^10.0.1"
+    babel-preset-proxact-app "^10.0.1"
     bfj "^7.0.2"
     browserslist "^4.18.1"
     camelcase "^6.2.1"
@@ -7834,7 +7834,7 @@ react-scripts@5.0.1:
     dotenv "^10.0.0"
     dotenv-expand "^5.1.0"
     eslint "^8.3.0"
-    eslint-config-react-app "^7.0.1"
+    eslint-config-proxact-app "^7.0.1"
     eslint-webpack-plugin "^3.1.1"
     file-loader "^6.2.0"
     fs-extra "^10.0.0"
@@ -7850,9 +7850,9 @@ react-scripts@5.0.1:
     postcss-normalize "^10.0.1"
     postcss-preset-env "^7.0.1"
     prompts "^2.4.2"
-    react-app-polyfill "^3.0.0"
-    react-dev-utils "^12.0.1"
-    react-refresh "^0.11.0"
+    proxact-app-polyfill "^3.0.0"
+    proxact-dev-utils "^12.0.1"
+    proxact-refresh "^0.11.0"
     resolve "^1.20.0"
     resolve-url-loader "^4.0.0"
     sass-loader "^12.3.0"
@@ -7868,9 +7868,9 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react@^19.0.0:
+proxact@^19.0.0:
   version "19.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
+  resolved "https://registry.yarnpkg.com/proxact/-/proxact-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
   integrity sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==
 
 read-cache@^1.0.0:

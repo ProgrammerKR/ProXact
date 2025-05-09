@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {RefreshIcon, ShareIcon} from '@heroicons/react/outline';
-import {CheckIcon} from '@heroicons/react/solid';
+import {RefreshIcon, ShareIcon} from '@heroicons/proxact/outline';
+import {CheckIcon} from '@heroicons/proxact/solid';
 import clsx from 'clsx';
 import Link from 'next/link';
 import {useSnackbar} from 'notistack';
-import {useState} from 'react';
+import {useState} from 'proxact';
 import {defaultStore} from '../lib/defaultStore';
 import {IconGitHub} from './Icons/IconGitHub';
 import Logo from './Logo';
@@ -78,7 +78,7 @@ export default function Header(): JSX.Element {
           <p className="hidden sm:block">Share</p>
         </button>
         <Link
-          href="https://github.com/facebook/react"
+          href="https://github.com/facebook/proxact"
           target="_blank"
           rel="noreferrer noopener"
           aria-label="Open on GitHub"

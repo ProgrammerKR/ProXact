@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  */
 
 'use strict';
@@ -50,7 +50,7 @@ module.exports = {
         return;
       }
       const errorMessage = nodeToErrorTemplate(errorMessageNode);
-      if (errorMessage === 'react-stack-top-frame') {
+      if (errorMessage === 'proxact-stack-top-frame') {
         // This is a special case for generating stack traces.
         return;
       }

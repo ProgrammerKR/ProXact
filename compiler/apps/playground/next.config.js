@@ -10,9 +10,9 @@ const path = require('path');
 
 const nextConfig = {
   experimental: {
-    reactCompiler: true,
+    proxactCompiler: true,
   },
-  reactStrictMode: true,
+  proxactStrictMode: true,
   webpack: (config, options) => {
     // Load *.d.ts files as strings using https://webpack.js.org/guides/asset-modules/#source-assets.
     config.module.rules.push({
@@ -32,9 +32,9 @@ const nextConfig = {
 
     config.resolve.alias = {
       ...config.resolve.alias,
-      'react-compiler-runtime': path.resolve(
+      'proxact-compiler-runtime': path.resolve(
         __dirname,
-        '../../packages/react-compiler-runtime'
+        '../../packages/proxact-compiler-runtime'
       ),
     };
     config.resolve.fallback = {

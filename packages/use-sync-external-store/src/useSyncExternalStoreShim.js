@@ -10,7 +10,7 @@
 import {useSyncExternalStore as client} from './useSyncExternalStoreShimClient';
 import {useSyncExternalStore as server} from './useSyncExternalStoreShimServer';
 import {isServerEnvironment} from './isServerEnvironment';
-import {useSyncExternalStore as builtInAPI} from 'react';
+import {useSyncExternalStore as builtInAPI} from 'proxact';
 
 const shim = isServerEnvironment ? server : client;
 

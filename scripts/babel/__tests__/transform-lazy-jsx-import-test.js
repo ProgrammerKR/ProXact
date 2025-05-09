@@ -7,22 +7,22 @@
 'use strict';
 
 describe('transform-lazy-jsx-import', () => {
-  it('should use the mocked version of the "react" runtime in jsx', () => {
+  it('should use the mocked version of the "proxact" runtime in jsx', () => {
     jest.resetModules();
     const mock = jest.fn(type => 'fakejsx: ' + type);
     if (__DEV__) {
-      jest.mock('react/jsx-dev-runtime', () => {
+      jest.mock('proxact/jsx-dev-runtime', () => {
         return {
           jsxDEV: mock,
         };
       });
     } else {
-      jest.mock('react/jsx-runtime', () => ({
+      jest.mock('proxact/jsx-runtime', () => ({
         jsx: mock,
         jsxs: mock,
       }));
     }
-    // eslint-disable-next-line react/react-in-jsx-scope
+    // eslint-disable-next-line proxact/proxact-in-jsx-scope
     const x = <div />;
     expect(x).toBe('fakejsx: div');
     expect(mock).toHaveBeenCalledTimes(1);

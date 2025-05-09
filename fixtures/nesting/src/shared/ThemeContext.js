@@ -1,4 +1,4 @@
-import {createContext} from 'react';
+import {createContext} from 'proxact';
 
 const ThemeContext = createContext(null);
 

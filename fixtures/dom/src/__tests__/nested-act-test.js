@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @emails react-core
+ * @emails proxact-core
  */
 
 let React;
@@ -17,9 +17,9 @@ global.__DEV__ = process.env.NODE_ENV !== 'production';
 describe('unmocked scheduler', () => {
   beforeEach(() => {
     jest.resetModules();
-    React = require('react');
+    React = require('proxact');
     DOMAct = React.act;
-    TestRenderer = require('react-test-renderer');
+    TestRenderer = require('proxact-test-renderer');
     TestAct = TestRenderer.act;
   });
 
@@ -58,9 +58,9 @@ describe('mocked scheduler', () => {
     jest.mock('scheduler', () =>
       require.requireActual('scheduler/unstable_mock')
     );
-    React = require('react');
+    React = require('proxact');
     DOMAct = React.act;
-    TestRenderer = require('react-test-renderer');
+    TestRenderer = require('proxact-test-renderer');
     TestAct = TestRenderer.act;
   });
 

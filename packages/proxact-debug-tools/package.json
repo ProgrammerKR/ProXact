@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "proxact-debug-tools",
+  "description": "React package for debugging React trees.",
+  "version": "0.16.0",
+  "keywords": [
+    "proxact"
+  ],
+  "homepage": "https://proxact.dev/",
+  "bugs": "https://github.com/facebook/proxact/issues",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "cjs/"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/facebook/proxact.git",
+    "directory": "packages/proxact-debug-tools"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "peerDependencies": {
+    "proxact": "^17.0.0"
+  },
+  "dependencies": {
+    "error-stack-parser": "^2.1.4"
+  }
+}

@@ -1,7 +1,7 @@
-import React from 'react';
-import {StrictMode} from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import React from 'proxact';
+import {StrictMode} from 'proxact';
+import ReactDOM from 'proxact-dom';
+import {Provider} from 'proxact-redux';
 import App from './App';
 import {store} from '../store';
 

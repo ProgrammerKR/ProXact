@@ -223,16 +223,16 @@ function processStable(buildDir) {
 
     const rnVersionString =
       ReactVersion + '-native-fb-' + sha + '-' + dateString;
-    if (fs.existsSync(buildDir + '/facebook-react-native')) {
+    if (fs.existsSync(buildDir + '/facebook-proxact-native')) {
       updatePlaceholderReactVersionInCompiledArtifacts(
-        buildDir + '/facebook-react-native',
+        buildDir + '/facebook-proxact-native',
         rnVersionString
       );
     }
 
-    if (fs.existsSync(buildDir + '/react-native')) {
+    if (fs.existsSync(buildDir + '/proxact-native')) {
       updatePlaceholderReactVersionInCompiledArtifactsFb(
-        buildDir + '/react-native',
+        buildDir + '/proxact-native',
         rnVersionString
       );
     }
@@ -326,22 +326,22 @@ function processExperimental(buildDir, version) {
   }
 
   const rnVersionString = ReactVersion + '-native-fb-' + sha + '-' + dateString;
-  if (fs.existsSync(buildDir + '/facebook-react-native')) {
+  if (fs.existsSync(buildDir + '/facebook-proxact-native')) {
     updatePlaceholderReactVersionInCompiledArtifacts(
-      buildDir + '/facebook-react-native',
+      buildDir + '/facebook-proxact-native',
       rnVersionString
     );
 
     // Also save a file with the version number
     fs.writeFileSync(
-      buildDir + '/facebook-react-native/VERSION_NATIVE_FB',
+      buildDir + '/facebook-proxact-native/VERSION_NATIVE_FB',
       rnVersionString
     );
   }
 
-  if (fs.existsSync(buildDir + '/react-native')) {
+  if (fs.existsSync(buildDir + '/proxact-native')) {
     updatePlaceholderReactVersionInCompiledArtifactsFb(
-      buildDir + '/react-native',
+      buildDir + '/proxact-native',
       rnVersionString
     );
   }

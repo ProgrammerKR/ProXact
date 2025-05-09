@@ -7,9 +7,9 @@
 
 import path from 'path';
 
-// We assume this is run from `babel-plugin-react-compiler`
+// We assume this is run from `babel-plugin-proxact-compiler`
 export const PROJECT_ROOT = path.normalize(
-  path.join(process.cwd(), '..', 'babel-plugin-react-compiler'),
+  path.join(process.cwd(), '..', 'babel-plugin-proxact-compiler'),
 );
 
 export const PROJECT_SRC = path.normalize(

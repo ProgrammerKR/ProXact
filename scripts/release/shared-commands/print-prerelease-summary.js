@@ -21,7 +21,7 @@ module.exports = ({cwd}, isStableRelease) => {
 
       You can review the contents of this release in {path build/node_modules/}
 
-      {header Before publishing, consider testing this release locally with create-react-app!}
+      {header Before publishing, consider testing this release locally with create-proxact-app!}
 
       You can publish this release by running:
       {path   ${publishPath}}

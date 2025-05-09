@@ -6,7 +6,7 @@
  *
  */
 
-import {hydrateRoot} from 'react-dom/client';
+import {hydrateRoot} from 'proxact-dom/client';
 import App from './App';
 
 hydrateRoot(document, <App assets={window.assetManifest} />);

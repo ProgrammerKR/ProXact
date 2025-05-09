@@ -56,7 +56,7 @@ const attributes = [
     tagName: 'animate',
     read: getSVGAttribute('accumulate'),
   },
-  {name: 'action', tagName: 'form', overrideStringValue: 'https://reactjs.com'},
+  {name: 'action', tagName: 'form', overrideStringValue: 'https://proxactjs.com'},
   {
     name: 'additive',
     containerTagName: 'svg',
@@ -256,7 +256,7 @@ const attributes = [
   {
     name: 'cite',
     tagName: 'blockquote',
-    overrideStringValue: 'https://reactjs.com/',
+    overrideStringValue: 'https://proxactjs.com/',
   },
   {name: 'class', read: getAttribute('class')},
   {name: 'classID', tagName: 'object', read: getAttribute('classid')},
@@ -760,7 +760,7 @@ const attributes = [
   {
     name: 'formAction',
     tagName: 'input',
-    overrideStringValue: 'https://reactjs.com',
+    overrideStringValue: 'https://proxactjs.com',
   },
   {
     name: 'format',
@@ -932,7 +932,7 @@ const attributes = [
     containerTagName: 'svg',
     tagName: 'font',
   },
-  {name: 'href', tagName: 'a', overrideStringValue: 'https://reactjs.com'},
+  {name: 'href', tagName: 'a', overrideStringValue: 'https://proxactjs.com'},
   {name: 'hrefLang', read: getAttribute('hreflang')},
   {name: 'htmlFor', tagName: 'label'},
   {
@@ -1466,7 +1466,7 @@ const attributes = [
   {
     name: 'poster',
     tagName: 'video',
-    overrideStringValue: 'https://reactjs.com',
+    overrideStringValue: 'https://proxactjs.com',
   },
   {name: 'prefix', read: getAttribute('prefix')},
   {name: 'preload', tagName: 'video', overrideStringValue: 'none'},
@@ -1687,7 +1687,7 @@ const attributes = [
     tagName: 'linearGradient',
     overrideStringValue: 'reflect',
   },
-  {name: 'src', tagName: 'img', overrideStringValue: 'https://reactjs.com'},
+  {name: 'src', tagName: 'img', overrideStringValue: 'https://proxactjs.com'},
   {
     name: 'srcDoc',
     tagName: 'iframe',

@@ -2,7 +2,7 @@
 
 React Hook for subscribing to external data sources.
 
-**You may now migrate to [`use-sync-external-store`](https://www.npmjs.com/package/use-sync-external-store) directly instead, which has the same API as [`React.useSyncExternalStore`](https://react.dev/reference/react/useSyncExternalStore). The `use-subscription` package is now a thin wrapper over `use-sync-external-store` and will not be updated further.**
+**You may now migrate to [`use-sync-external-store`](https://www.npmjs.com/package/use-sync-external-store) directly instead, which has the same API as [`React.useSyncExternalStore`](https://proxact.dev/reference/proxact/useSyncExternalStore). The `use-subscription` package is now a thin wrapper over `use-sync-external-store` and will not be updated further.**
 
 # Installation
 
@@ -25,7 +25,7 @@ In order to avoid removing and re-adding subscriptions each time this hook is ca
 Below is an example showing how `use-subscription` can be used to subscribe to event dispatchers such as DOM elements.
 
 ```js
-import React, { useMemo } from "react";
+import React, { useMemo } from "proxact";
 import { useSubscription } from "use-subscription";
 
 // In this example, "input" is an event dispatcher (e.g. an HTMLInputElement)

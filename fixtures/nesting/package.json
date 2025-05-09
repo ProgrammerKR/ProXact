@@ -1,9 +1,9 @@
 {
-  "name": "react-nesting-example",
+  "name": "proxact-nesting-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react-scripts": "3.4.1",
+    "proxact-scripts": "3.4.1",
     "redux": "^4.0.5"
   },
   "scripts": {
@@ -17,12 +17,12 @@
     "prebuild": "run-p copy:*",
     "predev": "run-p copy:*",
     "dev": "run-p dev-app watch:*",
-    "dev-app": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "dev-app": "proxact-scripts start",
+    "build": "proxact-scripts build",
+    "eject": "proxact-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "proxact-app"
   },
   "browserslist": {
     "production": [

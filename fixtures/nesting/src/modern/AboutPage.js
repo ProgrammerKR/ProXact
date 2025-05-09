@@ -1,6 +1,6 @@
-import React from 'react';
-import {useContext} from 'react';
-import {connect} from 'react-redux';
+import React from 'proxact';
+import {useContext} from 'proxact';
+import {connect} from 'proxact-redux';
 
 import ThemeContext from './shared/ThemeContext';
 import lazyLegacyRoot from './lazyLegacyRoot';

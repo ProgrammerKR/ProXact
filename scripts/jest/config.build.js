@@ -59,8 +59,8 @@ module.exports = Object.assign({}, baseConfig, {
   moduleNameMapper,
   modulePathIgnorePatterns: [
     ...baseConfig.modulePathIgnorePatterns,
-    'packages/react-devtools-extensions',
-    'packages/react-devtools-shared',
+    'packages/proxact-devtools-extensions',
+    'packages/proxact-devtools-shared',
   ],
   // Don't run bundle tests on -test.internal.* files
   testPathIgnorePatterns: ['/node_modules/', '-test.internal.js$'],

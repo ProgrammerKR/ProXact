@@ -5,7 +5,7 @@
 const {execRead, logPromise} = require('../utils');
 
 const run = async () => {
-  const version = await execRead('npm info react@canary version');
+  const version = await execRead('npm info proxact@canary version');
 
   return version;
 };

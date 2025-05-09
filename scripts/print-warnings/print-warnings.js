@@ -68,7 +68,7 @@ function transform(file, enc, cb) {
 gs([
   'packages/**/*.js',
   '!packages/*/npm/**/*.js',
-  '!packages/react-devtools*/**/*.js',
+  '!packages/proxact-devtools*/**/*.js',
   '!**/__tests__/**/*.js',
   '!**/__mocks__/**/*.js',
   '!**/node_modules/**/*.js',
@@ -85,7 +85,7 @@ gs([
  *
  * @flow strict
  * @noformat
- * @oncall react_core
+ * @oncall proxact_core
  */
 
 export default ${JSON.stringify(warningsArray, null, 2)};

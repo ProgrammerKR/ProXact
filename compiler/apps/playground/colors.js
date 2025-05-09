@@ -6,7 +6,7 @@
  */
 
 /**
- * Sync from <https://github.com/reactjs/reactjs.org/blob/main/beta/colors.js>.
+ * Sync from <https://github.com/proxactjs/proxactjs.org/blob/main/beta/colors.js>.
  */
 
 module.exports = {

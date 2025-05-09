@@ -14,7 +14,7 @@ const packages = readdirSync(packagesRoot).filter(dir => {
   if (dir.charAt(0) === '.') {
     return false;
   }
-  if (dir.includes('react-devtools')) {
+  if (dir.includes('proxact-devtools')) {
     return false;
   }
   if (dir === 'internal-test-utils') {
@@ -36,8 +36,8 @@ const packages = readdirSync(packagesRoot).filter(dir => {
 // Create a module map to point React packages to the build output
 const moduleNameMapper = {};
 
-moduleNameMapper['react-devtools-feature-flags'] =
-  '<rootDir>/packages/react-devtools-shared/src/config/DevToolsFeatureFlags.default';
+moduleNameMapper['proxact-devtools-feature-flags'] =
+  '<rootDir>/packages/proxact-devtools-shared/src/config/DevToolsFeatureFlags.default';
 
 // Map packages to bundles
 packages.forEach(name => {
@@ -50,8 +50,8 @@ packages.forEach(name => {
 
 // Allow tests to import shared code (e.g. feature flags, getStackByFiberInDevAndProd)
 moduleNameMapper['^shared/([^/]+)$'] = '<rootDir>/packages/shared/$1';
-moduleNameMapper['^react-reconciler/([^/]+)$'] =
-  '<rootDir>/packages/react-reconciler/$1';
+moduleNameMapper['^proxact-reconciler/([^/]+)$'] =
+  '<rootDir>/packages/proxact-reconciler/$1';
 
 module.exports = Object.assign({}, baseConfig, {
   // Redirect imports to the compiled bundles
@@ -68,31 +68,31 @@ module.exports = Object.assign({}, baseConfig, {
     '/__compiled__/',
     '/__untransformed__/',
   ],
-  testRegex: 'packages/react-devtools(-(.+))?/.+/__tests__/[^]+.test.js$',
+  testRegex: 'packages/proxact-devtools(-(.+))?/.+/__tests__/[^]+.test.js$',
   snapshotSerializers: [
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/__serializers__/dehydratedValueSerializer.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/__serializers__/dehydratedValueSerializer.js'
     ),
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/__serializers__/hookSerializer.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/__serializers__/hookSerializer.js'
     ),
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/__serializers__/inspectedElementSerializer.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/__serializers__/inspectedElementSerializer.js'
     ),
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/__serializers__/profilingSerializer.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/__serializers__/profilingSerializer.js'
     ),
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/__serializers__/storeSerializer.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/__serializers__/storeSerializer.js'
     ),
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/__serializers__/timelineDataSerializer.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/__serializers__/timelineDataSerializer.js'
     ),
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/__serializers__/treeContextStateSerializer.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/__serializers__/treeContextStateSerializer.js'
     ),
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/__serializers__/numberToFixedSerializer.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/__serializers__/numberToFixedSerializer.js'
     ),
   ],
   setupFiles: [
@@ -103,7 +103,7 @@ module.exports = Object.assign({}, baseConfig, {
   ],
   setupFilesAfterEnv: [
     require.resolve(
-      '../../packages/react-devtools-shared/src/__tests__/setupTests.js'
+      '../../packages/proxact-devtools-shared/src/__tests__/setupTests.js'
     ),
   ],
 });

@@ -5,8 +5,8 @@ const baseConfig = require('./config.base');
 module.exports = Object.assign({}, baseConfig, {
   modulePathIgnorePatterns: [
     ...baseConfig.modulePathIgnorePatterns,
-    'packages/react-devtools-extensions',
-    'packages/react-devtools-shared',
+    'packages/proxact-devtools-extensions',
+    'packages/proxact-devtools-shared',
     'ReactIncrementalPerf',
     'ReactIncrementalUpdatesMinimalism',
     'ReactIncrementalTriangle',

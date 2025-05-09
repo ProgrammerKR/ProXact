@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type {EffectCallback} from 'react';
-import {useEffect} from 'react';
+import type {EffectCallback} from 'proxact';
+import {useEffect} from 'proxact';
 
 export default function useMountEffect(effect: EffectCallback) {
   return useEffect(effect, []);

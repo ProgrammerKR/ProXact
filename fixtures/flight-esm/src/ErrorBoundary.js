@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import * as React from 'proxact';
 
 export default class ErrorBoundary extends React.Component {
   state = {error: null};

@@ -4,7 +4,7 @@
  * that versions will change during a single session this should be safe.
  */
 
-const TAGS_CACHE_KEY = '@react-dom-fixtures/tags';
+const TAGS_CACHE_KEY = '@proxact-dom-fixtures/tags';
 
 /**
  * Its possible that users will be testing changes frequently
@@ -52,7 +52,7 @@ export default function getVersionTags() {
       cachedTags = JSON.parse(cachedTags);
       resolve(cachedTags);
     } else {
-      fetch('https://api.github.com/repos/facebook/react/tags?per_page=1000', {
+      fetch('https://api.github.com/repos/facebook/proxact/tags?per_page=1000', {
         mode: 'cors',
       })
         .then(res => res.json())

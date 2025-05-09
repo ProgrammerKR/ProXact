@@ -3,22 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "experimental",
-    "react-dom": "experimental",
-    "react-scripts": "5.0.1",
+    "proxact": "experimental",
+    "proxact-dom": "experimental",
+    "proxact-scripts": "5.0.1",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "prestart": "cp -a ../../build/oss-experimental/. node_modules",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "proxact-scripts start",
+    "build": "proxact-scripts build",
+    "test": "proxact-scripts test",
+    "eject": "proxact-scripts eject"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "proxact-app",
+      "proxact-app/jest"
     ]
   },
   "browserslist": {

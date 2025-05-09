@@ -15,7 +15,7 @@ if (process.env.GH_TOKEN == null) {
 }
 
 const OWNER = 'facebook';
-const REPO = 'react';
+const REPO = 'proxact';
 const WORKFLOW_ID = 'runtime_build_and_test.yml';
 const GITHUB_HEADERS = `
   -H "Accept: application/vnd.github+json" \
@@ -88,7 +88,7 @@ async function getArtifact(workflowRunId, artifactName) {
 async function processArtifact(artifact, opts) {
   // Download and extract artifact
   const cwd = join(__dirname, '..', '..', '..');
-  const tmpDir = mkdtempSync(join(os.tmpdir(), 'react_'));
+  const tmpDir = mkdtempSync(join(os.tmpdir(), 'proxact_'));
   await exec(`rm -rf ./build`, {cwd});
   await exec(
     `curl -L ${GITHUB_HEADERS} ${artifact.archive_download_url} > artifacts_combined.zip`,

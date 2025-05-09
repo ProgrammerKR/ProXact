@@ -9,7 +9,7 @@
  * allows you to specify functions that should have dependencies added to
  * callsites.
  */
-import {useEffect} from 'react';
+import {useEffect} from 'proxact';
 
 export default function useEffectWrapper(f: () => void | (() => void)): void {
   useEffect(() => {

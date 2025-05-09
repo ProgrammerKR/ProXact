@@ -4,17 +4,17 @@
   "description": "Cooperative scheduler for the browser environment.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/react.git",
+    "url": "https://github.com/facebook/proxact.git",
     "directory": "packages/scheduler"
   },
   "license": "MIT",
   "keywords": [
-    "react"
+    "proxact"
   ],
   "bugs": {
-    "url": "https://github.com/facebook/react/issues"
+    "url": "https://github.com/facebook/proxact/issues"
   },
-  "homepage": "https://react.dev/",
+  "homepage": "https://proxact.dev/",
   "files": [
     "LICENSE",
     "README.md",

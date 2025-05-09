@@ -175,7 +175,7 @@
     "@parcel/transformer-postcss" "2.0.0-canary.1778+b50bc79cb"
     "@parcel/transformer-posthtml" "2.0.0-canary.1778+b50bc79cb"
     "@parcel/transformer-raw" "2.0.0-canary.1778+b50bc79cb"
-    "@parcel/transformer-react-refresh-wrap" "2.0.0-canary.1778+b50bc79cb"
+    "@parcel/transformer-proxact-refresh-wrap" "2.0.0-canary.1778+b50bc79cb"
     "@parcel/transformer-svg" "2.13.4-canary.3401+b50bc79cb"
 
 "@parcel/core@2.0.0-canary.1776+b50bc79cb":
@@ -223,8 +223,8 @@
   integrity sha512-NvX0zbNWTkKk75tb0qfaSUUdbx913Bk+zqjRzr6fnejcIpNb5LzFWB5H5EwdSMKN4rsU/16IBw0vh/eVzz65tg==
   dependencies:
     ansi-html-community "0.0.8"
-    react "^18 || ^19"
-    react-dom "^18 || ^19"
+    proxact "^18 || ^19"
+    proxact-dom "^18 || ^19"
 
 "@parcel/events@2.0.0-canary.1778+b50bc79cb":
   version "2.0.0-canary.1778"
@@ -649,15 +649,15 @@
   dependencies:
     "@parcel/plugin" "2.0.0-canary.1778+b50bc79cb"
 
-"@parcel/transformer-react-refresh-wrap@2.0.0-canary.1778+b50bc79cb":
+"@parcel/transformer-proxact-refresh-wrap@2.0.0-canary.1778+b50bc79cb":
   version "2.0.0-canary.1778"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-react-refresh-wrap/-/transformer-react-refresh-wrap-2.0.0-canary.1778.tgz#92249148709770a741a08163d6bf75973ab2f7b0"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-proxact-refresh-wrap/-/transformer-proxact-refresh-wrap-2.0.0-canary.1778.tgz#92249148709770a741a08163d6bf75973ab2f7b0"
   integrity sha512-SgdnIAsY2s2FUcBwj3A2ME3C3WcLtPnmpQZBHk8pBIzBXmx98DABkPgneMdtsmoPg5RpSRsLba1ThFz1GeaBsw==
   dependencies:
     "@parcel/error-overlay" "2.13.4-canary.3401+b50bc79cb"
     "@parcel/plugin" "2.0.0-canary.1778+b50bc79cb"
     "@parcel/utils" "2.0.0-canary.1778+b50bc79cb"
-    react-refresh ">=0.9 <=0.16"
+    proxact-refresh ">=0.9 <=0.16"
 
 "@parcel/transformer-svg@2.13.4-canary.3401+b50bc79cb":
   version "2.13.4-canary.3401"
@@ -961,14 +961,14 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.7.tgz#50ae4353eaaddc04044279812f52c8c65857dbcb"
   integrity sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==
 
-"@types/react-dom@^19":
+"@types/proxact-dom@^19":
   version "19.0.2"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-19.0.2.tgz#ad21f9a1ee881817995fd3f7fd33659c87e7b1b7"
+  resolved "https://registry.yarnpkg.com/@types/proxact-dom/-/proxact-dom-19.0.2.tgz#ad21f9a1ee881817995fd3f7fd33659c87e7b1b7"
   integrity sha512-c1s+7TKFaDRRxr1TxccIX2u7sfCnc3RxkVyBIUA2lCpyqCF+QoAwQ/CBg7bsMdVwP120HEH143VQezKtef5nCg==
 
-"@types/react@^19":
+"@types/proxact@^19":
   version "19.0.1"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.0.1.tgz#a000d5b78f473732a08cecbead0f3751e550b3df"
+  resolved "https://registry.yarnpkg.com/@types/proxact/-/proxact-19.0.1.tgz#a000d5b78f473732a08cecbead0f3751e550b3df"
   integrity sha512-YW6614BDhqbpR5KtUYzTA+zlA7nayzJRA9ljz9CQoxthR0sDisYZLuvSMsil36t4EH/uAt8T52Xb4sVw17G+SQ==
   dependencies:
     csstype "^3.0.2"
@@ -2015,38 +2015,38 @@ raw-body@2.5.2:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-"react-dom@^18 || ^19":
+"proxact-dom@^18 || ^19":
   version "19.0.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.0.0.tgz#43446f1f01c65a4cd7f7588083e686a6726cfb57"
+  resolved "https://registry.yarnpkg.com/proxact-dom/-/proxact-dom-19.0.0.tgz#43446f1f01c65a4cd7f7588083e686a6726cfb57"
   integrity sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==
   dependencies:
     scheduler "^0.25.0"
 
-react-dom@experimental:
+proxact-dom@experimental:
   version "0.0.0-experimental-79ddf5b5-20241210"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-0.0.0-experimental-79ddf5b5-20241210.tgz#c140f191e7a88be5d4c38d34f7cf1dbf38a9a71d"
+  resolved "https://registry.yarnpkg.com/proxact-dom/-/proxact-dom-0.0.0-experimental-79ddf5b5-20241210.tgz#c140f191e7a88be5d4c38d34f7cf1dbf38a9a71d"
   integrity sha512-bAB3yL0kntJWIC01+WprH/XAp7KATXSZ0kc6lUN9A1jMMDYTDOBmN0ghCMnDe/5lalJJouqGAmRd5bkji9HqwQ==
   dependencies:
     scheduler "0.0.0-experimental-79ddf5b5-20241210"
 
-"react-refresh@>=0.9 <=0.16":
+"proxact-refresh@>=0.9 <=0.16":
   version "0.16.0"
-  resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.16.0.tgz#e7d45625f05c9709466d09348a25d22f79b2ad23"
+  resolved "https://registry.yarnpkg.com/proxact-refresh/-/proxact-refresh-0.16.0.tgz#e7d45625f05c9709466d09348a25d22f79b2ad23"
   integrity sha512-FPvF2XxTSikpJxcr+bHut2H4gJ17+18Uy20D5/F+SKzFap62R3cM5wH6b8WN3LyGSYeQilLEcJcR1fjBSI2S1A==
 
-react-server-dom-parcel@experimental:
+proxact-server-dom-parcel@experimental:
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-server-dom-parcel/-/react-server-dom-parcel-0.0.1.tgz#2653c2b39a857fbd17770d27d6f08bd139803f09"
+  resolved "https://registry.yarnpkg.com/proxact-server-dom-parcel/-/proxact-server-dom-parcel-0.0.1.tgz#2653c2b39a857fbd17770d27d6f08bd139803f09"
   integrity sha512-f93wv8gycm4ltcQRqpSlgYyT6cJxmjJdRmXw3deQoXowDlP44W4RRzwHQ70u1xseCpHFIORmuHVXk7+Fk8RFtQ==
 
-"react@^18 || ^19":
+"proxact@^18 || ^19":
   version "19.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
+  resolved "https://registry.yarnpkg.com/proxact/-/proxact-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
   integrity sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==
 
-react@experimental:
+proxact@experimental:
   version "0.0.0-experimental-79ddf5b5-20241210"
-  resolved "https://registry.yarnpkg.com/react/-/react-0.0.0-experimental-79ddf5b5-20241210.tgz#d1c620a36dfa02337f69c4eaeee230fec6742b72"
+  resolved "https://registry.yarnpkg.com/proxact/-/proxact-0.0.0-experimental-79ddf5b5-20241210.tgz#d1c620a36dfa02337f69c4eaeee230fec6742b72"
   integrity sha512-+e7TiHmfdCEzR942m4ukOBf/4jd41Mc8M/ExOGYT7LtbrXCX/HCw9RqffaYZXdMd3+QD/nBzx9f/DTDLzP8FLA==
 
 regenerator-runtime@^0.14.0, regenerator-runtime@^0.14.1:

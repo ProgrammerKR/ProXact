@@ -5,7 +5,7 @@ const ClosureCompiler = require('google-closure-compiler').compiler;
 const prettier = require('prettier');
 
 const instructionDir =
-  './packages/react-dom-bindings/src/server/fizz-instruction-set';
+  './packages/proxact-dom-bindings/src/server/fizz-instruction-set';
 
 // This is the name of the generated file that exports the inline instruction
 // set as strings.
@@ -75,7 +75,7 @@ async function main() {
   );
 
   let outputCode = [
-    '// This is a generated file. The source files are in react-dom-bindings/src/server/fizz-instruction-set.',
+    '// This is a generated file. The source files are in proxact-dom-bindings/src/server/fizz-instruction-set.',
     '// The build script is at scripts/rollup/generate-inline-fizz-runtime.js.',
     '// Run `yarn generate-inline-fizz-runtime` to generate.',
     ...exportStatements,

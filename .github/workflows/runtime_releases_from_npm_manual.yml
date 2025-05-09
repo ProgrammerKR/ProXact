@@ -56,7 +56,7 @@ jobs:
             ```json
             ${{ toJson(inputs) }}
             ```
-          embed-url: https://github.com/facebook/react/actions/runs/${{ github.run_id }}
+          embed-url: https://github.com/facebook/proxact/actions/runs/${{ github.run_id }}
 
   publish:
     name: Publish releases

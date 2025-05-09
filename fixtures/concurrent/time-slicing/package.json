@@ -4,17 +4,17 @@
   "private": true,
   "dependencies": {
     "glamor": "^2.20.40",
-    "react": "0.0.0-experimental-269dd6ec5",
-    "react-dom": "0.0.0-experimental-269dd6ec5",
-    "react-markdown": "^3.2.0",
-    "react-scripts": "^1.1.4",
+    "proxact": "0.0.0-experimental-269dd6ec5",
+    "proxact-dom": "0.0.0-experimental-269dd6ec5",
+    "proxact-markdown": "^3.2.0",
+    "proxact-scripts": "^1.1.4",
     "victory": "^0.25.6"
   },
   "scripts": {
     "copy-source": "cp -r ../../../build/oss-experimental/* ./node_modules/",
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "dev": "proxact-scripts start",
+    "build": "proxact-scripts build",
+    "test": "proxact-scripts test --env=jsdom",
+    "eject": "proxact-scripts eject"
   }
 }

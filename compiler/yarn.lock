@@ -1216,23 +1216,23 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
 
-"@babel/plugin-transform-react-display-name@^7.25.9":
+"@babel/plugin-transform-proxact-display-name@^7.25.9":
   version "7.25.9"
-  resolved "https://registry.npmjs.org/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.25.9.tgz"
+  resolved "https://registry.npmjs.org/@babel/plugin-transform-proxact-display-name/-/plugin-transform-proxact-display-name-7.25.9.tgz"
   integrity sha512-KJfMlYIUxQB1CJfO3e0+h0ZHWOTLCPP115Awhaz8U0Zpq36Gl/cXlpoyMRnUWlhNUBAzldnCiAZNvCDj7CrKxQ==
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
 
-"@babel/plugin-transform-react-jsx-development@^7.25.9":
+"@babel/plugin-transform-proxact-jsx-development@^7.25.9":
   version "7.25.9"
-  resolved "https://registry.npmjs.org/@babel/plugin-transform-react-jsx-development/-/plugin-transform-react-jsx-development-7.25.9.tgz"
+  resolved "https://registry.npmjs.org/@babel/plugin-transform-proxact-jsx-development/-/plugin-transform-proxact-jsx-development-7.25.9.tgz"
   integrity sha512-9mj6rm7XVYs4mdLIpbZnHOYdpW42uoiBCTVowg7sP1thUOiANgMb4UtpRivR0pp5iL+ocvUv7X4mZgFRpJEzGw==
   dependencies:
-    "@babel/plugin-transform-react-jsx" "^7.25.9"
+    "@babel/plugin-transform-proxact-jsx" "^7.25.9"
 
-"@babel/plugin-transform-react-jsx@^7.25.9":
+"@babel/plugin-transform-proxact-jsx@^7.25.9":
   version "7.25.9"
-  resolved "https://registry.npmjs.org/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.25.9.tgz"
+  resolved "https://registry.npmjs.org/@babel/plugin-transform-proxact-jsx/-/plugin-transform-proxact-jsx-7.25.9.tgz"
   integrity sha512-s5XwpQYCqGerXl+Pu6VDL3x0j2d82eiV77UJ8a2mDHAW7j9SWRqQ2y1fNo1Z74CdcYipl5Z41zvjj4Nfzq36rw==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.25.9"
@@ -1241,9 +1241,9 @@
     "@babel/plugin-syntax-jsx" "^7.25.9"
     "@babel/types" "^7.25.9"
 
-"@babel/plugin-transform-react-pure-annotations@^7.25.9":
+"@babel/plugin-transform-proxact-pure-annotations@^7.25.9":
   version "7.25.9"
-  resolved "https://registry.npmjs.org/@babel/plugin-transform-react-pure-annotations/-/plugin-transform-react-pure-annotations-7.25.9.tgz"
+  resolved "https://registry.npmjs.org/@babel/plugin-transform-proxact-pure-annotations/-/plugin-transform-proxact-pure-annotations-7.25.9.tgz"
   integrity sha512-KQ/Takk3T8Qzj5TppkS1be588lkbTp5uj7w6a0LeQaTMSckU/wK0oJ/pih+T690tkgI5jfmg2TqDJvd41Sj1Cg==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.25.9"
@@ -1454,17 +1454,17 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/preset-react@^7.18.6":
+"@babel/preset-proxact@^7.18.6":
   version "7.26.3"
-  resolved "https://registry.npmjs.org/@babel/preset-react/-/preset-react-7.26.3.tgz"
+  resolved "https://registry.npmjs.org/@babel/preset-proxact/-/preset-proxact-7.26.3.tgz"
   integrity sha512-Nl03d6T9ky516DGK2YMxrTqvnpUW63TnJMOMonj+Zae0JiPC5BC9xPMSL6L8fiSpA5vP88qfygavVQvnLp+6Cw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.25.9"
     "@babel/helper-validator-option" "^7.25.9"
-    "@babel/plugin-transform-react-display-name" "^7.25.9"
-    "@babel/plugin-transform-react-jsx" "^7.25.9"
-    "@babel/plugin-transform-react-jsx-development" "^7.25.9"
-    "@babel/plugin-transform-react-pure-annotations" "^7.25.9"
+    "@babel/plugin-transform-proxact-display-name" "^7.25.9"
+    "@babel/plugin-transform-proxact-jsx" "^7.25.9"
+    "@babel/plugin-transform-proxact-jsx-development" "^7.25.9"
+    "@babel/plugin-transform-proxact-pure-annotations" "^7.25.9"
 
 "@babel/preset-typescript@^7.18.6":
   version "7.27.0"
@@ -3007,14 +3007,14 @@
     lz-string "^1.4.4"
     pretty-format "^27.0.2"
 
-"@testing-library/react@^13.4.0":
+"@testing-library/proxact@^13.4.0":
   version "13.4.0"
-  resolved "https://registry.npmjs.org/@testing-library/react/-/react-13.4.0.tgz"
+  resolved "https://registry.npmjs.org/@testing-library/proxact/-/proxact-13.4.0.tgz"
   integrity sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^8.5.0"
-    "@types/react-dom" "^18.0.0"
+    "@types/proxact-dom" "^18.0.0"
 
 "@tootallnate/once@2":
   version "2.0.0"
@@ -3122,7 +3122,7 @@
   resolved "https://registry.npmjs.org/@types/fbt/-/fbt-1.0.4.tgz"
   integrity sha512-KBaaLu4hEIBaCyQ3L2KP6JujD+tmMuPZ10YpgmGgqMaM8TESYR2TOJNvG+GYiWUhGkp38Y+62VZ1wJ97MPvt+A==
   dependencies:
-    "@types/react" "*"
+    "@types/proxact" "*"
 
 "@types/glob@^8.1.0":
   version "8.1.0"
@@ -3251,16 +3251,16 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-dom@^18.0.0":
+"@types/proxact-dom@^18.0.0":
   version "18.0.6"
-  resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.6.tgz"
+  resolved "https://registry.npmjs.org/@types/proxact-dom/-/proxact-dom-18.0.6.tgz"
   integrity sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==
   dependencies:
-    "@types/react" "*"
+    "@types/proxact" "*"
 
-"@types/react@*":
+"@types/proxact@*":
   version "18.0.21"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.0.21.tgz"
+  resolved "https://registry.npmjs.org/@types/proxact/-/proxact-18.0.21.tgz"
   integrity sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==
   dependencies:
     "@types/prop-types" "*"
@@ -8983,7 +8983,7 @@ pretty-format@^24:
     "@jest/types" "^24.9.0"
     ansi-regex "^4.0.0"
     ansi-styles "^3.2.0"
-    react-is "^16.8.4"
+    proxact-is "^16.8.4"
 
 pretty-format@^27.0.2:
   version "27.5.1"
@@ -8992,7 +8992,7 @@ pretty-format@^27.0.2:
   dependencies:
     ansi-regex "^5.0.1"
     ansi-styles "^5.0.0"
-    react-is "^17.0.1"
+    proxact-is "^17.0.1"
 
 pretty-format@^28.0.0, pretty-format@^28.1.3:
   version "28.1.3"
@@ -9002,7 +9002,7 @@ pretty-format@^28.0.0, pretty-format@^28.1.3:
     "@jest/schemas" "^28.1.3"
     ansi-regex "^5.0.1"
     ansi-styles "^5.0.0"
-    react-is "^18.0.0"
+    proxact-is "^18.0.0"
 
 pretty-format@^29.0.0, pretty-format@^29.7.0:
   version "29.7.0"
@@ -9011,7 +9011,7 @@ pretty-format@^29.0.0, pretty-format@^29.7.0:
   dependencies:
     "@jest/schemas" "^29.6.3"
     ansi-styles "^5.0.0"
-    react-is "^18.0.0"
+    proxact-is "^18.0.0"
 
 pretty-format@^29.0.3:
   version "29.0.3"
@@ -9020,7 +9020,7 @@ pretty-format@^29.0.3:
   dependencies:
     "@jest/schemas" "^29.0.0"
     ansi-styles "^5.0.0"
-    react-is "^18.0.0"
+    proxact-is "^18.0.0"
 
 pretty-format@^29.5.0:
   version "29.5.0"
@@ -9029,7 +9029,7 @@ pretty-format@^29.5.0:
   dependencies:
     "@jest/schemas" "^29.4.3"
     ansi-styles "^5.0.0"
-    react-is "^18.0.0"
+    proxact-is "^18.0.0"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -9180,36 +9180,36 @@ raw-body@^3.0.0:
     iconv-lite "0.6.3"
     unpipe "1.0.0"
 
-react-dom@0.0.0-experimental-4beb1fd8-20241118:
+proxact-dom@0.0.0-experimental-4beb1fd8-20241118:
   version "0.0.0-experimental-4beb1fd8-20241118"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-0.0.0-experimental-4beb1fd8-20241118.tgz"
+  resolved "https://registry.npmjs.org/proxact-dom/-/proxact-dom-0.0.0-experimental-4beb1fd8-20241118.tgz"
   integrity sha512-/Gs2N/6hiuwqf2uuJ3UN/PWxpIncbuY7XY/IynlB2oNpopeV+x1MMXfNdse8TiPkpgg9aw+VUfQUlLPC52bKiQ==
   dependencies:
     scheduler "0.0.0-experimental-4beb1fd8-20241118"
 
-react-is@0.0.0-experimental-4beb1fd8-20241118:
+proxact-is@0.0.0-experimental-4beb1fd8-20241118:
   version "0.0.0-experimental-4beb1fd8-20241118"
-  resolved "https://registry.npmjs.org/react-is/-/react-is-0.0.0-experimental-4beb1fd8-20241118.tgz"
+  resolved "https://registry.npmjs.org/proxact-is/-/proxact-is-0.0.0-experimental-4beb1fd8-20241118.tgz"
   integrity sha512-7JE3PtW4zpMYdp1bTXKNmz2t0jzaqc3frMWbvbuZmhif5ndtYx5oCGhfnbm6S5ZeTNKe4GXsN5D73QtZClfepQ==
 
-react-is@^16.8.4:
+proxact-is@^16.8.4:
   version "16.13.1"
-  resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
+  resolved "https://registry.npmjs.org/proxact-is/-/proxact-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-is@^17.0.1:
+proxact-is@^17.0.1:
   version "17.0.2"
-  resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
+  resolved "https://registry.npmjs.org/proxact-is/-/proxact-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-is@^18.0.0:
+proxact-is@^18.0.0:
   version "18.3.1"
-  resolved "https://registry.npmjs.org/react-is/-/react-is-18.3.1.tgz"
+  resolved "https://registry.npmjs.org/proxact-is/-/proxact-is-18.3.1.tgz"
   integrity sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==
 
-react@0.0.0-experimental-4beb1fd8-20241118:
+proxact@0.0.0-experimental-4beb1fd8-20241118:
   version "0.0.0-experimental-4beb1fd8-20241118"
-  resolved "https://registry.npmjs.org/react/-/react-0.0.0-experimental-4beb1fd8-20241118.tgz"
+  resolved "https://registry.npmjs.org/proxact/-/proxact-0.0.0-experimental-4beb1fd8-20241118.tgz"
   integrity sha512-SojDx9IQZXRbze+BNoLRiBDblVTMRebpOZyU2QyRk4ptJob78QiROi58uuE7yxrFMDQN4kBl6tqYkSwQaIM2nQ==
 
 readable-stream@^3.4.0, readable-stream@^3.6.2:
